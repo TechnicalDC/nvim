@@ -1,6 +1,4 @@
-local M 
-
-M = {
+local config = {
    view = {
       style = "sign",
       signs = {
@@ -11,4 +9,4 @@ M = {
    }
 }
 
-return M
+require('mini.diff').setup(config)

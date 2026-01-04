@@ -1,7 +1,6 @@
 local miniclue = require('mini.clue')
-local M
 
-M = {
+local config = {
    window = {
       config = {
          width = 40
@@ -45,4 +44,4 @@ M = {
    },
 }
 
-return M
+require('mini.clue').setup(config)
