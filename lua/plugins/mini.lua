@@ -2,12 +2,13 @@ return {
    'nvim-mini/mini.nvim', 
    version = false, 
    config = function() 
-      local pick = require("plugins.config.pick")
+      require("plugins.config.pick")
       require("plugins.config.clue")
       require("plugins.config.diff")
       require("plugins.config.files")
       require("plugins.config.icons")
       require("plugins.config.notify")
+      require("plugins.config.starter")
 
       require('mini.ai').setup()
       require('mini.align').setup()
@@ -16,10 +17,8 @@ return {
       require('mini.indentscope').setup()
       require('mini.move').setup()
       require('mini.pairs').setup()
-      require('mini.pick').setup(pick)
       require('mini.sessions').setup()
       require('mini.splitjoin').setup()
-      require('mini.starter').setup()
       require('mini.statusline').setup()
       require('mini.surround').setup()
       require('mini.visits').setup()

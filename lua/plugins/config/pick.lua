@@ -3,10 +3,24 @@ local nmap = function(lhs, rhs, desc)
   vim.keymap.set('n', lhs, rhs, { desc = desc })
 end
 
-local M
+local config = { 
+   options = {
+      content_from_bottom = true
+   },
+   window = { 
+      config = { 
+         border = 'single' 
+      } 
+   } 
+}
 
-M = { window = { config = { border = 'single' } } }
+require('mini.pick').setup(config)
+require('mini.extra').setup()
 
+nmap("<leader>fb", "<cmd>lua MiniPick.builtin.buffers()<cr>", "Open buffers")
 nmap("<leader>ff", "<cmd>lua MiniPick.builtin.files()<cr>", "Open files")
-
-return M
+nmap("<leader>fh", "<cmd>lua MiniPick.builtin.help()<cr>", "Open help")
+nmap("<leader>fd", "<cmd>lua MiniExtra.pickers.diagnostic()<cr>", "Open diagnostic")
+nmap("<leader>fH", "<cmd>lua MiniExtra.pickers.hipatterns()<cr>", "Open hipatterns")
+nmap("<leader>fo", "<cmd>lua MiniExtra.pickers.oldfiles()<cr>", "Open oldfiles")
+nmap("<leader>fs", "<cmd>lua MiniExtra.pickers.spellsuggest()<cr>", "Open spellsuggest")

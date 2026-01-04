@@ -1,4 +1,6 @@
 {
+  "LuaSnip": { "branch": "master", "commit": "3732756842a2f7e0e76a7b0487e9692072857277" },
+  "blink.cmp": { "branch": "main", "commit": "485c03400608cb6534bbf84da8c1c471fc4808c0" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "mini.nvim": { "branch": "main", "commit": "02fc1af931cb6e7bb475e4977f530073cfdcc20d" },
   "neowiki.nvim": { "branch": "main", "commit": "86f705604f9f2e6c1a0f238ebe8df9fb843e71c7" },

@@ -26,10 +26,7 @@ return {
                fg = "highlight_high",
                bg = "none"
             },
-            FloatTitle              = {
-               fg = "surface",
-               bg = "rose"
-            },
+            FloatTitle = { fg = "love", bg = "none" },
 
             SnacksPickerPreviewBorder = {
                fg = "highlight_high",
@@ -41,7 +38,10 @@ return {
             SnacksDashboardTitle     = { fg   = "rose" },
             SnacksPickerPreviewTitle = { fg   = "base", bg = "rose" },
 
-            MiniFilesTitleFocused    = { fg   = "base", bg = "love" },
+            MiniFilesTitleFocused    = { fg   = "love", bg = "none" },
+            MiniClueTitle            = { link = "FloatTitle" },
+            MiniPickHeader           = { link = "FloatTitle" },
+            MiniPickBorderText       = { link = "FloatTitle" },
 
             WhichKeyBorder           = { link = "FloatBorder" },
 

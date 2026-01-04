@@ -15,7 +15,6 @@ set.ruler          = false      -- Don't show cursor coordinates
 set.shortmess      = 'CFOSWaco' -- Disable some built-in completion messages
 set.showmode       = false      -- Don't show mode in command line
 set.showmatch      = true
-set.signcolumn     = 'yes'      -- Always show signcolumn (less flicker)
 set.splitbelow     = true       -- Horizontal splits will be below
 set.splitkeep      = 'screen'   -- Reduce scroll during window split
 set.splitright     = true       -- Vertical splits will be to the right
@@ -76,6 +75,10 @@ set.spelloptions  = 'camel' -- Treat camelCase word parts as separate words
 set.tabstop       = 3       -- Show tab as this number of spaces
 set.virtualedit   = 'block' -- Allow going past end of line in blockwise mode
 set.swapfile       = false
+set.spelllang     = "en_us"
+set.signcolumn    = "auto:1"
+set.conceallevel  = 2
+set.concealcursor = 'nc'
 
 -- SHELL {{{
 if vim.fn.has("win32") == 1 then
