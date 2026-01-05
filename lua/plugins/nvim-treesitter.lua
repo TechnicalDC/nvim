@@ -1,14 +1,14 @@
 return {
    'nvim-treesitter/nvim-treesitter',
-   enabled = false,
+   enabled = true,
    build = ':TSUpdate',
    config = function ()
-      require'nvim-treesitter.configs'.setup {
+      require'nvim-treesitter'.setup {
          ensure_installed = {
             "bash",
             "css",
             "diff",
-				"java",
+            "java",
             "json",
             "typst",
             "lua",
