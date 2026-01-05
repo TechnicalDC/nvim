@@ -42,6 +42,7 @@ return {
             MiniClueTitle            = { link = "FloatTitle" },
             MiniPickHeader           = { link = "FloatTitle" },
             MiniPickBorderText       = { link = "FloatTitle" },
+            MiniPickPromptPrefix     = { link = "FloatTitle" },
 
             WhichKeyBorder           = { link = "FloatBorder" },
 

@@ -9,8 +9,10 @@ local config = {
    },
    window = { 
       config = { 
-         border = 'single' 
-      } 
+         border = "single",
+      },
+      prompt_prefix = "❯ ",
+      prompt_caret = "▏"
    } 
 }
 

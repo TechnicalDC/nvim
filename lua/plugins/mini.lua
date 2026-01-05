@@ -9,6 +9,7 @@ return {
       require("plugins.config.icons")
       require("plugins.config.notify")
       require("plugins.config.starter")
+      require("plugins.config.statusline")
 
       require('mini.ai').setup()
       require('mini.align').setup()
@@ -19,7 +20,7 @@ return {
       require('mini.pairs').setup()
       require('mini.sessions').setup()
       require('mini.splitjoin').setup()
-      require('mini.statusline').setup()
       require('mini.surround').setup()
+      require('mini.tabline').setup()
       require('mini.visits').setup()
    end }
