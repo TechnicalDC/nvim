@@ -51,10 +51,10 @@ set.fillchars:append({
 })
 
 set.listchars = "eol: "
-   .. ",tab:┊·"
+   .. ",tab:┊ "
    .. ",nbsp:␣"
-   .. ",lead:·"
-   .. ",leadmultispace:·"
+   .. ",lead: "
+   .. ",leadmultispace: "
    .. ",extends:…"
    .. ",precedes:…"
 

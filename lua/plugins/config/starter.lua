@@ -17,16 +17,18 @@ starter.setup({
       ]]
       return banner
     end,
+    footer = "",
     items = {
        { name = 'find files', action = 'Pick files', section = 'Section' },
        { name = 'browse files', action = 'lua require("mini.files").open(vim.uv.cwd(), true)', section = 'Section' },
-       starter.sections.recent_files(5, true),
-       starter.sections.sessions(5, true),
+       { name = 'recent files', action = "lua MiniExtra.pickers.oldfiles()", section = 'Section' },
+       { name = 'load session', action = "lua MiniSessions.select()", section = 'Section' },
        { name = 'edit new buffer', action = 'enew', section = 'Builtin actions' },
        { name = 'quit Neovim', action = 'qall', section = 'Builtin actions' },
     },
     content_hooks = {
        starter.gen_hook.adding_bullet(),
+       starter.gen_hook.indexing('all'),
        starter.gen_hook.aligning('center', 'center'),
     },
     query_updaters = [[abcdefghilmoqrstuvwxyz0123456789_-,.ABCDEFGHIJKLMOQRSTUVWXYZ]],

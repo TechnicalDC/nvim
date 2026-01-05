@@ -43,6 +43,7 @@ return {
             MiniPickHeader           = { link = "FloatTitle" },
             MiniPickBorderText       = { link = "FloatTitle" },
             MiniPickPromptPrefix     = { link = "FloatTitle" },
+            MiniStarterHeader        = { fg = "love" },
 
             WhichKeyBorder           = { link = "FloatBorder" },
 
