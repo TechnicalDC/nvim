@@ -7,7 +7,9 @@ return {
       require("plugins.config.diff")
       require("plugins.config.files")
       require("plugins.config.icons")
+      require("plugins.config.misc")
       require("plugins.config.notify")
+      require("plugins.config.session")
       require("plugins.config.starter")
       require("plugins.config.statusline")
 
@@ -18,7 +20,6 @@ return {
       require('mini.indentscope').setup()
       require('mini.move').setup()
       require('mini.pairs').setup()
-      require('mini.sessions').setup()
       require('mini.splitjoin').setup()
       require('mini.surround').setup()
       require('mini.tabline').setup()

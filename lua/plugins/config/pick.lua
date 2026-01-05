@@ -10,6 +10,7 @@ local config = {
    window = { 
       config = { 
          border = "single",
+         height = 20
       },
       prompt_prefix = "❯ ",
       prompt_caret = "▏"
