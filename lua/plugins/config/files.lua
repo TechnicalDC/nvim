@@ -50,7 +50,7 @@ local config = {
    },
 }
 
-require('mini.files').setup()
+require('mini.files').setup(config)
 
 autocmd('User', {
    pattern = 'MiniFilesBufferCreate',

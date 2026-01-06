@@ -4,3 +4,15 @@ require('mini.indentscope').setup({
       border = 'both',
    }
 })
+
+-- Disable only for certain filetypes (for example, "lua" and "help")
+vim.api.nvim_create_autocmd('Filetype', {
+   pattern = {
+      "markdown",
+      "help",
+      "ministarter"
+   },
+   callback = function(args)
+      vim.b[args.buf].miniindentscope_disable = true
+   end
+})
