@@ -104,3 +104,18 @@ vim.filetype.add({
       cls = "progress",
    }
 })
+
+vim.diagnostic.config({
+   underline = true,
+   severity_sort = true,
+   virtual_text = false,
+   signs = {
+      text = {
+         [vim.diagnostic.severity.INFO]  = '',
+         [vim.diagnostic.severity.WARN]  = '',
+         [vim.diagnostic.severity.HINT]  = '󰌵',
+         [vim.diagnostic.severity.ERROR] = '',
+      }
+   }
+})
+
