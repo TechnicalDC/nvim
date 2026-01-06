@@ -1,10 +1,10 @@
 {
   "LuaSnip": { "branch": "master", "commit": "3732756842a2f7e0e76a7b0487e9692072857277" },
   "blink.cmp": { "branch": "main", "commit": "485c03400608cb6534bbf84da8c1c471fc4808c0" },
-  "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },
-  "mini.nvim": { "branch": "main", "commit": "02fc1af931cb6e7bb475e4977f530073cfdcc20d" },
+  "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "mini.nvim": { "branch": "main", "commit": "fb4ccfed03c1f0d9db702f93a65cb4c0c6c2832b" },
   "neowiki.nvim": { "branch": "main", "commit": "86f705604f9f2e6c1a0f238ebe8df9fb843e71c7" },
-  "nvim-treesitter": { "branch": "main", "commit": "31fc7e10cd7c1fd7717b439050d0f91c2c4f0a4b" },
+  "nvim-treesitter": { "branch": "main", "commit": "b033ab331ca0bccbd93c3c2b4f886fdfc09abec0" },
   "render-markdown.nvim": { "branch": "main", "commit": "da6a7b25471ab23824f3429225973186eb0b62d2" },
   "rose-pine": { "branch": "main", "commit": "cf2a288696b03d0934da713d66c6d71557b5c997" },
   "smart-splits.nvim": { "branch": "master", "commit": "d2629b2451649946c95bcc11ea5eaf15c96b23ef" }
