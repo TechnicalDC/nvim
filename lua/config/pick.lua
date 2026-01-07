@@ -3,18 +3,19 @@ local nmap = function(lhs, rhs, desc)
   vim.keymap.set('n', lhs, rhs, { desc = desc })
 end
 
-local config = { 
+local config = {
    options = {
       content_from_bottom = true
    },
-   window = { 
-      config = { 
+   window = {
+      config = {
          border = "single",
-         height = 10
+         height = 10,
+         width = vim.o.columns < 120 and vim.o.columns or 120
       },
       prompt_prefix = "  ",
       prompt_caret = "▏"
-   } 
+   }
 }
 
 require('mini.pick').setup(config)

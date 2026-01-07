@@ -1,7 +1,7 @@
-return { 
-   'nvim-mini/mini.nvim', 
-   version = false, 
-   config = function() 
+return {
+   'nvim-mini/mini.nvim',
+   version = false,
+   config = function()
       require("config.pick")
       require("config.clue")
       require("config.diff")

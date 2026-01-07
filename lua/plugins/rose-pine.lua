@@ -28,27 +28,16 @@ return {
             },
             FloatTitle = { fg = "love", bg = "none" },
 
-            SnacksPickerPreviewBorder = {
-               fg = "highlight_high",
-               bg = "none"
-            },
-            SnacksInputBorder        = { link = "FloatBorder" },
-            SnacksInputTitle         = { link = "FloatTitle" },
-            SnacksInputNormal        = { link = "NormalFloat" },
-            SnacksDashboardTitle     = { fg   = "rose" },
-            SnacksPickerPreviewTitle = { fg   = "base", bg = "rose" },
-
             MiniFilesTitleFocused    = { fg   = "love", bg = "none" },
             MiniClueTitle            = { link = "FloatTitle" },
             MiniPickHeader           = { link = "FloatTitle" },
             MiniPickBorderText       = { link = "FloatTitle" },
             MiniPickPromptPrefix     = { link = "FloatTitle" },
             MiniStarterHeader        = { fg = "love" },
+            MiniTablineModifiedCurrent = { bg = "love" },
+            MiniTablineModifiedVisible = { fg = "love", bg = "love", blend = 30 },
+            MiniTablineModifiedHidden  = { fg = "love", bg = "love", blend = 20 },
 
-            WhichKeyBorder           = { link = "FloatBorder" },
-
-            -- RenderMarkdownLink       = { fg = "foam", underline = true },
-            -- RenderMarkdownH2         = { fg = "foam", reverse = true },
             MarkdownH1Bg       = { fg = "base", bg = "iris" },
             MarkdownH2Bg       = { fg = "base", bg = "foam" },
             MarkdownH3Bg       = { fg = "base", bg = "rose" },
