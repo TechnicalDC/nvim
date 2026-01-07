@@ -28,7 +28,7 @@ starter.setup({
     },
     content_hooks = {
        starter.gen_hook.adding_bullet(),
-       starter.gen_hook.indexing('all'),
+       -- starter.gen_hook.indexing('all'),
        starter.gen_hook.aligning('center', 'center'),
     },
     query_updaters = [[abcdefghilmoqrstuvwxyz0123456789_-,.ABCDEFGHIJKLMOQRSTUVWXYZ]],
