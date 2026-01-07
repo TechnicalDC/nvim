@@ -32,4 +32,9 @@ require("lazy").setup("plugins", {
       enabled = true,
       notify = false
    },
+   ui = {
+      border = "single",
+      title = " lazy ",
+      title_pos = "left"
+   }
 })
