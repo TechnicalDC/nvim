@@ -22,6 +22,7 @@ end})
 --------------------------------------------------------------------------------
 local enabled_lsp_servers = {
    lua_ls = "lua-language-server",
+   ts_ls = "typescript-language-server",
    marksman = "marksman",
    tinymist = "tinymist",
    jdtls = "jdtls",
