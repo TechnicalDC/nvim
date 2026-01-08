@@ -55,8 +55,8 @@ set.listchars = "eol: "
    .. ",nbsp:␣"
    .. ",lead: "
    .. ",leadmultispace: "
-   .. ",extends:…"
-   .. ",precedes:…"
+   .. ",extends:>"
+   .. ",precedes:<"
 
 
 -- Editing ====================================================================
