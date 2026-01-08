@@ -6,6 +6,7 @@ local map = vim.keymap.set
 --------------------------------------------------------------------------------
 vim.api.nvim_create_autocmd("LspAttach", { callback = function (args)
    map("n", "<leader>rn", vim.lsp.buf.rename,                  { desc = "Rename" } )
+   map("n", "<leader>K",  vim.lsp.buf.hover,                   { desc = "Hover" } )
    map("n", "<leader>oc", vim.lsp.buf.code_action,             { desc = "Open code actions" } )
    map("n", "<leader>gd", vim.lsp.buf.definition,              { desc = "Go to definition" } )
    map("n", "<leader>gD", vim.lsp.buf.declaration,             { desc = "Go to declaration" } )
