@@ -106,6 +106,7 @@ vim.filetype.add({
 })
 
 vim.diagnostic.config({
+   float = false,
    underline = true,
    severity_sort = true,
    virtual_lines = true,
