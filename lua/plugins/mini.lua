@@ -6,6 +6,7 @@ return {
       require("config.clue")
       require("config.diff")
       require("config.files")
+      require("config.hipatterns")
       require("config.icons")
       require("config.indentscope")
       require("config.misc")
