@@ -14,3 +14,10 @@ autocmd("FileType", {
   pattern = "help",
   command = "wincmd L",
 })
+
+autocmd( 'FileType', {
+   pattern = 'markdown',
+   callback = function(args)
+      vim.treesitter.start(args.buf, 'markdown')
+   end
+})
