@@ -18,7 +18,7 @@ return {
             "typescript",
             "xml",
          },
-         sync_install = false,
+         sync_install = true,
          auto_install = false,
          ignore_install = { "javascript" },
 
