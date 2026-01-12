@@ -22,7 +22,7 @@ set.winborder      = 'single'   -- Use border in floating windows
 set.wrap           = false      -- Don't visually wrap lines (toggle with \w)
 set.cursorlineopt  = 'screenline,number' -- Show cursor line per screen line
 set.showtabline    = 0
-set.laststatus     = 3
+set.laststatus     = 2
 set.wildmenu       = true
 set.wildmode       = "longest:full,list:full"
 set.wildignore     = "*.o,*.obj,*.bak,*.exe,*.hi,*.dyn_hi,*.dyn_o,*.zip,*.pdf,*.gif,*.png,*.jpg,*.mp4,*mp3"
@@ -41,13 +41,13 @@ set.fillchars:append({
    foldclose = "",
    diff      = "-",
    eob       = " ",
-	horiz     = '═',
-	horizup   = '╩',
-	horizdown = '╦',
-	vert      = '║',
-	vertleft  = '╣',
-	vertright = '╠',
-	verthoriz = '╬',
+   -- horiz     = '═',
+   -- horizup   = '╩',
+   -- horizdown = '╦',
+   -- vert      = '║',
+   -- vertleft  = '╣',
+   -- vertright = '╠',
+   -- verthoriz = '╬',
 })
 
 set.listchars = "eol: "
