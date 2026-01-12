@@ -55,6 +55,7 @@ set.listchars = "eol: "
    .. ",nbsp:␣"
    .. ",lead: "
    .. ",leadmultispace: "
+   .. ",trail: "
    .. ",extends:>"
    .. ",precedes:<"
 
@@ -76,9 +77,10 @@ set.tabstop       = 3       -- Show tab as this number of spaces
 set.virtualedit   = 'block' -- Allow going past end of line in blockwise mode
 set.swapfile       = false
 set.spelllang     = "en_us"
-set.signcolumn    = "auto:1"
+set.signcolumn    = "yes"
 set.conceallevel  = 2
 set.concealcursor = 'nc'
+set.undofile      = true
 
 -- SHELL {{{
 if vim.fn.has("win32") == 1 then
