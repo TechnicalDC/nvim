@@ -70,9 +70,17 @@ return {
          }
       },
       sources = {
+         providers = {
+            orgmode = {
+               name = 'Orgmode',
+               module = 'orgmode.org.autocompletion.blink',
+               fallbacks = { 'buffer' },
+            },
+         },
          default = { 'lsp', 'path', 'snippets', 'buffer' },
          per_filetype = {
             markdown = { 'lsp', 'snippets', 'buffer', 'path' },
+            org = {'orgmode'}
          },
       },
       signature = {
