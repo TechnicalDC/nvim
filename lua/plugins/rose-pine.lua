@@ -38,6 +38,10 @@ return {
             MiniTablineModifiedVisible = { fg = "love", bg = "love", blend = 30 },
             MiniTablineModifiedHidden  = { fg = "love", bg = "love", blend = 20 },
 
+            MiniHipatternsDone         = { fg = "pine" },
+            MiniHipatternsPending      = { fg = "love" },
+            MiniHipatternsProgress     = { fg = "gold" },
+
             NoiceCmdline               = { link = "StatusLine" },
             NoiceCmdlineIcon           = { link = "StatusLineModeInsert" },
             NoiceCmdlineIconCmdline    = { link = "StatusLineModeInsert" },
