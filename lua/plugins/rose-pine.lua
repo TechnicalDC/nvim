@@ -38,9 +38,13 @@ return {
             MiniTablineModifiedVisible = { fg = "love", bg = "love", blend = 30 },
             MiniTablineModifiedHidden  = { fg = "love", bg = "love", blend = 20 },
 
-            MiniHipatternsDone         = { fg = "pine" },
-            MiniHipatternsPending      = { fg = "love" },
-            MiniHipatternsProgress     = { fg = "gold" },
+            MiniHipatternsDone     = { fg = "pine", bg = "none" },
+            MiniHipatternsPending  = { fg = "love", bg = "none" },
+            MiniHipatternsProgress = { fg = "gold", bg = "none" },
+            MiniHipatternsFixme    = { fg = "love", bg = "none" },
+            MiniHipatternsTodo     = { fg = "iris", bg = "none" },
+            MiniHipatternsNote     = { fg = "foam", bg = "none" },
+            MiniHipatternsDebug    = { fg = "gold", bg = "none" },
 
             NoiceCmdline               = { link = "StatusLine" },
             NoiceCmdlineIcon           = { link = "StatusLineModeInsert" },

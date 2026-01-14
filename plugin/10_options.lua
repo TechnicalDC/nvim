@@ -40,7 +40,7 @@ set.fillchars:append({
    foldopen  = "",
    foldclose = "",
    diff      = "-",
-   eob       = "~",
+   eob       = " ",
    -- horiz     = '═',
    -- horizup   = '╩',
    -- horizdown = '╦',
