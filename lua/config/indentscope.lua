@@ -9,6 +9,7 @@ require('mini.indentscope').setup({
 vim.api.nvim_create_autocmd('Filetype', {
    pattern = {
       "markdown",
+      "org",
       "lazy",
       "mason",
       "help",
