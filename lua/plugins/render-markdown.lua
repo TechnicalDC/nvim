@@ -27,7 +27,7 @@ return {
          bullet = {
             enabled = true,
             -- icons = {'◆', '◇'},
-            icons = {'', ''},
+            icons = {'•', '⚬'},
          },
          dash = { enabled = true },
          completions = {
