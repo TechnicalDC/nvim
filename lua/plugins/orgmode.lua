@@ -8,6 +8,7 @@ return {
    config = function()
       local Menu = require("org-modern.menu")
       require('orgmode').setup({
+         org_ellipsis = "[...]",
          org_agenda_files = '~/orgfiles/**/*',
          org_agenda_start_on_weekday = 0,
          org_capture_templates = {
