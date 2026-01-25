@@ -8,4 +8,4 @@ miniNotify.setup({
    }
 })
 
-vim.notify = miniNotify.make_notify()
+-- vim.notify = miniNotify.make_notify()
