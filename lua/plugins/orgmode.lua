@@ -13,9 +13,9 @@ return {
          org_agenda_start_on_weekday = 0,
          org_capture_templates = {
             t = {
-               description = 'Task',
+               description = 'Todo',
                template = '** TODO %?\n %u',
-               target = "~/orgfiles/tasks.org"
+               target = "~/orgfiles/todo.org"
             }
          },
          org_default_notes_file = '~/orgfiles/refile.org',
