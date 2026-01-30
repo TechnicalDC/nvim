@@ -8,9 +8,10 @@ hipatterns.setup({
       debug = { pattern = 'DEBUG:', group = 'MiniHipatternsDebug'  },
 
       done     = { pattern = ' DONE ',     group = 'MiniHipatternsDone'  },
-      progress = { pattern = ' PROGRESS ', group = 'MiniHipatternsProgress'  },
+      progress = { pattern = ' PROG ', group = 'MiniHipatternsProgress'  },
       pending  = { pattern = ' PENDING ',  group = 'MiniHipatternsPending'  },
       wait     = { pattern = ' WAIT ',     group = 'MiniHipatternsPending'  },
+      todo1    = { pattern = ' TODO ',  group = 'MiniHipatternsTodo'  },
 
       hex_color = hipatterns.gen_highlighter.hex_color(),
    }
