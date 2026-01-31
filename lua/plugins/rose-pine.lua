@@ -17,6 +17,12 @@ return {
             ["@markup.link.label.markdown_inline"] = { fg = "foam", underline = true },
 
             RenderMarkdownUnchecked = { fg = "love" },
+            RenderMarkdownH1Bg = { bg = "none" },
+            RenderMarkdownH2Bg = { bg = "none" },
+            RenderMarkdownH3Bg = { bg = "none" },
+            RenderMarkdownH4Bg = { bg = "none" },
+            RenderMarkdownH5Bg = { bg = "none" },
+            RenderMarkdownH6Bg = { bg = "none" },
 
             BlinkCmpSource          = { bg   = "none" },
 
