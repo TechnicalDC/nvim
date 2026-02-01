@@ -2,6 +2,7 @@
 return {
    "rose-pine/neovim",
    name = "rose-pine",
+   enabled = true,
    config = function()
       local transparency = false
       require("rose-pine").setup({
