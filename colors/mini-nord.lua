@@ -46,4 +46,4 @@ else
 end
 
 require('mini.hues').apply_palette(palette)
-vim.g.colors_name = 'minisummer'
+vim.g.colors_name = 'mini-nord'

@@ -15,6 +15,14 @@ autocmd("FileType", {
   command = "wincmd L",
 })
 
+autocmd("CmdlineLeave", {
+  command = "set nohlsearch",
+})
+
+autocmd("CmdlineEnter", {
+  command = "set hlsearch",
+})
+
 autocmd( 'FileType', {
    pattern = 'markdown',
    callback = function(args)
