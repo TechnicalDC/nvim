@@ -1,8 +1,8 @@
 local hues = require('mini.hues')
 
 hues.setup({
-   background = '#11262d',
-   foreground = '#c0c8cc',
+   background = '#070D19',
+   foreground = '#c7cad0',
    accent = 'bg',
    saturation = 'low',
    n_hues = 8
