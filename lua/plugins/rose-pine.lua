@@ -4,7 +4,6 @@ return {
    name = "rose-pine",
    enabled = true,
    config = function()
-      local transparency = false
       require("rose-pine").setup({
          highlight_groups = {
             StatusLine            = { fg = "subtle", bg  = "surface" },
