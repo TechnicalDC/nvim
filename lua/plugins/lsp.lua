@@ -17,6 +17,6 @@ return {
             "jdtls",
          }
       })
-      require("config.lsp")
+      require("dc.config.lsp")
    end
 }

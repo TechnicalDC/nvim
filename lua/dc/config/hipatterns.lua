@@ -56,6 +56,6 @@ map("<leader>tp", function ()
    toggle_todo(todo_patterns.prog)
 end, "Change to 'PROG'")
 
-map("<leader>td", function ()
+map("<leader>tw", function ()
    toggle_todo(todo_patterns.wait)
 end, "Change to 'WAIT'")

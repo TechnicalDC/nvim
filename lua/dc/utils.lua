@@ -37,4 +37,10 @@ function util.lighten(hex, amount, fg)
    return util.blend(hex, fg or util.fg, math.abs(amount))
 end
 
+function util.replace_vars(str, tbl)
+	return (str:gsub("($%b{})", function(w)
+		return tbl[w:sub(3, -2)] or w
+	end))
+end
+
 return util
