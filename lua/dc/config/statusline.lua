@@ -18,18 +18,21 @@ require('mini.statusline').setup({
          local pathname      = H.section_pathname({
             trunc_width = 100,
             filename_hl = "MiniStatuslineFilename",
-            modified_hl = "MiniStatuslineFilenameModified" })
+            modified_hl = "MiniStatuslineFilename" })
+
+			mode_hl = "StatusLine"
+			mode = "--" .. mode:upper() .. "--"
 
          -- Usage of `MiniStatusline.combine_groups()` ensures highlighting and
          -- correct padding with spaces between groups (accounts for 'missing'
          -- sections, etc.)
          return statusline.combine_groups({
-            { hl = mode_hl,                   strings = { mode:upper() } },
             { hl = 'MiniStatuslineDevinfo',   strings = { git, diff } },
             '%<', -- Mark general truncate point
             { hl = 'MiniStatuslineDirectory', strings = { pathname } },
             '%=', -- End left alignment
             { hl = 'DiagnosticWarn',          strings = { recording } },
+            { hl = mode_hl,                   strings = { mode } },
             { hl = 'MiniStatuslineFileinfo',  strings = { diagnostics, filetype, lsp } },
             { hl = mode_hl,                   strings = { search .. location } },
             { hl = 'MiniStatuslineDirectory', strings = {} },
