@@ -39,3 +39,5 @@ require("lazy").setup("plugins", {
       title_pos = "left"
    }
 })
+
+vim.cmd.colorscheme("rose")

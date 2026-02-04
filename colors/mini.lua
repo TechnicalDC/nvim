@@ -7,3 +7,5 @@ hues.setup({
    saturation = 'medium',
    n_hues = 8
 })
+
+require("dc.highlights")

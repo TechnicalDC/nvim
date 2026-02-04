@@ -1,7 +1,7 @@
 local palette = require("mini.hues").make_palette()
 local hl = vim.api.nvim_set_hl
 
-print(vim.inspect(palette))
+-- print(vim.inspect(palette))
 
 hl(0, "NormalFloat", { fg = palette.fg,     bg = "None" })
 hl(0, "FloatBorder", { fg = palette.fg_mid2, bg = "None" })
@@ -48,3 +48,8 @@ hl(0, "MiniPickPromptCaret",  { link = "FloatTitle" })
 hl(0, "MiniPickMatchCurrent", { link = "PmenuSel" })
 
 hl(0, "MiniNotifyBorder", { link = "FloatBorder" })
+
+-- MINI-CLUE
+hl(0, "MiniClueDescGroup", { fg = palette.yellow })
+hl(0, "MiniClueSeparator", { fg = palette.blue })
+hl(0, "MiniClueNextKey", { fg = palette.cyan })
