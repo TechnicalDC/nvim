@@ -24,7 +24,8 @@ starter.setup({
        { name = 'recent files', action = "lua MiniExtra.pickers.oldfiles()", section = 'Section' },
        { name = 'load session', action = "lua MiniSessions.select()", section = 'Section' },
        { name = 'edit new buffer', action = 'enew', section = 'Builtin actions' },
-       { name = 'quit Neovim', action = 'qall', section = 'Builtin actions' },
+       { name = 'update plugins', action = 'Lazy update', section = 'Builtin actions' },
+       { name = 'quit', action = 'qall', section = 'Builtin actions' },
     },
     content_hooks = {
        starter.gen_hook.adding_bullet(),
