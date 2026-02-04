@@ -19,3 +19,4 @@ map("n",   "Y",             "y$",                                         { desc
 map("n",   "<leader><Esc>", ":lua vim.o.hlsearch = false<CR>",            { desc = "Disable incremental search highlighting" } )
 map("n",   "<leader>rr",    [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Replace word under the cursor globally" } )
 map("n",   "<leader>xx",    "<cmd>!chmod +x %<CR>",                       { desc = "Make file executable" } )
+map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })

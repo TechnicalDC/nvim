@@ -5,7 +5,7 @@ local hl = vim.api.nvim_set_hl
 
 hl(0, "NormalFloat", { fg = palette.fg,     bg = "None" })
 hl(0, "FloatBorder", { fg = palette.fg_mid2, bg = "None" })
-hl(0, "FloatTitle",  { fg = palette.fg,     bg = "None" })
+hl(0, "FloatTitle",  { fg = palette.green,     bg = "None" })
 hl(0, "PmenuKind",   { bg = "None" })
 hl(0, "MiniPickMatchRanges", { fg = palette.green, bg = "None"})
 
@@ -53,3 +53,21 @@ hl(0, "MiniNotifyBorder", { link = "FloatBorder" })
 hl(0, "MiniClueDescGroup", { fg = palette.yellow })
 hl(0, "MiniClueSeparator", { fg = palette.blue })
 hl(0, "MiniClueNextKey", { fg = palette.cyan })
+
+-- RENDER-MARKDOWN
+-- hl(0, "RenderMarkdownUnchecked", { fg = "love" })
+-- hl(0, "RenderMarkdownH1Bg", { bg = "none" }    )
+-- hl(0, "RenderMarkdownH2Bg", { bg = "none" }    )
+-- hl(0, "RenderMarkdownH3Bg", { bg = "none" }    )
+-- hl(0, "RenderMarkdownH4Bg", { bg = "none" }    )
+-- hl(0, "RenderMarkdownH5Bg", { bg = "none" }    )
+-- hl(0, "RenderMarkdownH6Bg", { bg = "none" }    )
+
+-- MINI-HIPATTERN
+hl(0, "MiniHipatternsDone"     , { fg = palette.green })
+hl(0, "MiniHipatternsPending"  , { fg = palette.red })
+hl(0, "MiniHipatternsProgress" , { fg = palette.blue })
+hl(0, "MiniHipatternsFixme"    , { fg = palette.red })
+hl(0, "MiniHipatternsTodo"     , { fg = palette.yellow })
+hl(0, "MiniHipatternsNote"     , { fg = palette.blue })
+hl(0, "MiniHipatternsDebug"    , { fg = palette.orange })
