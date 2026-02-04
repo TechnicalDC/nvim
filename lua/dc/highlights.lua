@@ -55,13 +55,13 @@ hl(0, "MiniClueSeparator", { fg = palette.blue })
 hl(0, "MiniClueNextKey", { fg = palette.cyan })
 
 -- RENDER-MARKDOWN
--- hl(0, "RenderMarkdownUnchecked", { fg = "love" })
--- hl(0, "RenderMarkdownH1Bg", { bg = "none" }    )
--- hl(0, "RenderMarkdownH2Bg", { bg = "none" }    )
--- hl(0, "RenderMarkdownH3Bg", { bg = "none" }    )
--- hl(0, "RenderMarkdownH4Bg", { bg = "none" }    )
--- hl(0, "RenderMarkdownH5Bg", { bg = "none" }    )
--- hl(0, "RenderMarkdownH6Bg", { bg = "none" }    )
+hl(0, "RenderMarkdownUnchecked", { fg = palette.red })
+hl(0, "RenderMarkdownH1Bg", { fg = palette.orange })
+hl(0, "RenderMarkdownH2Bg", { fg = palette.yellow })
+hl(0, "RenderMarkdownH3Bg", { fg = palette.green  })
+hl(0, "RenderMarkdownH4Bg", { fg = palette.cyan   })
+hl(0, "RenderMarkdownH5Bg", { fg = palette.azure  })
+hl(0, "RenderMarkdownH6Bg", { fg = palette.blue   })
 
 -- MINI-HIPATTERN
 hl(0, "MiniHipatternsDone"     , { fg = palette.green })
@@ -71,3 +71,11 @@ hl(0, "MiniHipatternsFixme"    , { fg = palette.red })
 hl(0, "MiniHipatternsTodo"     , { fg = palette.yellow })
 hl(0, "MiniHipatternsNote"     , { fg = palette.blue })
 hl(0, "MiniHipatternsDebug"    , { fg = palette.orange })
+
+-- MiniPickHeader           = { link = "FloatTitle" },
+-- MiniPickBorderText       = { link = "FloatTitle" },
+-- MiniPickPromptPrefix     = { link = "FloatTitle" },
+-- MiniStarterHeader        = { fg = "love" },
+-- MiniTablineModifiedCurrent = { bg = "love" },
+-- MiniTablineModifiedVisible = { fg = "love", bg = "love", blend = 30 },
+-- MiniTablineModifiedHidden  = { fg = "love", bg = "love", blend = 20 },
