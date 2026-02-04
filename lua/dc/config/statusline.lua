@@ -17,10 +17,10 @@ require('mini.statusline').setup({
 			local search        = H.section_searchcount({ trunc_width = 80 })
 			local pathname      = H.section_pathname({
 				trunc_width = 100,
-				filename_hl = "StatusLine",
-				modified_hl = "StatusLine" })
+				filename_hl = "StatusLineNC",
+				modified_hl = "StatusLineNC" })
 
-			mode_hl = "StatusLine"
+			mode_hl = "StatusLineNC"
 			mode = "--" .. mode:upper() .. "--"
 
 			-- Usage of `MiniStatusline.combine_groups()` ensures highlighting and
@@ -29,7 +29,7 @@ require('mini.statusline').setup({
 			return statusline.combine_groups({
 				{ hl = 'MiniStatuslineDevinfo',   strings = { git } },
 				'%<', -- Mark general truncate point
-				{ hl = 'StatusLine', strings = { pathname } },
+				{ hl = 'StatusLineNC', strings = { pathname } },
 				'%=', -- End left alignment
 				{ hl = 'DiagnosticWarn',          strings = { recording } },
 				{ hl = mode_hl,                   strings = { mode } },

@@ -3,11 +3,11 @@ local hl = vim.api.nvim_set_hl
 
 -- print(vim.inspect(palette))
 
-hl(0, "NormalFloat", { fg = palette.fg,     bg = "None" })
-hl(0, "FloatBorder", { fg = palette.fg_mid2, bg = "None" })
-hl(0, "FloatTitle",  { fg = palette.green,     bg = "None" })
-hl(0, "PmenuKind",   { bg = "None" })
-hl(0, "MiniPickMatchRanges", { fg = palette.green, bg = "None"})
+hl(0, "NormalFloat",         { fg = palette.fg,      bg = "None" })
+hl(0, "FloatBorder",         { fg = palette.fg_mid2, bg = "None" })
+hl(0, "FloatTitle",          { fg = palette.green,   bg = "None" })
+hl(0, "PmenuKind",           { bg = "None" })
+hl(0, "MiniPickMatchRanges", { fg = palette.green,   bg = "None"})
 
 hl(0, "StatusLine",            { fg = palette.fg_mid, bg = palette.bg_mid2 })
 hl(0, "StatusLineNC",          { fg = palette.fg_mid, bg = palette.bg_mid })
@@ -26,6 +26,7 @@ hl(0, "DiagnosticUnderlineHint",  { undercurl = true })
 hl(0, "DiagnosticUnderlineInfo",  { undercurl = true })
 hl(0, "DiagnosticUnderlineOk",    { undercurl = true })
 hl(0, "DiagnosticUnderlineWarn",  { undercurl = true })
+hl(0, "@markup.link.label.markdown_inline", { fg = palette.cyan, underline = true })
 
 -- BLINK-CMP
 hl(0, "BlinkCmpSource", { fg = palette.fg_mid2 })
@@ -72,10 +73,10 @@ hl(0, "MiniHipatternsTodo"     , { fg = palette.yellow })
 hl(0, "MiniHipatternsNote"     , { fg = palette.blue })
 hl(0, "MiniHipatternsDebug"    , { fg = palette.orange })
 
--- MiniPickHeader           = { link = "FloatTitle" },
--- MiniPickBorderText       = { link = "FloatTitle" },
--- MiniPickPromptPrefix     = { link = "FloatTitle" },
--- MiniStarterHeader        = { fg = "love" },
+hl(0,"MiniPickHeader", { link = "FloatTitle" })
+hl(0,"MiniPickBorderText", { link = "FloatTitle" })
+hl(0,"MiniPickPromptPrefix", { link = "FloatTitle" })
+hl(0,"MiniStarterHeader", { fg = palette.purple })
 -- MiniTablineModifiedCurrent = { bg = "love" },
 -- MiniTablineModifiedVisible = { fg = "love", bg = "love", blend = 30 },
 -- MiniTablineModifiedHidden  = { fg = "love", bg = "love", blend = 20 },
