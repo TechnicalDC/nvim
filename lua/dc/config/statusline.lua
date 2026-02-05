@@ -4,23 +4,27 @@ local statusline = require("mini.statusline")
 require('mini.statusline').setup({
 	use_icons = true,
 	content = {
+		inactive = function ()
+			local pathname      = H.section_pathname({ trunc_width = 100 })
+			-- Usage of `MiniStatusline.combine_groups()` ensures highlighting and
+			-- correct padding with spaces between groups (accounts for 'missing'
+			-- sections, etc.)
+			return statusline.combine_groups({
+				'%<', -- Mark general truncate point
+				{ hl = 'StatusLineNC', strings = { pathname } },
+				'%=', -- End left alignment
+			})
+			-- stylua: ignore end
+		end,
 		active = function()
 			-- stylua: ignore start
 			local mode, mode_hl = statusline.section_mode({ trunc_width = 120 })
 			local git           = statusline.section_git({ trunc_width = 40 })
-			local diff          = statusline.section_diff({ trunc_width = 80 })
-			local diagnostics   = statusline.section_diagnostics({ trunc_width = 60 })
-			local lsp           = statusline.section_lsp({ trunc_width = 40 })
 			local filetype      = H.section_filetype({ trunc_width = 70 })
-			local location      = H.section_location({ trunc_width = 120 })
 			local recording     = H.section_recording({ trunc_width = 120 })
 			local search        = H.section_searchcount({ trunc_width = 80 })
-			local pathname      = H.section_pathname({
-				trunc_width = 100,
-				filename_hl = "StatusLineNC",
-				modified_hl = "StatusLineNC" })
+			local pathname      = H.section_pathname({ trunc_width = 100 })
 
-			mode_hl = "StatusLineNC"
 			mode = "--" .. mode:upper() .. "--"
 
 			-- Usage of `MiniStatusline.combine_groups()` ensures highlighting and
@@ -29,13 +33,12 @@ require('mini.statusline').setup({
 			return statusline.combine_groups({
 				{ hl = 'MiniStatuslineDevinfo',   strings = { git } },
 				'%<', -- Mark general truncate point
-				{ hl = 'StatusLineNC', strings = { pathname } },
+				{ hl = 'StatusLine', strings = { pathname } },
 				'%=', -- End left alignment
 				{ hl = 'DiagnosticWarn',          strings = { recording } },
 				{ hl = mode_hl,                   strings = { mode } },
-				{ hl = 'MiniStatuslineFileinfo',  strings = { filetype } },
+				{ hl = 'StatusLine',  strings = { filetype } },
 				{ hl = mode_hl,                   strings = { search } },
-				{ hl = 'MiniStatuslineDirectory', strings = {} },
 			})
 			-- stylua: ignore end
 		end,
@@ -51,7 +54,7 @@ H.get_filetype_icon = function()
 	local has_devicons, devicons = pcall(require, "mini.icons")
 	if not has_devicons then return "" end
 
-	local file_name, file_ext = vim.fn.expand("%:t"), vim.fn.expand("%:e")
+	local file_name, _ = vim.fn.expand("%:t"), vim.fn.expand("%:e")
 	return devicons.get('file', file_name)
 end
 
@@ -121,7 +124,7 @@ H.section_pathname = function(args)
 	local dir = ""
 	if #parts > 1 then dir = table.concat({ unpack(parts, 1, #parts - 1) }, sep) .. sep end
 
-	local file = parts[#parts]
+	local file = string.len(parts[#parts]) ~= 0 and parts[#parts] or "[No Name]"
 	local file_hl = ""
 	if vim.bo.modified and args.modified_hl then
 		file_hl = "%#" .. args.modified_hl .. "#"
