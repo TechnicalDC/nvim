@@ -26,6 +26,7 @@ require('mini.statusline').setup({
 			local pathname      = H.section_pathname({ trunc_width = 100 })
 
 			mode = "--" .. mode:upper() .. "--"
+			mode_hl = "StatusLine"
 
 			-- Usage of `MiniStatusline.combine_groups()` ensures highlighting and
 			-- correct padding with spaces between groups (accounts for 'missing'
