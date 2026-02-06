@@ -6,12 +6,14 @@ return {
 		local render = require('render-markdown')
 
 		render.setup({
-			file_types = { 'markdown', 'vimwiki' },
+			file_types = { 'markdown' },
 			render_modes = true,
 			anti_conceal = { enabled = true },
 			heading = {
 				border = false,
-				sign = false,
+				sign = true,
+				left_pad = 1,
+				right_pad = 1,
 				width = "block",
 				position = "inline",
 			},
@@ -25,8 +27,7 @@ return {
 			quote = { icon = '▌' },
 			bullet = {
 				enabled = true,
-				-- icons = {'◆', '◇'},
-				icons = {'•', '⚬'},
+				icons = {'◆', '◇'},
 			},
 			dash = { enabled = true },
 			completions = {
@@ -34,7 +35,7 @@ return {
 				lsp = { enabled = true }
 			},
 			link = {
-				hyperlink = '',
+				hyperlink = '󰌷 ',
 				custom = {
 					web = { pattern = '^http', icon = '󰖟 ' },
 					apple = { pattern = 'apple%.com', icon = ' ' },

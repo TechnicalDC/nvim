@@ -29,6 +29,6 @@ nmap("<leader>fd", "<cmd>lua MiniExtra.pickers.diagnostic()<cr>", "Open diagnost
 nmap("<leader>fH", "<cmd>lua MiniExtra.pickers.hipatterns()<cr>", "Open hipatterns")
 nmap("<leader>fo", "<cmd>lua MiniExtra.pickers.oldfiles()<cr>", "Open oldfiles")
 nmap("<leader>fs", "<cmd>lua MiniExtra.pickers.spellsuggest()<cr>", "Open spellsuggest")
-nmap("<leader>fw", "<cmd>lua MiniExtra.pickers.grep()<cr>", "Grep word")
-nmap("<leader>fW", "<cmd>lua MiniExtra.pickers.grep_live()<cr>", "Live grep word")
+nmap("<leader>fw", "<cmd>lua MiniPick.builtin.grep()<cr>", "Grep word")
+nmap("<leader>fW", "<cmd>lua MiniPick.builtin.grep_live()<cr>", "Live grep word")
 nmap("<leader>fc", "<cmd>lua MiniExtra.pickers.colorschemes()<cr>", "Choose colorscheme")
