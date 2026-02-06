@@ -39,7 +39,7 @@ return {
 								zindex = 1000,
 							},
 							icons = {
-								separator = "➜",
+								separator = "",
 							},
 						}):open(data)
 					end,
@@ -47,7 +47,7 @@ return {
 			},
 		})
 		require("org-roam").setup({
-		   directory = "~/orgfiles",
+		   directory = "~/orgfiles/notes",
 		})
 		require('org-bullets').setup()
 

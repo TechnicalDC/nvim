@@ -14,19 +14,7 @@ local content_type_width = function(content, section_type)
 end
 
 starter.setup({
-	header = function()
-		local banner = [[
-
-                 █              █
-
-████████████ ███ ████████ ███
-██████████████ ████ ██████████ ████
-█████ ████ █████ ████ █████ █████ ████
-█████ ████ █████ ████ █████ █████ ████
-█████ ████ ████████ █████ ████████
-      ]]
-		return banner
-	end,
+	header = headers.mini,
 	footer = headers.mini_footer,
 	items = {
 		{ name = 'find files', action = 'Pick files', section = 'Section' },
