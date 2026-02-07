@@ -42,11 +42,11 @@ local config = {
       -- Whether to show preview of file/directory under cursor
       preview = true,
       -- Width of focused window
-      width_focus = 50,
+      width_focus = 30,
       -- Width of non-focused window
-      width_nofocus = 30,
+      width_nofocus = 20,
       -- Width of preview window
-      width_preview = 50,
+      width_preview = 30,
    },
 }
 
