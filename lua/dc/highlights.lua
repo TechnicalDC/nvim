@@ -3,13 +3,13 @@ local hl = vim.api.nvim_set_hl
 
 -- print(vim.inspect(palette))
 
-hl(0, "NormalFloat",         { fg = palette.fg,      bg = "None" })
-hl(0, "FloatBorder",         { fg = palette.fg_mid2, bg = "None" })
-hl(0, "FloatTitle",          { fg = palette.green,   bg = "None" })
+hl(0, "NormalFloat",         { fg = palette.fg,      bg = palette.bg_edge })
+hl(0, "FloatBorder",         { fg = palette.bg_edge, bg = palette.bg_edge })
+hl(0, "FloatTitle",          { fg = palette.bg,   bg = palette.azure })
 hl(0, "PmenuKind",           { bg = "None" })
 hl(0, "MiniPickMatchRanges", { fg = palette.green,   bg = "None"})
 
-hl(0, "StatusLine",            { fg = palette.fg_mid, bg = palette.bg_mid2 })
+hl(0, "StatusLine",            { fg = palette.fg_mid, bg = palette.bg_edge })
 hl(0, "StatusLineNC",          { fg = palette.fg_mid, bg = palette.bg_mid })
 hl(0, "StatusLineTerm",        { fg = palette.fg_mid, bg = "None" })
 hl(0, "StatusLineTermNC",      { fg = palette.fg_mid, bg = "None" })

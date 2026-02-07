@@ -7,8 +7,13 @@ return {
 	},
 	config = function()
 		local Menu = require("org-modern.menu")
-		require('orgmode').setup({
+		local org = require('orgmode')
+
+		-- org.setup_ts_grammar()
+		org.setup({
+			org_ellipsis = " ",
 			org_agenda_files = '~/orgfiles/**/*',
+			org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
 			org_capture_templates = {
 				t = {
@@ -20,7 +25,12 @@ return {
 					description = 'Note',
 					template = '** %?',
 					target = "~/orgfiles/notes.org"
-				}
+				},
+				j = {
+					description = 'Journal',
+					template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
+					target = '~/orgfiles/journal/%<%Y-%m>.org'
+				},
 			},
 			org_default_notes_file = '~/orgfiles/refile.org',
 			calendar_week_start_day = 0,
