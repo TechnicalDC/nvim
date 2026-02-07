@@ -12,9 +12,9 @@ return {
 			org_agenda_start_on_weekday = 0,
 			org_capture_templates = {
 				t = {
-					description = 'Task',
+					description = 'Todo',
 					template = '** TODO %?',
-					target = "~/orgfiles/tasks.org"
+					target = "~/orgfiles/todo.org"
 				},
 				n = {
 					description = 'Note',
