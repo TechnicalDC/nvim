@@ -32,7 +32,7 @@ require('mini.statusline').setup({
 			-- correct padding with spaces between groups (accounts for 'missing'
 			-- sections, etc.)
 			return statusline.combine_groups({
-				{ hl = 'MiniStatuslineDevinfo',   strings = { git } },
+				{ hl = 'StatusLine',   strings = { git } },
 				'%<', -- Mark general truncate point
 				{ hl = 'StatusLine', strings = { pathname } },
 				'%=', -- End left alignment
