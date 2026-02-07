@@ -23,7 +23,6 @@ local config = {
 	-- Explicitly opt-in for set of common keys to trigger clue window
 	triggers = {
 		{ mode = { 'n', 'x' }, keys = '<Leader>' }, -- Leader triggers
-		{ mode =   'n',        keys = '\\' },       -- mini.basics
 		{ mode = { 'n', 'x' }, keys = '[' },        -- mini.bracketed
 		{ mode = { 'n', 'x' }, keys = ']' },
 		{ mode =   'i',        keys = '<C-x>' },    -- Built-in completion
