@@ -15,6 +15,8 @@ hl(0, "StatusLineTerm",        { fg = palette.fg_mid, bg = "None" })
 hl(0, "StatusLineTermNC",      { fg = palette.fg_mid, bg = "None" })
 hl(0, "WinBar",                { fg = palette.fg_mid, bg = "None" })
 hl(0, "WinBarNC",              { fg = palette.fg_mid, bg = "None" })
+hl(0, "@org.keyword.todo",          { fg = palette.red , bold = true })
+hl(0, "@org.keyword.done",          { fg = palette.green, bold = true })
 
 -- BUILT-IN
 hl(0, "Msg", { link = "StatusLine" })
