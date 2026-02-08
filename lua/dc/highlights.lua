@@ -39,7 +39,7 @@ hl(0, "MiniStarterItemPrefix", { fg = palette.fg_mid})
 
 -- MINI-FILES
 hl(0, "MiniFilesTitle", { link = "FloatTitle" })
-hl(0, "MiniFilesTitleFocused", { fg = palette.bg,   bg = palette.red })
+hl(0, "MiniFilesTitleFocused", { fg = palette.bg,   bg = palette.azure })
 hl(0, "MiniFilesBorderModified", { link = "FloatBorder" })
 
 -- MINI-PICK
