@@ -14,8 +14,8 @@ local content_type_width = function(content, section_type)
 end
 
 starter.setup({
-	header = headers.mini,
-	footer = headers.mini_footer,
+	header = headers.dc,
+	footer = headers.greeter,
 	items = {
 		{ name = 'find files', action = 'Pick files', section = 'Section' },
 		{ name = 'browse files', action = 'lua require("mini.files").open(vim.uv.cwd(), true)', section = 'Section' },

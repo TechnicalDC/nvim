@@ -4,6 +4,10 @@ headers.dc = [[
 Neovim :: T E C H N I C A L D C
 ]]
 
+headers.greeter = [[
+Good Morning, Dilip
+]]
+
 headers.mini = [[
 
                  █              █
