@@ -15,4 +15,6 @@ nmap( "<leader>sS", function ()
    end)
 end, "Create session (global)" )
 
-require('mini.sessions').setup()
+require('mini.sessions').setup({
+	file = '.Session.vim',
+})
