@@ -5,14 +5,14 @@ end
 
 local config = {
 	options = {
-		content_from_bottom = true
+		content_from_bottom = false,
 	},
 	window = {
 		config = {
 			-- split = "bottom",
 			border = "single",
-			height = 10,
-			width = vim.o.columns < 120 and vim.o.columns or 120
+			height = 15,
+			width = vim.o.columns,
 		},
 		prompt_prefix = "  ",
 		prompt_caret = "▏"
