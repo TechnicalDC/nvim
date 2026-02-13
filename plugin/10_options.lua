@@ -38,8 +38,8 @@ set.statuscolumn = "%s%=%{v:virtnum == 0 ? (v:relnum ? v:relnum : v:lnum) : ''} 
 -- Special UI symbols. More is set via 'mini.basics' later.
 set.fillchars:append({
    fold      = " ",
-   foldopen  = "",
-   foldclose = "",
+   foldopen  = "",
+   foldclose = "",
    diff      = "-",
    eob       = " ",
    -- horiz     = '═',
