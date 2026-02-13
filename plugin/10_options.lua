@@ -127,6 +127,6 @@ vim.diagnostic.config({
 function _G.custom_fold_text()
    local line = vim.fn.getline(vim.v.foldstart)
    line = string.gsub(line, " {+", "")
-   return line .. "..."
+   return line .. " "
 end
 -- }}}

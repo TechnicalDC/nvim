@@ -33,3 +33,4 @@ nmap("<leader>fs", "<cmd>lua MiniExtra.pickers.spellsuggest()<cr>", "Open spells
 nmap("<leader>fw", "<cmd>lua MiniPick.builtin.grep()<cr>", "Grep word")
 nmap("<leader>fW", "<cmd>lua MiniPick.builtin.grep_live()<cr>", "Live grep word")
 nmap("<leader>fc", "<cmd>lua MiniExtra.pickers.colorschemes()<cr>", "Choose colorscheme")
+nmap("<leader>ns", "<cmd>lua MiniPick.builtin.grep_live(nil,{ source = {cwd = '/home/dilip/orgfiles/'} })<cr>", "Search in notes")

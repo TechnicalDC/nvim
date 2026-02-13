@@ -15,6 +15,7 @@ return {
 			org_agenda_files = '~/orgfiles/**/*',
 			org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
+			org_todo_keywords = {'TODO(t)', 'WAIT(w)', '|', 'PROG(p)', 'DONE(d)'},
 			org_capture_templates = {
 				t = {
 					description = 'Todo',
