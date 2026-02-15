@@ -34,7 +34,7 @@ return {
 				},
 				j = {
 					description = 'Journal',
-					template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
+					template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n%?',
 					target = '~/orgfiles/journal/%<%Y-%m>.org'
 				},
 			},
