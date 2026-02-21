@@ -2,7 +2,7 @@ return {
 	'nvim-mini/mini.nvim',
 	version = false,
 	config = function()
-		require("dc.config.pick")
+		-- require("dc.config.pick")
 		require("dc.config.clue")
 		require("dc.config.diff")
 		require("dc.config.files")

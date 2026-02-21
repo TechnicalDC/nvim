@@ -82,3 +82,6 @@ hl(0,"MiniStarterHeader", { fg = palette.purple })
 -- MiniTablineModifiedCurrent = { bg = "love" },
 -- MiniTablineModifiedVisible = { fg = "love", bg = "love", blend = 30 },
 -- MiniTablineModifiedHidden  = { fg = "love", bg = "love", blend = 20 },
+
+-- TELESCOPE
+hl(0, "TelescopeNormal", { bg = palette.bg_edge })
