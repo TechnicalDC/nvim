@@ -2,7 +2,6 @@ return {
 	'nvim-telescope/telescope.nvim', version = '*',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
-		"joaomsa/telescope-orgmode.nvim",
 		-- optional but recommended
 		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 	},
@@ -24,7 +23,7 @@ return {
 			defaults = {
 				layout_strategy='bottom_pane',
 				layout_config = {
-					height = 0.5,
+					height = 15,
 				},
 				sorting_strategy = "ascending",
 				prompt_prefix = "❯ ",
@@ -49,21 +48,21 @@ return {
 			},
 			pickers = {
 				-- Default configuration for builtin pickers goes here:
-				-- picker_name = {
-					--   picker_config_key = value,
-					--   ...
-					-- }
-					-- Now the picker_config_key will be applied every time you call this
-					-- builtin picker
-				},
-				extensions = {
-					-- Your extension configuration goes here:
-					-- extension_name = {
+				find_files    = { prompt_prefix = "find files ❯ " },
+				buffers       = { prompt_prefix = "buffers ❯ " },
+				oldfiles      = { prompt_prefix = "recent files ❯ " },
+				highlights    = { prompt_prefix = "highlights ❯ " },
+				colorschemes  = { prompt_prefix = "colorschemes ❯ " },
+				filetypes     = { prompt_prefix = "filetypes ❯ " },
+				spell_suggest = { prompt_prefix = "spell ❯ " },
+				diagnostics   = { prompt_prefix = "diagnostics ❯ " },
+				help_tags     = { prompt_prefix = "help ❯ " },
+				grep_string   = { prompt_prefix = "grep ❯ " },
+				live_grep     = { prompt_prefix = "live grep ❯ " },
 						--   extension_config_key = value,
 						-- }
 						-- please take a look at the readme of the extension you want to configure
 					}
 				}
-				-- require('telescope').load_extension('orgmode')
 			end
 		}

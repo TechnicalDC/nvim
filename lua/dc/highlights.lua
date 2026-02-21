@@ -85,3 +85,7 @@ hl(0,"MiniStarterHeader", { fg = palette.purple })
 
 -- TELESCOPE
 hl(0, "TelescopeNormal", { bg = palette.bg_edge })
+hl(0, "TelescopeSelection", { fg = palette.azure, bg = "none", bold = true })
+hl(0, "TelescopeMultiSelection", { bg = "none", bold = true })
+hl(0, "TelescopeSelectionCaret", { fg = palette.azure, bg = "none", bold = true })
+hl(0, "TelescopePromptPrefix" , { fg = palette.red })
