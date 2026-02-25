@@ -63,7 +63,7 @@ return {
 			},
 		})
 		require("org-roam").setup({
-		   directory = "~/orgfiles/notes",
+		   directory = "~/orgfiles/roam",
 		})
 		require('org-bullets').setup()
 

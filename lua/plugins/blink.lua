@@ -80,7 +80,7 @@ return {
          default = { 'lsp', 'path', 'snippets', 'buffer' },
          per_filetype = {
             markdown = { 'lsp', 'snippets', 'buffer', 'path' },
-            org = {'orgmode'}
+            org = { 'orgmode', 'buffer' }
          },
       },
       signature = {
