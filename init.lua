@@ -40,4 +40,4 @@ require("lazy").setup("plugins", {
    }
 })
 
-vim.cmd.colorscheme("rose")
+-- vim.cmd.colorscheme("rose")
