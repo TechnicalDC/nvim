@@ -46,6 +46,7 @@ return {
 				},
 				menu = {
 					handler = function(data)
+						data.title = " " .. data.title .. " "
 						Menu:new({
 							window = {
 								margin = { 1, 0, 1, 0 },
