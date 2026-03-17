@@ -58,6 +58,8 @@ syn match ProgressProcedure		"^\s*procedure.*"
 syn match ProgressProcedure		"^\s*end\s\s*procedure.*"
 syn match ProgressFunction		"^\s*function.*"
 syn match ProgressFunction		"^\s*end\s\s*function.*"
+syn match ProgressMethod		"^\s*method.*"
+syn match ProgressMethod		"^\s*end\s\s*method.*"
 " ... otherwise use this:
 " syn keyword ProgressFunction	procedure function
 
@@ -262,6 +264,7 @@ if version >= 508 || !exists("did_progress_syntax_inits")
 	HiLink ProgressEndError        Error
 	HiLink ProgressFor             Repeat
 	HiLink ProgressFunction        Procedure
+	HiLink ProgressMethod          Procedure
 	HiLink ProgressIdentifier      Identifier
 	HiLink ProgressInclude         Include
 	HiLink ProgressMatrixDelimiter Identifier
