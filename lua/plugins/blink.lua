@@ -97,7 +97,7 @@ return {
 		},
 		completion = {
 			menu = {
-				border = "none",
+				border = "single",
 				scrollbar = true,
 				winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
 				draw = {

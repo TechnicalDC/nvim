@@ -26,12 +26,16 @@ return {
 					height = 15,
 				},
 				sorting_strategy = "ascending",
-				prompt_prefix = ": ",
 				selection_caret = "❯ ",
+				results_title = "",
 				-- entry_prefix
 				multi_icon = "┃",
-				border = false,
-				-- borderchars 
+				-- Only for ivy layout
+				borderchars = {
+					prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+					results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+					preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+				},
 				preview = {
 					hide_on_startup = true
 				},
@@ -46,23 +50,6 @@ return {
 					}
 				}
 			},
-			pickers = {
-				-- Default configuration for builtin pickers goes here:
-				find_files    = { prompt_prefix = "find files: " },
-				buffers       = { prompt_prefix = "buffers: " },
-				oldfiles      = { prompt_prefix = "recent files: " },
-				highlights    = { prompt_prefix = "highlights: " },
-				colorschemes  = { prompt_prefix = "colorschemes: " },
-				filetypes     = { prompt_prefix = "filetypes: " },
-				spell_suggest = { prompt_prefix = "spell: " },
-				diagnostics   = { prompt_prefix = "diagnostics: " },
-				help_tags     = { prompt_prefix = "help: " },
-				grep_string   = { prompt_prefix = "grep: " },
-				live_grep     = { prompt_prefix = "live grep: " },
-						--   extension_config_key = value,
-						-- }
-						-- please take a look at the readme of the extension you want to configure
-					}
-				}
-			end
 		}
+	end
+}
