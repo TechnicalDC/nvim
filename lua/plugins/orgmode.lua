@@ -22,6 +22,11 @@ return {
 					template = '** TODO %?',
 					target = "~/orgfiles/todo.org"
 				},
+				T = {
+					description = 'Task',
+					template = '** TODO %?\n%^t\n',
+					target = "~/orgfiles/tasks.org"
+				},
 				m = {
 					description = 'Meeting',
 					template = '** TODO %?',

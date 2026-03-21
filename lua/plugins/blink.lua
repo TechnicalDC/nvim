@@ -92,7 +92,7 @@ return {
 			window = {
 				scrollbar = false,
 				border = "single",
-				winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+				winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None',
 			}
 		},
 		completion = {
