@@ -30,5 +30,7 @@ return {
 		hl(0, "@org.keyword.todo",     { fg   = colors.base08, bold = true          })
 		hl(0, "@org.keyword.done",     { fg   = colors.base0B, bold = true          })
 		hl(0, "@markup.link.label.markdown_inline", { fg = colors.base0E, underline = true })
+		hl(0, "Pmenu",           { fg   = colors.base05, bg   = "none"        })
+		hl(0, "PmenuSel",           {  bg   = colors.base01        })
 	end,
 }
