@@ -68,7 +68,7 @@ return {
 				menu = {
 					auto_show = true, -- Inherits from top level `completion.menu.auto_show` config when not set
 					draw = {
-						columns = { { 'label', 'label_description', gap = 1 } },
+						columns = { {'kind_icon' },{ 'label', 'label_description', gap = 1 } },
 					},
 				}
 			}
