@@ -32,5 +32,6 @@ return {
 		hl(0, "@markup.link.label.markdown_inline", { fg = colors.base0E, underline = true })
 		hl(0, "Pmenu",           { fg   = colors.base05, bg   = "none"        })
 		hl(0, "PmenuSel",           {  bg   = colors.base01        })
+		hl(0, "MiniStarterSection", {  fg   = colors.base0B        })
 	end,
 }
