@@ -5,7 +5,6 @@ local config = {
 		config = {
 			width = 50,
 			anchor = "SW",
-			col = 0,
 			title_pos = "center"
 		},
 		delay = 0
