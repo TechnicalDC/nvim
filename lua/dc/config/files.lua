@@ -38,7 +38,7 @@ local config = {
 	},
 	windows = {
 		-- Maximum number of windows to show side by side
-		max_number = 3,
+		max_number = 2,
 		-- Whether to show preview of file/directory under cursor
 		preview = true,
 		-- Width of focused window
@@ -46,7 +46,7 @@ local config = {
 		-- Width of non-focused window
 		width_nofocus = 20,
 		-- Width of preview window
-		width_preview = 30,
+		width_preview = 40,
 	},
 }
 

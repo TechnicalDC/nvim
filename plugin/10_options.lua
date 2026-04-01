@@ -15,6 +15,7 @@ set.ruler          = false      -- Don't show cursor coordinates
 set.shortmess      = 'CFOSWaco' -- Disable some built-in completion messages
 set.showmode       = false      -- Don't show mode in command line
 set.showmatch      = true
+set.confirm        = true
 set.splitbelow     = true       -- Horizontal splits will be below
 set.splitkeep      = 'screen'   -- Reduce scroll during window split
 set.splitright     = true       -- Vertical splits will be to the right
@@ -27,7 +28,7 @@ set.wildmenu       = true
 set.wildmode       = "longest:full,list:full"
 set.wildignore     = "*.o,*.obj,*.bak,*.exe,*.hi,*.dyn_hi,*.dyn_o,*.zip,*.pdf,*.gif,*.png,*.jpg,*.mp4,*mp3"
 set.foldenable     = false
-set.foldcolumn     = "0"
+set.foldcolumn     = "1"
 set.foldmethod     = "marker"
 set.foldmarker     = "{{{,}}}"
 set.foldexpr       = "v:lua.vim.treesitter.foldexpr()"
@@ -52,7 +53,7 @@ set.fillchars:append({
 })
 
 set.listchars = "eol: "
-   .. ",tab:┊ "
+   .. ",tab:  "
    .. ",nbsp:␣"
    .. ",lead:·"
    .. ",leadmultispace:·"
