@@ -7,7 +7,7 @@ return {
 	opts = {
 		enabled = function() 
 			-- Dont show completion for specific file types
-			return not vim.tbl_contains({ "org-roam-select" }, vim.bo.filetype)
+			return not vim.tbl_contains({ "org-roam-select", "minifiles" }, vim.bo.filetype)
 		end,
 		keymap = { preset = 'default' },
 		appearance = {
