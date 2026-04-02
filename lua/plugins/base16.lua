@@ -19,7 +19,7 @@ return {
 		hl(0, "FloatBorder",           { fg   = colors.base03, bg   = "none"        })
 		hl(0, "FloatTitle",            { fg   = colors.base00, bg   = colors.base08 })
 		hl(0, "WinSeparator", { fg = colors.base02 })
-		hl(0, "StatusLineMode",     { bg   = colors.base08, bold = true          })
+		hl(0, "StatusLineMode",     { fg   = colors.base00, bg   = colors.base08 })
 		hl(0, "DiagnosticUnderlineError", { undercurl = true })
 		hl(0, "DiagnosticUnderlineHint",  { undercurl = true })
 		hl(0, "DiagnosticUnderlineInfo",  { undercurl = true })

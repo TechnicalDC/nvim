@@ -56,7 +56,7 @@ return {
 							window = {
 								margin = { 1, 0, 1, 0 },
 								padding = { 0, 1, 0, 1 },
-								title_pos = "left",
+								title_pos = "center",
 								border = "single",
 								zindex = 1000,
 							},
