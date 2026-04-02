@@ -24,22 +24,24 @@ require('mini.statusline').setup({
 			local recording     = H.section_recording({ trunc_width = 120 })
 			local search        = H.section_searchcount({ trunc_width = 80 })
 			local pathname      = H.section_pathname({ trunc_width = 100 })
+			local diagnostics   = vim.diagnostic.status()
 
-			mode = "--" .. mode:upper() .. "--"
+			mode = mode:upper()
 			mode_hl = "StatusLine"
 
 			-- Usage of `MiniStatusline.combine_groups()` ensures highlighting and
 			-- correct padding with spaces between groups (accounts for 'missing'
 			-- sections, etc.)
 			return statusline.combine_groups({
-				{ hl = 'StatusLine',   strings = { git } },
-				'%<', -- Mark general truncate point
-				{ hl = 'StatusLine', strings = { pathname } },
-				'%=', -- End left alignment
-				{ hl = 'DiagnosticWarn',          strings = { recording } },
-				{ hl = mode_hl,                   strings = { mode } },
-				{ hl = 'StatusLine',  strings = { filetype } },
-				{ hl = mode_hl,                   strings = { search } },
+				{ hl = mode_hl,          strings = { mode } },
+				'%<',                    -- Mark general truncate point
+				{ hl = 'StatusLine',     strings = { pathname } },
+				'%=',                    -- End left alignment
+				{ hl = 'DiagnosticWarn', strings = { recording } },
+				{ hl = 'StatusLine',     strings = { diagnostics } },
+				{ hl = 'StatusLine',     strings = { git } },
+				{ hl = 'StatusLine',     strings = { filetype } },
+				{ hl = mode_hl,          strings = { search } },
 			})
 			-- stylua: ignore end
 		end,
