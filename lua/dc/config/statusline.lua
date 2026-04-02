@@ -27,7 +27,7 @@ require('mini.statusline').setup({
 			local diagnostics   = vim.diagnostic.status()
 
 			mode = mode:upper()
-			mode_hl = "StatusLine"
+			mode_hl = "StatusLineMode"
 
 			-- Usage of `MiniStatusline.combine_groups()` ensures highlighting and
 			-- correct padding with spaces between groups (accounts for 'missing'
