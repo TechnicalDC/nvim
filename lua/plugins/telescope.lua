@@ -5,6 +5,7 @@ return {
 		-- optional but recommended
 		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 	},
+	cmd = "Telescope",
 	keys = {
 		{ "<leader>fb",  "<cmd>Telescope buffers<cr>",      desc = "Open buffers" },
 		{ "<leader>fr",  "<cmd>Telescope oldfiles<cr>",      desc = "Open recent files" },
@@ -23,7 +24,7 @@ return {
 			defaults = {
 				layout_strategy='bottom_pane',
 				layout_config = {
-					height = 15,
+					height = 10,
 				},
 				sorting_strategy = "ascending",
 				selection_caret = "❯ ",

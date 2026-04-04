@@ -17,7 +17,7 @@ return {
 		local colors = require('base16-colorscheme').colors
 
 		hl(0, "FloatBorder",           { fg   = colors.base03, bg   = "none"        })
-		hl(0, "FloatTitle",            { fg   = colors.base00, bg   = colors.base08 })
+		hl(0, "FloatTitle",            { bg = "none", fg   = colors.base08 })
 		hl(0, "WinSeparator", { fg = colors.base02 })
 		hl(0, "StatusLineMode",     { fg   = colors.base00, bg   = colors.base08 })
 		hl(0, "DiagnosticUnderlineError", { undercurl = true })
@@ -28,6 +28,7 @@ return {
 		hl(0, "Comment",  { fg = colors.base03, italic = true })
 		hl(0, "TelescopeBorder",       { link = "FloatBorder"  })
 		hl(0, "TelescopePromptBorder", { link = "FloatBorder"  })
+		hl(0, "TelescopePromptTitle", { link = "FloatTitle"  })
 		hl(0, "TelescopeTitle",        { link = "FloatTitle"   })
 		hl(0, "@org.keyword.todo",     { fg   = colors.base08, bold = true          })
 		hl(0, "@org.keyword.done",     { fg   = colors.base0B, bold = true          })

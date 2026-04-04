@@ -68,7 +68,7 @@ table.insert(snippets, meta_snippet)
 
 -- DATE {{{
 local date_fmt = fmta(
-   [[- TODO <today> - ]],
+   [[- <today> - ]],
    {
 		today = f(function(_,snip) return {os.date('%d/%m/%Y')} end, {})
    }

@@ -27,7 +27,7 @@ return {
 			quote = { icon = '▌' },
 			bullet = {
 				enabled = true,
-				icons = {'◆', '◇'},
+				icons = {'•'},
 			},
 			dash = { enabled = true },
 			completions = {
@@ -36,6 +36,7 @@ return {
 			},
 			link = {
 				hyperlink = '󰌷 ',
+				wiki = { icon = "" },
 				custom = {
 					web = { pattern = '^http', icon = '󰖟 ' },
 					apple = { pattern = 'apple%.com', icon = ' ' },
