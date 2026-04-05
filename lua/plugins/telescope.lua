@@ -20,11 +20,12 @@ return {
 		{ "<leader>fW",  "<cmd>Telescope live_grep<cr>",    desc = "Live grep word" },
 	},
 	config = function ()
+
 		require('telescope').setup{
 			defaults = {
 				layout_strategy='bottom_pane',
 				layout_config = {
-					height = 10,
+					height = 15,
 				},
 				sorting_strategy = "ascending",
 				selection_caret = "❯ ",
@@ -34,11 +35,17 @@ return {
 				multi_icon = "┃",
 				-- Only for ivy layout
 				borderchars = {
-					{ '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-					prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
-					results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
-					preview = { '─', '│', '─', '│', '┌', '┤', '┘', '└'},
+					prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+					results = { " " },
+					preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 				},
+				-- Only for dropdownm
+				-- borderchars = {
+				-- 	{ '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+				-- 	prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+				-- 	results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+				-- 	preview = { '─', '│', '─', '│', '┌', '┤', '┘', '└'},
+				-- },
 				preview = {
 					hide_on_startup = true
 				},

@@ -1,9 +1,11 @@
 return {
 	'nvim-orgmode/orgmode',
 	dependencies = {
+		"nvim-telescope/telescope.nvim",
 		"chipsenkbeil/org-roam.nvim",
 		"akinsho/org-bullets.nvim",
 		"danilshvalov/org-modern.nvim",
+		"nvim-orgmode/telescope-orgmode.nvim",
 	},
 	config = function()
 		local Menu = require("org-modern.menu")
@@ -14,7 +16,7 @@ return {
 			org_ellipsis = " ",
 			org_hide_emphasis_markers = true,
 			org_agenda_files = '~/orgfiles/**/*',
-			org_agenda_span = "week",
+			org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
 			org_todo_keywords = {'TODO(t)', 'WAIT(w)', '|', 'PROG(p)', 'DONE(d)'},
 			org_capture_templates = {
@@ -73,6 +75,14 @@ return {
 		   directory = "~/orgfiles/roam",
 		})
 		require('org-bullets').setup()
+
+		require("telescope").load_extension("orgmode")
+
+		local ext = require("telescope").extensions.orgmode
+		vim.keymap.set("n", "<leader>fH", ext.search_headings, { desc = "Org headlines" })
+		vim.keymap.set("n", "<leader>fT", ext.search_tags, { desc = "Org tags" })
+		vim.keymap.set("n", "<leader>rh", ext.refile_heading, { desc = "Org refile" })
+		vim.keymap.set("n", "<leader>li", ext.insert_link, { desc = "Org insert link" })
 
 		-- Experimental LSP support
 		vim.lsp.enable('org')
