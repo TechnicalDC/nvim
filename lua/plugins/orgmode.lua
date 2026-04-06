@@ -13,7 +13,7 @@ return {
 
 		-- org.setup_ts_grammar()
 		org.setup({
-			org_ellipsis = " ",
+			org_ellipsis = " [...]",
 			org_hide_emphasis_markers = true,
 			org_agenda_files = '~/orgfiles/**/*',
 			org_agenda_span = "day",
@@ -22,22 +22,22 @@ return {
 			org_capture_templates = {
 				t = {
 					description = 'Todo',
-					template = '** TODO %?',
+					template = '* TODO %?',
 					target = "~/orgfiles/todo.org"
 				},
 				T = {
 					description = 'Task',
-					template = '** TODO %?\n%^t\n',
+					template = '* TODO %?\n%^t\n%F\n',
 					target = "~/orgfiles/tasks.org"
 				},
 				m = {
 					description = 'Meeting',
-					template = '** TODO %?',
+					template = '* TODO %?',
 					target = "~/orgfiles/meetings.org"
 				},
 				n = {
 					description = 'Note',
-					template = '** %?',
+					template = '* %?',
 					target = "~/orgfiles/notes.org"
 				},
 				j = {
