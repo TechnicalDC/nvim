@@ -1,0 +1,12 @@
+* Neovim Configs
+
+** Plugins
+** Installation
+
+   #+begin_src bash
+   # Linux
+   git clone https://github.com/TechnicalDC/NvConf ~/.config/nvim
+
+   # Windows
+   git clone https://github.com/TechnicalDC/NvConf ~/Appdata/Local/nvim
+   #+end_src

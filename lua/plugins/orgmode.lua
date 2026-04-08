@@ -27,12 +27,12 @@ return {
 				},
 				T = {
 					description = 'Task',
-					template = '* TODO %?\n%^t\n%F\n',
+					template = '* TODO %?\n  SCHEDULED: %^t\n  [[%F]]\n',
 					target = "~/orgfiles/tasks.org"
 				},
 				m = {
 					description = 'Meeting',
-					template = '* TODO %?',
+					template = '* TODO %?\n  SCHEDULED: %^t',
 					target = "~/orgfiles/meetings.org"
 				},
 				n = {
