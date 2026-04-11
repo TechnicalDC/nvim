@@ -23,7 +23,7 @@ set.winborder      = 'single'   -- Use border in floating windows
 set.wrap           = false      -- Don't visually wrap lines (toggle with \w)
 set.cursorlineopt  = 'screenline,number' -- Show cursor line per screen line
 set.showtabline    = 0
-set.laststatus     = 2
+set.laststatus     = 3
 set.wildmenu       = true
 set.wildmode       = "longest:full,list:full"
 set.wildignore     = "*.o,*.obj,*.bak,*.exe,*.hi,*.dyn_hi,*.dyn_o,*.zip,*.pdf,*.gif,*.png,*.jpg,*.mp4,*mp3"
@@ -34,7 +34,7 @@ set.foldmarker     = "{{{,}}}"
 set.foldexpr       = "v:lua.vim.treesitter.foldexpr()"
 set.foldtext       = "v:lua.custom_fold_text()"
 set.helpheight   = 15
-set.statuscolumn = "%s%=%{v:virtnum == 0 ? (v:relnum ? v:relnum : v:lnum) : ''} "
+-- set.statuscolumn = "%s%=%{v:virtnum == 0 ? (v:relnum ? v:relnum : v:lnum) : ''} "
 
 -- Special UI symbols. More is set via 'mini.basics' later.
 set.fillchars:append({
@@ -43,13 +43,13 @@ set.fillchars:append({
    foldclose = "",
    diff      = "-",
    eob       = " ",
-   -- horiz     = '═',
-   -- horizup   = '╩',
-   -- horizdown = '╦',
-   -- vert      = '║',
-   -- vertleft  = '╣',
-   -- vertright = '╠',
-   -- verthoriz = '╬',
+   horiz     = '═',
+   horizup   = '╩',
+   horizdown = '╦',
+   vert      = '║',
+   vertleft  = '╣',
+   vertright = '╠',
+   verthoriz = '╬',
 })
 
 set.listchars = "eol: "
@@ -79,7 +79,7 @@ set.tabstop       = 3       -- Show tab as this number of spaces
 set.virtualedit   = 'block' -- Allow going past end of line in blockwise mode
 set.swapfile       = false
 set.spelllang     = "en_us"
-set.signcolumn    = "yes"
+set.signcolumn    = "auto:1"
 set.conceallevel  = 2
 set.concealcursor = 'nc'
 set.undofile      = true

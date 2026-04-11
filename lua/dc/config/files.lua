@@ -42,11 +42,11 @@ local config = {
 		-- Whether to show preview of file/directory under cursor
 		preview = true,
 		-- Width of focused window
-		width_focus = 40,
+		width_focus = vim.o.columns > 120 and math.floor(vim.o.columns * 0.3) or 40,
 		-- Width of non-focused window
-		width_nofocus = 20,
+		width_nofocus = math.floor(vim.o.columns * 0.25),
 		-- Width of preview window
-		width_preview = 40,
+		width_preview = vim.o.columns > 120 and math.floor(vim.o.columns * 0.3) or 40,
 	},
 }
 
