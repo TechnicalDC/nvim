@@ -60,7 +60,7 @@ return {
 								margin = { 1, 0, 1, 0 },
 								padding = { 0, 1, 0, 1 },
 								title_pos = "center",
-								border = "single",
+								border = vim.o.winborder,
 								zindex = 1000,
 							},
 							icons = {
