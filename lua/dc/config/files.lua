@@ -13,7 +13,7 @@ end
 local toggle_dotfiles = function()
 	show_dotfiles = not show_dotfiles
 	local new_filter = show_dotfiles and true or filter_hide
-	miniFiles.refresh({ content = { filter = new_filter } })
+	MiniFiles.refresh({ content = { filter = new_filter } })
 end
 -- }}}
 
@@ -38,15 +38,15 @@ local config = {
 	},
 	windows = {
 		-- Maximum number of windows to show side by side
-		max_number = 2,
+		max_number = 4,
 		-- Whether to show preview of file/directory under cursor
 		preview = true,
 		-- Width of focused window
-		width_focus = vim.o.columns > 120 and math.floor(vim.o.columns * 0.3) or 40,
+		width_focus = 40,
 		-- Width of non-focused window
-		width_nofocus = math.floor(vim.o.columns * 0.25),
+		width_nofocus = 30,
 		-- Width of preview window
-		width_preview = vim.o.columns > 120 and math.floor(vim.o.columns * 0.3) or 40,
+		width_preview = 40
 	},
 }
 
@@ -69,11 +69,22 @@ autocmd('User', {
 
 		vim.wo[args.data.win_id].number = true
 		vim.wo[args.data.win_id].relativenumber = true
-		vim.wo[args.data.win_id].statuscolumn = "%s%=%{v:relnum ? v:relnum : v:lnum} "
 
 		config.title_pos = "center"
 
 		vim.api.nvim_win_set_config(args.data.win_id, config)
+	end,
+})
+
+local set_mark = function(id, path, desc)
+	MiniFiles.set_bookmark(id, path, { desc = desc })
+end
+vim.api.nvim_create_autocmd('User', {
+	pattern = 'MiniFilesExplorerOpen',
+	callback = function()
+		set_mark('c', vim.fn.stdpath('config'), 'Config') -- path
+		set_mark('w', vim.fn.getcwd, 'Working directory') -- callable
+		set_mark('~', '~', 'Home directory')
 	end,
 })
 
