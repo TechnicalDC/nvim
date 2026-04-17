@@ -35,7 +35,7 @@ return {
 				multi_icon = "┃",
 				-- Only for ivy layout
 				borderchars = {
-					prompt = { "═", " ", " ", " ", "═", "═", " ", " " },
+					prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
 					results = { " " },
 					preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 				},

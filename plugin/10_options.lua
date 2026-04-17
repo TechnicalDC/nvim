@@ -43,13 +43,13 @@ set.fillchars:append({
    foldclose = "",
    diff      = "-",
    eob       = " ",
-   horiz     = '═',
-   horizup   = '╩',
-   horizdown = '╦',
-   vert      = '║',
-   vertleft  = '╣',
-   vertright = '╠',
-   verthoriz = '╬',
+   -- horiz     = '═',
+   -- horizup   = '╩',
+   -- horizdown = '╦',
+   -- vert      = '║',
+   -- vertleft  = '╣',
+   -- vertright = '╠',
+   -- verthoriz = '╬',
 })
 
 set.listchars = "eol: "
