@@ -1,6 +1,8 @@
 local H = {}
 local statusline = require("mini.statusline")
 
+-- sep_left  = { open = "", close = "" }
+
 require('mini.statusline').setup({
 	use_icons = true,
 	content = {
