@@ -23,7 +23,7 @@ return {
 
 		require('telescope').setup{
 			defaults = {
-				layout_strategy='bottom_pane',
+				layout_strategy='center',
 				layout_config = {
 					height = 15,
 				},
@@ -34,18 +34,18 @@ return {
 				-- entry_prefix
 				multi_icon = "┃",
 				-- Only for ivy layout
-				borderchars = {
-					prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-					results = { " " },
-					preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-				},
-				-- Only for dropdownm
 				-- borderchars = {
-				-- 	{ '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-				-- 	prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
-				-- 	results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
-				-- 	preview = { '─', '│', '─', '│', '┌', '┤', '┘', '└'},
+				-- 	prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+				-- 	results = { " " },
+				-- 	preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 				-- },
+				-- Only for dropdownm
+				borderchars = {
+					{ '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+					prompt = {"─", "│", " ", "│", '╭', '╮', "│", "│"},
+					results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
+					preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+				},
 				preview = {
 					hide_on_startup = true
 				},
@@ -59,19 +59,6 @@ return {
 						["<C-h>"] = "which_key"
 					}
 				}
-			},
-			pickers = {
-				find_files = { prompt_prefix = "find files❯ ", prompt_title = false },
-				buffers = { prompt_prefix = "buffers❯ ", prompt_title = false },
-				oldfiles = { prompt_prefix = "recent files❯ ", prompt_title = false },
-				highlights = { prompt_prefix = "highlights❯ ", prompt_title = false },
-				colorschemes = { prompt_prefix = "colorschemes❯ ", prompt_title = false },
-				spell_suggest = { prompt_prefix = "spell❯ ", prompt_title = false },
-				help_tags = { prompt_prefix = "help❯ ", prompt_title = false },
-				diagnostics = { prompt_prefix = "diagnostics❯ ", prompt_title = false },
-				grep_string = { prompt_prefix = "grep❯ ", prompt_title = false },
-				live_grep = { prompt_prefix = "live grep❯ ", prompt_title = false },
-				filetypes = { prompt_prefix = "filetypes❯ ", prompt_title = false },
 			},
 		}
 	end
