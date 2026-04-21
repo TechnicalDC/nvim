@@ -28,11 +28,11 @@ return {
 					height = 15,
 				},
 				sorting_strategy = "ascending",
-				selection_caret = "❯ ",
-				prompt_prefix = "❯ ",
+				selection_caret = "> ",
+				prompt_prefix = "> ",
 				results_title = "",
 				-- entry_prefix
-				multi_icon = "┃",
+				multi_icon = "|",
 				-- Only for ivy layout
 				-- borderchars = {
 				-- 	prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
