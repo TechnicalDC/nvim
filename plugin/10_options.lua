@@ -114,14 +114,14 @@ vim.diagnostic.config({
    underline = true,
    severity_sort = true,
    virtual_lines = { current_line = true },
-   signs = {
-      text = {
-         [vim.diagnostic.severity.INFO]  = '',
-         [vim.diagnostic.severity.WARN]  = '',
-         [vim.diagnostic.severity.HINT]  = '󰌵',
-         [vim.diagnostic.severity.ERROR] = '',
-      }
-   }
+   -- signs = {
+   --    text = {
+   --       [vim.diagnostic.severity.INFO]  = '',
+   --       [vim.diagnostic.severity.WARN]  = '',
+   --       [vim.diagnostic.severity.HINT]  = '󰌵',
+   --       [vim.diagnostic.severity.ERROR] = '',
+   --    }
+   -- }
 })
 
 -- CUSTOM FOLD TEXT {{{
