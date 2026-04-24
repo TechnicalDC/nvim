@@ -22,7 +22,7 @@ set.splitright     = true       -- Vertical splits will be to the right
 set.winborder      = 'rounded'   -- Use border in floating windows
 set.wrap           = false      -- Don't visually wrap lines (toggle with \w)
 set.cursorlineopt  = 'screenline,number' -- Show cursor line per screen line
-set.showtabline    = 0
+set.showtabline    = 2
 set.laststatus     = 3
 set.wildmenu       = true
 set.wildmode       = "longest:full,list:full"
@@ -42,7 +42,7 @@ set.fillchars:append({
    foldopen  = "",
    foldclose = "",
    diff      = "-",
-   eob       = " ",
+   eob       = "~",
    -- horiz     = '═',
    -- horizup   = '╩',
    -- horizdown = '╦',

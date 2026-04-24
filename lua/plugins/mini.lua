@@ -23,7 +23,7 @@ return {
 		require('mini.pairs').setup()
 		require('mini.operators').setup()
 		require('mini.surround').setup()
-		-- require('mini.tabline').setup()
+		require('mini.tabline').setup()
 		require('mini.visits').setup()
 	end 
 }
