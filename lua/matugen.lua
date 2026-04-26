@@ -20,7 +20,7 @@ function M.setup()
 		base0C = '#b9e996', -- Regex, Escape Chars
 		base0D = '#8bc4f3', -- Functions, Methods
 		base0E = '#d696e9', -- Keywords, Storage
-		base0F = '#8a0f19', -- Deprecated, Embedded Tags
+		base0F = '#e06c75', -- Deprecated, Embedded Tags
 	}
 end
 
