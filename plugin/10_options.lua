@@ -34,7 +34,7 @@ set.foldmarker     = "{{{,}}}"
 set.foldexpr       = "v:lua.vim.treesitter.foldexpr()"
 set.foldtext       = "v:lua.custom_fold_text()"
 set.helpheight   = 15
-set.statuscolumn = "%s%=%{v:virtnum == 0 ? (v:relnum ? v:relnum : v:lnum) : ''} "
+-- set.statuscolumn = "%s%=%{v:virtnum == 0 ? (v:relnum ? v:relnum : v:lnum) : ''} "
 
 -- Special UI symbols. More is set via 'mini.basics' later.
 set.fillchars:append({
