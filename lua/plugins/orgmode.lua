@@ -15,28 +15,28 @@ return {
 		org.setup({
 			org_ellipsis = " [...]",
 			org_hide_emphasis_markers = true,
-			win_split_mode = function(name)
-				-- Make sure it's not a scratch buffer by passing false as 2nd argument
-				local bufnr = vim.api.nvim_create_buf(false, false)
-				--- Setting buffer name is required
-				vim.api.nvim_buf_set_name(bufnr, name)
-
-				local fill = 0.5
-				local width = math.floor((vim.o.columns * fill))
-				local height = math.floor((vim.o.lines * fill))
-				local row = math.floor((((vim.o.lines - height) / 2) - 1))
-				local col = math.floor(((vim.o.columns - width) / 2))
-
-				vim.api.nvim_open_win(bufnr, true, {
-					relative = "editor",
-					width = width,
-					height = height,
-					row = row,
-					col = col,
-					style = "minimal",
-					border = "rounded"
-				})
-			end,
+			-- win_split_mode = function(name)
+			-- 	-- Make sure it's not a scratch buffer by passing false as 2nd argument
+			-- 	local bufnr = vim.api.nvim_create_buf(false, false)
+			-- 	--- Setting buffer name is required
+			-- 	vim.api.nvim_buf_set_name(bufnr, name)
+			--
+			-- 	local fill = 0.5
+			-- 	local width = math.floor((vim.o.columns * fill))
+			-- 	local height = math.floor((vim.o.lines * fill))
+			-- 	local row = math.floor((((vim.o.lines - height) / 2) - 1))
+			-- 	local col = math.floor(((vim.o.columns - width) / 2))
+			--
+			-- 	vim.api.nvim_open_win(bufnr, true, {
+			-- 		relative = "editor",
+			-- 		width = width,
+			-- 		height = height,
+			-- 		row = row,
+			-- 		col = col,
+			-- 		style = "minimal",
+			-- 		border = "rounded"
+			-- 	})
+			-- end,
 			org_agenda_files = '~/orgfiles/**/*',
 			org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
@@ -109,6 +109,13 @@ return {
 		-- Experimental LSP support
 		vim.lsp.enable('org')
 
+		vim.api.nvim_create_autocmd('FileType', {
+			pattern = 'orgagenda',
+			callback = function(args)
+				-- vim.bo[args.buf].number = false
+				-- vim.bo[args.buf].relativenumber = false
+			end,
+		})
 		vim.api.nvim_create_autocmd('FileType', {
 			pattern = 'org',
 			callback = function()
