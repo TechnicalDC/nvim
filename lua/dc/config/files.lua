@@ -67,8 +67,8 @@ autocmd('User', {
 	callback = function(args)
 		local config = vim.api.nvim_win_get_config(args.data.win_id)
 
-		vim.wo[args.data.win_id].number = true
-		vim.wo[args.data.win_id].relativenumber = true
+		vim.wo[args.data.win_id].number = false
+		vim.wo[args.data.win_id].relativenumber = false
 
 		config.title_pos = "center"
 
