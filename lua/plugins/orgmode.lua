@@ -86,7 +86,7 @@ return {
 								zindex = 1000,
 							},
 							icons = {
-								separator = "",
+								separator = "│",
 							},
 						}):open(data)
 					end,
@@ -109,13 +109,13 @@ return {
 		-- Experimental LSP support
 		vim.lsp.enable('org')
 
-		vim.api.nvim_create_autocmd('FileType', {
-			pattern = 'orgagenda',
-			callback = function(args)
-				-- vim.bo[args.buf].number = false
-				-- vim.bo[args.buf].relativenumber = false
-			end,
-		})
+		-- vim.api.nvim_create_autocmd('FileType', {
+		-- 	pattern = 'orgagenda',
+		-- 	callback = function(args)
+		-- 		vim.wo[args.data.win_id].number = false
+		-- 		vim.wo[args.data.win_id].relativenumber = false
+		-- 	end,
+		-- })
 		vim.api.nvim_create_autocmd('FileType', {
 			pattern = 'org',
 			callback = function()
