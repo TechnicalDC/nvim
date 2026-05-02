@@ -271,6 +271,28 @@ local query_snippet = s(
 )
 table.insert(snippets, query_snippet)
 
+local fDatasetWrite = fmta(
+	[[
+	dataset <dataset_name>:write-xml(
+		"file", /* Target Type */
+		"<filename>", /* File Name */
+		true, /* Formatted */
+		?, /* Encoding */
+		?, /* Scheme Location */
+		false, /* Write Scheme */
+		false /* Min Scheme */
+	).
+	]],
+	{
+		dataset_name = i(1,"<++>"),
+		filename = i(2,"<++>")
+	}
+)
+local sDatasetWrite = s(
+	{trig = "dataset-write-xml", regTrig = false, hidden = false},
+	fDatasetWrite
+)
+table.insert(snippets, sDatasetWrite)
 -- local test_fmt = fmta(
 --    [[
 --    Captured Text: <test>
