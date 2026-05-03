@@ -25,5 +25,5 @@ return {
 		require('mini.surround').setup()
 		require('mini.tabline').setup()
 		require('mini.visits').setup()
-	end 
+	end
 }
