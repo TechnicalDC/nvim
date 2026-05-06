@@ -24,7 +24,7 @@ return {
 		hl(0, "TabLineFill",                        { link = "StatusLine" })
 		hl(0, "TabLineSel",                         { link = "StatusLineMode" })
 		hl(0, "LineNr",                             { fg = colors.base03 })
-		-- hl(0, "CursorLineNr",                       { bg   = colors.base01 })
+		hl(0, "CursorLineNr",                       { bg   = "none", bold = true })
 		-- hl(0, "CursorLineFold",                     { bg   = colors.base01 })
 		-- hl(0, "CursorLineSign",                     { bg   = colors.base01 })
 		-- hl(0, "SignColumn",                         { bg   = colors.base01 })

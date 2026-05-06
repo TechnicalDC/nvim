@@ -28,14 +28,14 @@ set.wildmenu       = true
 set.wildmode       = "longest:full,list:full"
 set.wildignore     = "*.o,*.obj,*.bak,*.exe,*.hi,*.dyn_hi,*.dyn_o,*.zip,*.pdf,*.gif,*.png,*.jpg,*.mp4,*mp3"
 set.foldenable     = false
-set.foldcolumn     = "auto:1"
+set.foldcolumn     = '0'
 set.foldmethod     = "marker"
 set.foldmarker     = "{{{,}}}"
 set.foldexpr       = "v:lua.vim.treesitter.foldexpr()"
 set.foldtext       = "v:lua.custom_fold_text()"
 set.helpheight   = 15
 -- set.statuscolumn = "%s%=%{v:virtnum == 0 ? (v:relnum ? v:relnum : v:lnum) : ''} "
--- set.statuscolumn = " %s%=%l%C "
+set.statuscolumn = " %s%=%l%#LineNr#│"
 
 -- Special UI symbols. More is set via 'mini.basics' later.
 set.fillchars:append({
