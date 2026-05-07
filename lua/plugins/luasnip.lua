@@ -4,6 +4,7 @@ return {
    config = function ()
       local ls = require("luasnip")
       local types = require("luasnip.util.types")
+		local map = vim.keymap.set
 
       if vim.fn.has("win32") == 1 then
          -- For windows
@@ -26,5 +27,10 @@ return {
             },
          },
       })
+
+      map({ "i", "s" },   "<C-j>", function() ls.jump(1) end,           { desc = "Jump to next node" } )
+      map({ "i", "s" },   "<C-k>", function() ls.jump(-1) end,          { desc = "Jump to previous node" } )
+      map({ "i", "s" },   "<C-n>", function() ls.change_choice(1)  end, { desc = "Select next choice" } )
+      map({ "i", "s" },   "<C-p>", function() ls.change_choice(-1) end, { desc = "Select previous choice" } )
    end
 }

@@ -14,7 +14,8 @@ return {
 		require("dc.config.session")
 		require("dc.config.splitjoin")
 		require("dc.config.starter")
-		require("dc.config.statusline")
+		-- require("dc.config.statusline")
+		require("dc.statusline")
 
 		require('mini.ai').setup()
 		require('mini.align').setup()
