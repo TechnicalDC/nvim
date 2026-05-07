@@ -39,25 +39,25 @@ set.statuscolumn = " %s%=%l%#LineNr#▕ "
 
 -- Special UI symbols. More is set via 'mini.basics' later.
 set.fillchars:append({
-   fold      = " ",
+	fold      = " ",
 	foldinner = "│",
-	foldsep = "│",
-   foldopen  = "",
-   foldclose = "",
-   diff      = "-",
-   eob       = "~",
-   -- horiz     = '═',
-   -- horizup   = '╩',
-   -- horizdown = '╦',
-   -- vert      = '║',
-   -- vertleft  = '╣',
-   -- vertright = '╠',
-   -- verthoriz = '╬',
+	foldsep   = "│",
+	foldopen  = "",
+	foldclose = "",
+	diff      = "-",
+	eob       = "~",
+	-- horiz     = '═',
+	-- horizup   = '╩',
+	-- horizdown = '╦',
+	-- vert      = '║',
+	-- vertleft  = '╣',
+	-- vertright = '╠',
+	-- verthoriz = '╬',
 })
 
 set.listchars = "eol: "
    .. ",tab:  "
-   .. ",leadtab:▏ "
+   .. ",leadtab:│ "
    .. ",nbsp:␣"
    .. ",lead:·"
    .. ",leadmultispace:·"

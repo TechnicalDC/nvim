@@ -19,6 +19,7 @@ local snippets, autosnippets = {}, {}
 -- OTHER STUFFS {{{
 local lock_type = {
 	"no-lock",
+	"",
 	"exclusive-lock"
 }
 local def_types = {
@@ -35,20 +36,20 @@ local data_types = {
 	"character",
 	"decimal",
 	"integer",
-   "handle",
+	"handle",
 	"date",
 	"logical",
-   "void"
+	"void"
 }
 local access_type = {
-   "public",
-   "private",
-   "protected"
+	"public",
+	"private",
+	"protected"
 }
 local input_types = {
-   "input",
-   "output",
-   "input-output",
+	"input",
+	"output",
+	"input-output",
 }
 
 -- Returns table containing insert node with provided options
@@ -255,21 +256,22 @@ local query_fmt = fmta(
 		query_name = d(1, function(_, snip)
 			return sn(1, i(1,snip.env.TM_SELECTED_TEXT[1] or {"<++>"}))
 		end),
-      query_buffers =  rep(1),
-      buffers = i(3,"<++>"),
-      query_prepare =  rep(1),
-      query_logic = i(5,"<++>"),
-      query_open =  rep(1),
-      query_next =  rep(1),
-      query_next1 =  rep(1),
-      query_close =  rep(1),
-   }
+		query_buffers =  rep(1),
+		buffers = i(3,"<++>"),
+		query_prepare =  rep(1),
+		query_logic = i(5,"<++>"),
+		query_open =  rep(1),
+		query_next =  rep(1),
+		query_next1 =  rep(1),
+		query_close =  rep(1),
+	}
 )
 local query_snippet = s(
 	{trig = "build-query", regTrig = false, hidden = false},
 	query_fmt
 )
 table.insert(snippets, query_snippet)
+-- }}}
 
 local fDatasetWrite = fmta(
 	[[
@@ -293,21 +295,5 @@ local sDatasetWrite = s(
 	fDatasetWrite
 )
 table.insert(snippets, sDatasetWrite)
--- local test_fmt = fmta(
---    [[
---    Captured Text: <test>
---    ]],
---    {
---       test = d(1, function(_, snip)
--- 			return sn(1, i(1, snip.captures[1]))
--- 		end),
---    }
--- )
--- local test_snippet = s(
--- 	{trig = "test(.)", regTrig = true, hidden = false},
---    test_fmt
--- )
--- table.insert(autosnippets, test_snippet)
--- }}}
 
 return snippets, autosnippets
