@@ -109,13 +109,14 @@ return {
 		-- Experimental LSP support
 		vim.lsp.enable('org')
 
-		-- vim.api.nvim_create_autocmd('FileType', {
-		-- 	pattern = 'orgagenda',
-		-- 	callback = function(args)
-		-- 		vim.wo[args.data.win_id].number = false
-		-- 		vim.wo[args.data.win_id].relativenumber = false
-		-- 	end,
-		-- })
+		vim.api.nvim_create_autocmd('FileType', {
+			pattern = 'orgagenda',
+			command = "setlocal nonumber norelativenumber"
+			-- callback = function(args)
+			-- 	vim.wo[args.data.win_id].number = false
+			-- 	vim.wo[args.data.win_id].relativenumber = false
+			-- end,
+		})
 		vim.api.nvim_create_autocmd('FileType', {
 			pattern = 'org',
 			callback = function()

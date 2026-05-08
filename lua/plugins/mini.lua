@@ -7,7 +7,6 @@ return {
 		require("dc.config.files")
 		require("dc.config.hipatterns")
 		require("dc.config.icons")
-		-- require("dc.config.indentscope")
 		require("dc.config.misc")
 		require("dc.config.move")
 		require("dc.config.notify")
