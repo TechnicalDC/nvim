@@ -24,8 +24,15 @@ local modes = {
 	['r?'] = {'CONFIRM',    'C',  'StatuslineMode'},
 }
 
-local excludes = function()
+local exclude_statusline = function()
 	if vim.tbl_contains(config.statusline.exclude_filetype, vim.bo.filetype) then
+		return true
+	end
+	return false
+end
+
+local exclude_winbar = function()
+	if vim.tbl_contains(config.winbar.exclude_filetype, vim.bo.filetype) then
 		return true
 	end
 	return false
@@ -38,15 +45,12 @@ local get_current_mode = function()
 	return "%#" .. hl .. "# " .. mode .. " %#StatusLine#"
 end
 
-local get_end_block = function()
-	local current_mode = vim.api.nvim_get_mode().mode
-	local mode = string.format('%s', modes[current_mode][1])
-	local hl = string.format('%s', modes[current_mode][3])
-	return "%#" .. hl .. "#▐%#StatusLine#"
+local get_pwd = function ()
+	return " " .. vim.fn.getcwd()
 end
 
 local get_filename = function ()
-	if excludes() then
+	if exclude_statusline() then
 		return ""
 	end
 
@@ -79,14 +83,14 @@ local is_modified = function ()
 	if vim.bo.filetype == "help" then
 		return ""
 	end
-	if excludes() then
+	if exclude_statusline() then
 		return ""
 	end
 	return " %m"
 end
 
 local get_location = function ()
-	if excludes() then
+	if exclude_statusline() then
 		return ""
 	end
 	return "  %-3.(%l/%L "
@@ -103,15 +107,26 @@ end
 function _G.setup_statusline()
 	return table.concat {
 		get_current_mode(),
+		get_pwd(),
+		" %<",
+		"%=",
+		get_location(),
+	}
+end
+
+function _G.setup_winbar()
+	if exclude_winbar() then
+		return ""
+	end
+	return table.concat {
 		get_filename(),
 		is_modified(),
 		" %<",
 		"%=",
 		get_diagnotics(),
 		get_filetype(),
-		get_location(),
-		get_end_block(),
 	}
 end
 
 vim.opt.statusline = "%!v:lua.setup_statusline()"
+vim.opt.winbar = "%!v:lua.setup_winbar()"

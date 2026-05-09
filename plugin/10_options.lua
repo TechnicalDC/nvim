@@ -45,7 +45,7 @@ set.fillchars:append({
 	foldopen  = "",
 	foldclose = "",
 	diff      = "-",
-	eob       = "~",
+	eob       = " ",
 	-- horiz     = '═',
 	-- horizup   = '╩',
 	-- horizdown = '╦',
@@ -90,14 +90,14 @@ set.undofile      = true
 
 -- SHELL {{{
 if vim.fn.has("win32") == 1 then
-   set.shell = vim.fn.executable "powershell" == 1 and "powershell" or "pwsh"
-   set.shellcmdflag = "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-   set.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
-   set.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-   set.shellquote = ""
-   set.shellxquote = ""
+	set.shell = vim.fn.executable "powershell" == 1 and "powershell" or "pwsh"
+	set.shellcmdflag = "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+	set.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+	set.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+	set.shellquote = ""
+	set.shellxquote = ""
 else
-   set.shell = "fish"
+	set.shell = "fish"
 end
 -- }}}
 
@@ -130,8 +130,8 @@ vim.diagnostic.config({
 
 -- CUSTOM FOLD TEXT {{{
 function _G.custom_fold_text()
-   local line = vim.fn.getline(vim.v.foldstart)
-   line = string.gsub(line, " {+", "")
-   return line .. " "
+	local line = vim.fn.getline(vim.v.foldstart)
+	line = string.gsub(line, " {+", "")
+	return line .. " "
 end
 -- }}}
