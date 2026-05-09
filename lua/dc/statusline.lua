@@ -115,9 +115,14 @@ function _G.setup_statusline()
 end
 
 function _G.setup_winbar()
+	local hl = "StatuslineMode"
 	if exclude_winbar() then
 		return ""
 	end
+	-- if vim.bo.filetype == "orgagenda" then
+	-- 	local text = "Org Agenda"
+	-- 	return "%#" .. hl .. "# " .. text .. " %#StatusLine#"
+	-- end
 	return table.concat {
 		get_filename(),
 		is_modified(),

@@ -18,7 +18,7 @@ return {
 		exclude_filetype = {
 			"ministarter",
 			"minifiles",
-			"TelescopePrompt"
+			"TelescopePrompt",
 		}
 	},
 }
