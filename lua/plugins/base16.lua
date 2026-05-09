@@ -22,6 +22,7 @@ return {
 		hl(0, "StatusLineMode",                     { fg   = colors.base00, bg   = colors.base08, bold = true })
 		hl(0, "StatusLine",                         { fg = colors.base03 })
 		hl(0, "Winbar", 									  { link = "StatusLine"})
+		hl(0, "WinbarNC", 								  { link = "StatusLine"})
 		hl(0, "TabLineFill",                        { link = "StatusLine" })
 		hl(0, "TabLineSel",                         { link = "StatusLineMode" })
 		hl(0, "LineNr",                             { fg = colors.base03 })
@@ -54,5 +55,6 @@ return {
 		hl(0, "PmenuSel",                           {  bg   = colors.base01        })
 		hl(0, "MiniStarterSection",                 {  fg   = colors.base0B        })
 		hl(0, "MiniTablineFill",                    { link = "TabLineFill" })
+		hl(0, "MiniTablineModifiedCurrent",			  { link = "MiniTablineCurrent"})
 	end,
 }

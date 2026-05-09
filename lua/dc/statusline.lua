@@ -46,7 +46,7 @@ local get_current_mode = function()
 end
 
 local get_pwd = function ()
-	return " " .. vim.fn.getcwd()
+	return "  " .. vim.fn.getcwd()
 end
 
 local get_filename = function ()
@@ -119,11 +119,12 @@ function _G.setup_winbar()
 	if exclude_winbar() then
 		return ""
 	end
-	-- if vim.bo.filetype == "orgagenda" then
-	-- 	local text = "Org Agenda"
-	-- 	return "%#" .. hl .. "# " .. text .. " %#StatusLine#"
-	-- end
+	if vim.bo.filetype == "orgagenda" then
+		local text = "Org Agenda"
+		return "%#" .. hl .. "# " .. text .. " %#StatusLine#"
+	end
 	return table.concat {
+		"(%n)",
 		get_filename(),
 		is_modified(),
 		" %<",
@@ -133,5 +134,5 @@ function _G.setup_winbar()
 	}
 end
 
-vim.opt.statusline = "%!v:lua.setup_statusline()"
-vim.opt.winbar = "%!v:lua.setup_winbar()"
+vim.opt.statusline = "%{%v:lua.setup_statusline()%}"
+vim.opt.winbar = "%{%v:lua.setup_winbar()%}"
