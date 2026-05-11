@@ -16,6 +16,10 @@ return {
 		local hl = vim.api.nvim_set_hl
 		local colors = require('base16-colorscheme').colors
 
+		hl(0, "Normal",									  { bg = "none" })
+		hl(0, "NormalNC",									  { bg = "none" })
+		hl(0, "NormalFloat",								  { link = "Normal" })
+		hl(0, "SignColumn",								  { link = "Normal" })
 		hl(0, "FloatBorder",                        { fg   = colors.base03, bg   = "none"        })
 		hl(0, "FloatTitle",                         { bg = "none",          fg   = colors.base08 })
 		hl(0, "WinSeparator",                       { fg = colors.base02 })
@@ -36,6 +40,8 @@ return {
 		hl(0, "DiagnosticUnderlineWarn",            { undercurl = true })
 		hl(0, "Comment",                            { fg = colors.base03,   italic = true })
 		hl(0, "TelescopeBorder",                    { link = "FloatBorder"  })
+		hl(0, "TelescopeNormal",                    { link = "NormalFloat"  })
+		hl(0, "TelescopePromptNormal",                    { link = "NormalFloat"  })
 		hl(0, "TelescopePromptBorder",              { link = "FloatBorder"  })
 		hl(0, "TelescopePromptTitle",               { link = "FloatTitle"  })
 		hl(0, "TelescopePromptPrefix",              { link = "FloatTitle"  })
