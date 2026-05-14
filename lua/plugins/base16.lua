@@ -40,6 +40,7 @@ return {
 		hl(0, "DiagnosticUnderlineWarn",            { undercurl = true })
 		hl(0, "Comment",                            { fg = colors.base03,   italic = true })
 		hl(0, "TelescopeBorder",                    { link = "FloatBorder"  })
+		hl(0, "TelescopeMatching",                    { bg = colors.base0C, fg = colors.base00 })
 		hl(0, "TelescopeNormal",                    { link = "NormalFloat"  })
 		hl(0, "TelescopePromptNormal",                    { link = "NormalFloat"  })
 		hl(0, "TelescopePromptBorder",              { link = "FloatBorder"  })

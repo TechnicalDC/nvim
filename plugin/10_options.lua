@@ -55,15 +55,15 @@ set.fillchars:append({
 	-- verthoriz = '╬',
 })
 
-set.listchars = "eol: "
-   .. ",tab:  "
-   .. ",leadtab:│ "
-   .. ",nbsp:␣"
-   .. ",lead:·"
-   .. ",leadmultispace:·"
-   .. ",trail: "
-   .. ",extends:>"
-   .. ",precedes:<"
+set.listchars = "eol:󰌑"
+				 .. ",tab:  "
+				 .. ",leadtab:│ "
+				 .. ",nbsp:␣"
+				 .. ",lead:·"
+				 .. ",leadmultispace:·"
+				 .. ",trail: "
+				 .. ",extends:>"
+				 .. ",precedes:<"
 
 
 -- Editing ====================================================================

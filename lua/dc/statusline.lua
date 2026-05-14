@@ -123,6 +123,10 @@ function _G.setup_winbar()
 		local text = "Org Agenda"
 		return "%#" .. hl .. "# " .. text .. " %#StatusLine#"
 	end
+	if vim.bo.filetype == "org-roam-select" then
+		local text = "Org Roam"
+		return "%#" .. hl .. "# " .. text .. " %#StatusLine#"
+	end
 	return table.concat {
 		"(%n)",
 		get_filename(),
