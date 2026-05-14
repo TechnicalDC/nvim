@@ -23,9 +23,9 @@ return {
 
 		require('telescope').setup{
 			defaults = {
-				layout_strategy='center',
+				layout_strategy='bottom_pane',
 				layout_config = {
-					height = 15,
+					height = 20,
 				},
 				sorting_strategy = "ascending",
 				selection_caret = "> ",
@@ -34,20 +34,21 @@ return {
 				-- entry_prefix
 				multi_icon = "|",
 				-- Only for ivy layout
-				-- borderchars = {
-				-- 	prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-				-- 	results = { " " },
-				-- 	preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-				-- },
-				-- Only for dropdownm
 				borderchars = {
-					{ '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-					prompt = {"─", "│", " ", "│", '╭', '╮', "│", "│"},
-					results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
+					prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+					results = { " " },
 					preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
 				},
+				-- Only for dropdownm
+				-- borderchars = {
+				-- 	{ '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+				-- 	prompt = {"─", "│", " ", "│", '╭', '╮', "│", "│"},
+				-- 	results = {"─", "│", "─", "│", "│", "│", "╯", "╰"},
+				-- 	-- results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
+				-- 	preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+				-- },
 				preview = {
-					hide_on_startup = true
+					hide_on_startup = false
 				},
 				-- Default configuration for telescope goes here:
 				-- config_key = value,
