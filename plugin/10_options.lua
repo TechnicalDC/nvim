@@ -61,7 +61,7 @@ set.listchars = "eol:󰌑"
 				 .. ",nbsp:␣"
 				 .. ",lead:·"
 				 .. ",leadmultispace:·"
-				 .. ",trail: "
+				 .. ",trail:·"
 				 .. ",extends:>"
 				 .. ",precedes:<"
 
