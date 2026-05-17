@@ -56,5 +56,8 @@ return {
 		hl(0, "MiniStarterSection",                 {  fg   = colors.base0B        })
 		hl(0, "MiniTablineFill",                    { link = "TabLineFill" })
 		hl(0, "MiniTablineModifiedCurrent",			  { link = "MiniTablineCurrent"})
+		hl(0, "MiniTablineVisible",				     { link = "MiniTablineHidden"})
+		hl(0, "MiniTablineModifiedVisible",			  { fg = colors.base08, bg = colors.base02 })
+		hl(0, "MiniTablineModifiedHidden",			  { fg = colors.base08, bg = colors.base02 })
 	end,
 }

@@ -12,6 +12,7 @@ local sn = ls.snippet_node
 
 local rep = require("luasnip.extras").rep
 local fmta = require("luasnip.extras.fmt").fmta
+local fmt = require("luasnip.extras.fmt").fmt
 
 local snippets, autosnippets = {}, {}
 -- }}}
