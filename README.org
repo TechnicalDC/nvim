@@ -10,3 +10,5 @@
    # Windows
    git clone https://github.com/TechnicalDC/NvConf ~/Appdata/Local/nvim
    #+end_src
+
+

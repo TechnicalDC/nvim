@@ -5,7 +5,7 @@ return {
 	},
 	version = 'v0.*',
 	opts = {
-		enabled = function() 
+		enabled = function()
 			-- Dont show completion for specific file types
 			return not vim.tbl_contains({ "org-roam-select", "minifiles" }, vim.bo.filetype)
 		end,
@@ -83,8 +83,8 @@ return {
 			},
 			default = { 'lsp', 'path', 'snippets', 'buffer' },
 			per_filetype = {
-				markdown = { 'lsp', 'snippets', 'buffer', 'path' },
-				org = { 'orgmode', 'buffer' }
+				-- markdown = { 'lsp', 'snippets', 'buffer', 'path' },
+				-- org = { 'orgmode', 'buffer' }
 			},
 		},
 		signature = {
@@ -92,7 +92,7 @@ return {
 			window = {
 				scrollbar = false,
 				border = "rounded",
-				winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None',
+				winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
 			}
 		},
 		completion = {
