@@ -67,5 +67,6 @@ return {
 		hl(0, "MiniTablineVisible",				     { link = "MiniTablineHidden"})
 		hl(0, "MiniTablineModifiedVisible",			  { fg = colors.base08, bg = colors.base02 })
 		hl(0, "MiniTablineModifiedHidden",			  { fg = colors.base08, bg = colors.base02 })
+		hl(0, "LuaSnipNode",			  { fg = colors.base08, bg = "none" })
 	end,
 }
