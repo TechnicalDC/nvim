@@ -16,7 +16,6 @@ return {
 	winbar = {
 		enabled = true,
 		exclude_filetype = {
-			"",
 			"ministarter",
 			"minifiles",
 			"TelescopePrompt",

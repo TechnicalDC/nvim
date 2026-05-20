@@ -39,21 +39,11 @@ return {
 				borderchars = {
 					prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
 					results = { " " },
-					preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+					preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
 				},
-				-- Only for dropdownm
-				-- borderchars = {
-				-- 	{ '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-				-- 	prompt = {"─", "│", " ", "│", '╭', '╮', "│", "│"},
-				-- 	results = {"─", "│", "─", "│", "│", "│", "╯", "╰"},
-				-- 	-- results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
-				-- 	preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-				-- },
 				preview = {
 					hide_on_startup = false
 				},
-				-- Default configuration for telescope goes here:
-				-- config_key = value,
 				mappings = {
 					i = {
 						-- map actions.which_key to <C-h> (default: <C-/>)
