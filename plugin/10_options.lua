@@ -87,6 +87,7 @@ set.signcolumn    = "auto:1"
 set.conceallevel  = 2
 set.concealcursor = 'nc'
 set.undofile      = true
+-- set.cmdheight     = 0
 
 -- SHELL {{{
 if vim.fn.has("win32") == 1 then
