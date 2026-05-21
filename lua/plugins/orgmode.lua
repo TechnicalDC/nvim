@@ -4,11 +4,9 @@ return {
 		"nvim-telescope/telescope.nvim",
 		"chipsenkbeil/org-roam.nvim",
 		"akinsho/org-bullets.nvim",
-		"danilshvalov/org-modern.nvim",
 		"nvim-orgmode/telescope-orgmode.nvim",
 	},
 	config = function()
-		local Menu = require("org-modern.menu")
 		local org = require('orgmode')
 
 		-- org.setup_ts_grammar()
@@ -54,19 +52,33 @@ return {
 				},
 				menu = {
 					handler = function(data)
-						data.title = " " .. data.title .. " "
-						Menu:new({
-							window = {
-								margin = { 1, 0, 1, 0 },
-								padding = { 0, 1, 0, 1 },
-								title_pos = "center",
-								border = vim.o.winborder,
-								zindex = 1000,
-							},
-							icons = {
-								separator = "│",
-							},
-						}):open(data)
+						-- your handler here, for example:
+						local options = {}
+						local options_by_label = {}
+
+						for _, item in ipairs(data.items) do
+							-- Only MenuOption has `key`
+							-- Also we don't need `Quit` option because we can close the menu with ESC
+							if item.key and item.label:lower() ~= "quit" then
+								table.insert(options, item.label)
+								options_by_label[item.label] = item
+							end
+						end
+
+						local handler = function(choice)
+							if not choice then
+								return
+							end
+
+							local option = options_by_label[choice]
+							if option.action then
+								option.action()
+							end
+						end
+
+						vim.ui.select(options, {
+							prompt = data.title,
+						}, handler)
 					end,
 				},
 			},

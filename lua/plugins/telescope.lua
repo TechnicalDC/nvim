@@ -6,10 +6,12 @@ return {
 		'nvim-lua/plenary.nvim',
 		-- optional but recommended
 		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+		'nvim-telescope/telescope-ui-select.nvim'
 	},
 	cmd = "Telescope",
 	keys = {
 		{ "<leader>fb",  "<cmd>Telescope buffers<cr>",      desc = "Open buffers" },
+		{ "<leader>fk",  "<cmd>Telescope keymaps<cr>",      desc = "Keymaps" },
 		{ "<leader>fr",  "<cmd>Telescope oldfiles<cr>",      desc = "Open recent files" },
 		{ "<leader>fhi", "<cmd>Telescope highlights<cr>",      desc = "Open highlights" },
 		{ "<leader>ff",  "<cmd>Telescope find_files<cr>",   desc = "Open files" },
@@ -22,7 +24,6 @@ return {
 		{ "<leader>fW",  "<cmd>Telescope live_grep<cr>",    desc = "Live grep word" },
 	},
 	config = function ()
-
 		require('telescope').setup{
 			defaults = {
 				layout_strategy='bottom_pane',
@@ -54,5 +55,7 @@ return {
 				}
 			},
 		}
+
+		require("telescope").load_extension("ui-select")
 	end
 }
