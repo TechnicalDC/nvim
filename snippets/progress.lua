@@ -11,7 +11,6 @@ local f = ls.function_node
 local sn = ls.snippet_node
 
 local rep = require("luasnip.extras").rep
-local fmta = require("luasnip.extras.fmt").fmta
 local fmt = require("luasnip.extras.fmt").fmt
 
 local snippets, autosnippets = {}, {}
@@ -55,3 +54,31 @@ local input_types = {
 }
 -- }}}
 
+-- DEFINE VARIABLE {{{
+local def_fmt = fmt(
+	[[
+	define variable {} {} {}.
+	]],
+	{
+		d(1, function(_, snip)
+			return sn(1, i(1,snip.env.TM_SELECTED_TEXT[1] or {"<++>"}))
+		end),
+		c(2, {
+			i(1, "as character"),
+			i(1, "as integer"),
+			i(1, "as decimal"),
+			i(1, "as date"),
+			i(1, "as logical"),
+			i(1, "like"),
+		}),
+		c(3, {
+			i(1, "no-undo"),
+			i(1, ""),
+		}),
+	}
+)
+local def_snippet = s("define", def_fmt)
+table.insert(snippets, def_snippet)
+-- }}}
+
+return snippets, autosnippets
