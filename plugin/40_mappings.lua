@@ -6,10 +6,10 @@ local map = vim.keymap.set
 -- map("n", '<A-k>', require('smart-splits').resize_up,    { desc = "Adjust size to left" })
 -- map("n", '<A-l>', require('smart-splits').resize_right, { desc = "Adjust size to left" })
 -- moving between splits
--- map("n",  '<C-h>', require('smart-splits').move_cursor_left,  { desc = "Switch to left split" })
--- map("n",  '<C-j>', require('smart-splits').move_cursor_down,  { desc = "Switch to below split" })
--- map("n",  '<C-k>', require('smart-splits').move_cursor_up,    { desc = "Switch to above split" })
--- map("n",  '<C-l>', require('smart-splits').move_cursor_right, { desc = "Switch to right split" })
+map("n", '<C-h>', "<C-w>h", { desc = "Switch to left split" })
+map("n", '<C-j>', "<C-w>j", { desc = "Switch to below split" })
+map("n", '<C-k>', "<C-w>k", { desc = "Switch to above split" })
+map("n", '<C-l>', "<C-w>l", { desc = "Switch to right split" })
 -- }}}}
 
 map("x",   "<leader>p",     [["_dP]],                                     { desc = "Paste Ultra Pro Max" } )
