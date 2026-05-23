@@ -61,6 +61,7 @@ return {
 		hl(0, "@org.headline.level8",               { fg   = colors.base0F, bold = true          })
 		hl(0, "@org.agenda.deadline",               { link = "Error" })
 		hl(0, "@org.agenda.scheduled",              { link = "Normal" })
+		hl(0, "@org.strikethrough",              { strikethrough = true })
 		hl(0, "@markup.link.label.markdown_inline", { fg = colors.base0E,   underline = true })
 		hl(0, "Pmenu",                              { fg   = colors.base05, bg   = "none"        })
 		hl(0, "PmenuSel",                           {  bg   = colors.base01        })
