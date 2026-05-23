@@ -28,7 +28,7 @@ return {
 			defaults = {
 				layout_strategy='bottom_pane',
 				layout_config = {
-					height = 20,
+					height = 15,
 				},
 				sorting_strategy = "ascending",
 				selection_caret = "> ",
