@@ -153,7 +153,8 @@ local find_fmt = fmt(
 	[[
 	find first {} no-error.
 	if {} then do:
-	end. /* if {} then do: */
+		{}
+	end.
 	]],
 	{
 		i(1, "tableName"),
@@ -165,7 +166,7 @@ local find_fmt = fmt(
 				return sn(nil, t("available " .. value))
 			end
 		end, 1),
-		rep(2)
+		i(3, "/* Add Logic Here */")
 	}
 )
 local find_snippet = s(
