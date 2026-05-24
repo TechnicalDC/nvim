@@ -14,6 +14,16 @@ local rep = require("luasnip.extras").rep
 local fmt = require("luasnip.extras.fmt").fmt
 
 local snippets, autosnippets = {}, {}
+
+-- Returns table containing insert node with provided options
+local get_options = function(arg)
+	local x = {}
+
+	for key, value in pairs(arg) do
+		table.insert(x, i(1, arg[key]))
+	end
+	return x
+end
 -- }}}
 
 -- OTHER STUFFS {{{
@@ -55,7 +65,7 @@ local input_types = {
 -- }}}
 
 -- DEFINE VARIABLE {{{
-local def_fmt = fmt(
+local defvar_fmt = fmt(
 	[[
 	define variable {} {} {}.
 	]],
@@ -77,8 +87,88 @@ local def_fmt = fmt(
 		}),
 	}
 )
-local def_snippet = s("define", def_fmt)
-table.insert(snippets, def_snippet)
+local defvar_snippet = s("defvar", defvar_fmt)
+table.insert(snippets, defvar_snippet)
 -- }}}
+
+-- DEFINE BUFFER {{{
+local defbuf_fmt = fmt(
+	[[
+	define buffer {} for {} no-undo.
+	]],
+	{
+		i(1,"bufferName"),
+		i(2,"tableName"),
+	}
+)
+local defbuf_snippet = s("defbuf", defbuf_fmt)
+table.insert(snippets, defbuf_snippet)
+-- }}}
+
+-- DEFINE PROPERTY {{{
+local defprop_fmt = fmt(
+	[[
+	define {}{} property {} as {} no-undo.
+	]],
+	{
+		c(1, get_options(access_type)),
+		c(2, {
+			i(1," static"),
+			i(1," ")
+		}),
+		i(3,"propertyName"),
+		i(4,"className"),
+	}
+)
+local defprop_snippet = s("defprop", defprop_fmt)
+table.insert(snippets, defprop_snippet)
+-- }}}
+
+-- DEBUG MESSAGE {{{
+local msg_fmt = fmt(
+	[[
+	message "DUU - {} -" "{}" {} {}.
+	]],
+	{
+		i(1, "methodName"),
+		i(2, "fieldName"),
+		rep(2),
+		c(3, {
+			i(1, "view-as alert-box"),
+			i(1, "")
+		})
+	}
+)
+
+local msg_snippet = s("msg", msg_fmt)
+table.insert(snippets, msg_snippet)
+-- }}}
+
+-- FIND SNIPPET {{{
+local find_fmt = fmt(
+	[[
+	find first {} no-error.
+	if {} then do:
+	end. /* if {} then do: */
+	]],
+	{
+		i(1, "tableName"),
+		d(2, function (args)
+			local value = args[1][1]
+			if value:sub(-2) == "DO" then
+					return sn(nil, t(value .. ":Available"))
+			else
+				return sn(nil, t("available " .. value))
+			end
+		end, 1),
+		rep(2)
+	}
+)
+local find_snippet = s(
+	{trig = "find", regTrig = false, hidden = false},
+	find_fmt
+)
+table.insert(snippets, find_snippet)
+--}}}
 
 return snippets, autosnippets
