@@ -176,4 +176,25 @@ local find_snippet = s(
 table.insert(snippets, find_snippet)
 --}}}
 
+-- METHOD {{{
+local method_fmt = fmt(
+	[[
+   method {} {} {} (input incustnum as integer):
+
+      {}
+   
+   end method.
+	]], {
+		c(1, get_options(access_type)),
+		c(2, get_options(data_types)),
+		i(3, "methodName"),
+		d(4, function ()
+			return sn(nil, i(nil, "return."))
+		end, 2)
+	}
+)
+local method_snippet = s("method", method_fmt)
+table.insert(snippets, method_snippet)
+-- }}}
+
 return snippets, autosnippets
