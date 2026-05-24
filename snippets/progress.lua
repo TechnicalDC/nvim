@@ -27,6 +27,10 @@ end
 -- }}}
 
 -- OTHER STUFFS {{{
+local services = {
+	"InventoryServices",
+	"BaseServices",
+}
 local lock_type = {
 	"no-lock",
 	"",
@@ -35,7 +39,7 @@ local lock_type = {
 local def_types = {
 	"variable",
 	"frame",
-   "property",
+	"property",
 	"query",
 	"buffer",
 	"stream",
