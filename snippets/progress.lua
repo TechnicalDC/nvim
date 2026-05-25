@@ -12,6 +12,7 @@ local sn = ls.snippet_node
 
 local rep = require("luasnip.extras").rep
 local fmt = require("luasnip.extras.fmt").fmt
+local postfix = require("luasnip.extras.postfix").postfix
 
 local snippets, autosnippets = {}, {}
 
@@ -195,6 +196,22 @@ local method_fmt = fmt(
 )
 local method_snippet = s("method", method_fmt)
 table.insert(snippets, method_snippet)
+-- }}}
+
+-- LOG (POST FIX) {{{
+local log_fmt = fmt(
+	[[
+	message "{}" {} view-as alert-box.
+	]], {
+		d(1, function (_, parent)
+			local capture = parent.snippet.env.POSTFIX_MATCH
+			return sn(nil, t(capture))
+		end),
+		rep(1)
+	}
+)
+local log_postfix = postfix(".log", log_fmt)
+table.insert(snippets, log_postfix)
 -- }}}
 
 return snippets, autosnippets
