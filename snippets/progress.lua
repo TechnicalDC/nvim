@@ -57,7 +57,7 @@ local input_types = {
 -- DEFINE VARIABLE {{{
 local def_fmt = fmt(
 	[[
-	define variable {} {} {}.
+	define variable {} {} {} no-undo.
 	]],
 	{
 		d(1, function(_, snip)
@@ -71,10 +71,18 @@ local def_fmt = fmt(
 			i(1, "as logical"),
 			i(1, "like"),
 		}),
-		c(3, {
-			i(1, "no-undo"),
-			i(1, ""),
-		}),
+		d(3, function (args)
+			local value = args[1][1]
+			if value == "like" then
+			return sn(nil, {
+				i("Hello"),
+			})
+			else
+			return sn(nil, {
+				t(""),
+			})
+			end
+		end, 2),
 	}
 )
 local def_snippet = s("define", def_fmt)
