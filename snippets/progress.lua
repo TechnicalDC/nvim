@@ -121,7 +121,13 @@ table.insert(snippets, defbuf_snippet)
 -- DEFINE PROPERTY {{{
 local defprop_fmt = fmt(
 	[[
-	define {}{} property {} as {} no-undo.
+   define {}{} property {} as {} no-undo
+      get:
+         if not valid-object({}) then
+            {} = {}:{}().
+            return {}.
+      end geta
+      set.
 	]],
 	{
 		c(1, get_options(access_type)),
@@ -131,6 +137,11 @@ local defprop_fmt = fmt(
 		}),
 		i(3,"propertyName"),
 		i(4,"className"),
+		rep(3),
+		rep(3),
+		c(5, get_options(services)),
+		i(6, "GetMethodName"),
+		rep(3),
 	}
 )
 local defprop_snippet = s("defprop", defprop_fmt)
@@ -188,16 +199,17 @@ table.insert(snippets, find_snippet)
 -- METHOD {{{
 local method_fmt = fmt(
 	[[
-   method {} {} {} (input incustnum as integer):
+   method {} {} {} ({}):
 
       {}
-   
+
    end method.
 	]], {
 		c(1, get_options(access_type)),
 		c(2, get_options(data_types)),
 		i(3, "methodName"),
-		d(4, function ()
+		i(4, "arguments"),
+		d(5, function ()
 			return sn(nil, i(nil, "return."))
 		end, 2)
 	}
