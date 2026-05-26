@@ -38,16 +38,9 @@ local exclude_winbar = function()
 	return false
 end
 
-local function get_macro_status()
-	local recording_register = vim.fn.reg_recording()
-	if recording_register == "" then
-		return ""
-	end
-	return "󰑊 Recording @" .. recording_register
-end
-
 local get_current_mode = function()
 	local current_mode = vim.api.nvim_get_mode().mode
+	print(current_mode)
 	local mode = string.format('%s', modes[current_mode][1])
 	local hl = string.format('%s', modes[current_mode][3])
 	return "%#" .. hl .. "# " .. mode .. " %#StatusLine#"
@@ -141,7 +134,6 @@ function _G.setup_winbar()
 		is_modified(),
 		" %<",
 		"%=",
-		get_macro_status(),
 		get_diagnotics(),
 		get_filetype(),
 	}
