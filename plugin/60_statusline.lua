@@ -40,7 +40,6 @@ end
 
 local get_current_mode = function()
 	local current_mode = vim.api.nvim_get_mode().mode
-	print(current_mode)
 	local mode = string.format('%s', modes[current_mode][1])
 	local hl = string.format('%s', modes[current_mode][3])
 	return "%#" .. hl .. "# " .. mode .. " %#StatusLine#"

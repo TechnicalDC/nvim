@@ -38,7 +38,7 @@ return {
 		hl(0, "DiagnosticUnderlineInfo",            { undercurl = true })
 		hl(0, "DiagnosticUnderlineOk",              { undercurl = true })
 		hl(0, "DiagnosticUnderlineWarn",            { undercurl = true })
-		hl(0, "ErrorMsg",                     		  { fg   = colors.base00, bg   = "none" })
+		hl(0, "ErrorMsg",                     		  { link = "Error" })
 		hl(0, "Comment",                            { fg = colors.base03,   italic = true })
 		hl(0, "TelescopeBorder",                    { link = "FloatBorder"  })
 		hl(0, "TelescopeMatching",                    { fg = colors.base0C, bold = true })

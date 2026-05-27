@@ -1,9 +1,7 @@
 local headers = {}
 
 headers.dc = [[
-╭─────────────────────────────────────╮
-│   Neovim :: T E C H N I C A L D C   │
-╰─────────────────────────────────────╯
+Neovim :: T E C H N I C A L D C
 ]]
 
 headers.greeter = [[
