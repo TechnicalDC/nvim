@@ -5,6 +5,7 @@ return {
 		"chipsenkbeil/org-roam.nvim",
 		"akinsho/org-bullets.nvim",
 		"nvim-orgmode/telescope-orgmode.nvim",
+		"hamidi-dev/org-super-agenda.nvim",
 	},
 	config = function()
 		local org = require('orgmode')
@@ -16,7 +17,7 @@ return {
 			org_agenda_files = '~/orgfiles/**/*',
 			org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
-			org_todo_keywords = {'TODO(t)', 'WAIT(w)', '|', 'PROG(p)', 'DONE(d)'},
+			org_todo_keywords = {'TODO(t)', 'WAITING(w)', '|', 'PROGRESS(p)', 'DONE(d)'},
 			org_capture_templates = {
 				t = {
 					description = 'Todo',
@@ -87,7 +88,7 @@ return {
 			directory = "~/orgfiles/roam",
 		})
 		require('org-bullets').setup()
-
+		require('org-super-agenda').setup()
 		require("telescope").load_extension("orgmode")
 
 		local ext = require("telescope").extensions.orgmode
