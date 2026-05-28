@@ -17,6 +17,7 @@ return {
 			org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
 			org_todo_keywords = {'TODO(t)', 'WAITING(w)', '|', 'PROGRESS(p)', 'DONE(d)'},
+			org_agenda_use_time_grid = false,
 			org_capture_templates = {
 				t = {
 					description = 'Todo',
@@ -40,8 +41,9 @@ return {
 				},
 				j = {
 					description = 'Journal',
-					template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n%?',
-					target = '~/orgfiles/journal/%<%Y-%m>.org'
+					template = '\t\t%?',
+					target = '~/orgfiles/journal/%<%Y-%m>.org',
+					datetree = { tree_type = "day" },
 				},
 			},
 			org_default_notes_file = '~/orgfiles/refile.org',
