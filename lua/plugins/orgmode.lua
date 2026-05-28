@@ -5,7 +5,6 @@ return {
 		"chipsenkbeil/org-roam.nvim",
 		"akinsho/org-bullets.nvim",
 		"nvim-orgmode/telescope-orgmode.nvim",
-		"hamidi-dev/org-super-agenda.nvim",
 	},
 	config = function()
 		local org = require('orgmode')
@@ -88,7 +87,6 @@ return {
 			directory = "~/orgfiles/roam",
 		})
 		require('org-bullets').setup()
-		require('org-super-agenda').setup()
 		require("telescope").load_extension("orgmode")
 
 		local ext = require("telescope").extensions.orgmode
