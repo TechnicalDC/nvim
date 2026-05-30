@@ -19,15 +19,15 @@ starter.setup({
 	items = {
 		{ name = 'find files', action = 'Telescope find_files', section = 'Section' },
 		{ name = 'browse files', action = 'lua require("mini.files").open(vim.uv.cwd(), true)', section = 'Section' },
-		{ name = 'recent files', action = "Telescope oldfiles", section = 'Section' },
-		{ name = 'load session', action = "lua MiniSessions.select()", section = 'Section' },
-		{ name = 'edit new buffer', action = 'enew', section = 'Builtin actions' },
-		{ name = 'update plugins', action = 'Lazy update', section = 'Builtin actions' },
+		{ name = 'new file', action = 'enew', section = 'Builtin actions' },
 		{ name = 'quit', action = 'qall', section = 'Builtin actions' },
+		-- starter.sections.recent_files(5, false, true),
+		starter.sections.recent_files(5, true, true),
+		starter.sections.sessions(5, true),
 	},
 	content_hooks = {
 		-- starter.gen_hook.adding_bullet(),
-		-- starter.gen_hook.indexing('all'),
+		starter.gen_hook.indexing('all'),
 		function(content)
 			-- Coords
 			local header_width = content_type_width(content, "header")
