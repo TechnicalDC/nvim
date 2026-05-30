@@ -18,6 +18,7 @@ return {
 			org_agenda_start_on_weekday = 0,
 			org_todo_keywords = {'TODO(t)', 'WAITING(w)', '|', 'PROGRESS(p)', 'DONE(d)'},
 			org_agenda_use_time_grid = false,
+			win_border = "rounded",
 			org_capture_templates = {
 				t = {
 					description = 'Todo',
@@ -90,6 +91,13 @@ return {
 		})
 		require('org-bullets').setup()
 		require("telescope").load_extension("orgmode")
+		require("telescope-orgmode").setup({
+			picker_defaults = {
+				search_headings = { preview = false },
+				search_tags = { preview = false },
+				insert_link = { preview = false },
+			},
+		})
 
 		local ext = require("telescope").extensions.orgmode
 		vim.keymap.set("n", "<leader>fH", ext.search_headings, { desc = "Org headlines" })

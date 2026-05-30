@@ -12,8 +12,8 @@ starter.setup({
 		{ name = 'browse files', action = 'lua require("mini.files").open(vim.uv.cwd(), true)', section = 'Files' },
 		{ name = 'create new file', action = 'enew', section = 'Builtin actions' },
 		{ name = 'quit neovim', action = 'qall', section = 'Builtin actions' },
-		-- starter.sections.recent_files(5, false, true),
 		starter.sections.recent_files(5, true, true),
+		starter.sections.recent_files(5, false, true),
 		starter.sections.sessions(5, true),
 	},
 	content_hooks = {
