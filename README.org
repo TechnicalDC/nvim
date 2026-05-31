@@ -1,6 +1,21 @@
 * Neovim Configs
 
 ** Plugins
+
+   - base16-nvim 
+   - luasnip
+   - blink.cmp
+   - mini.nvim
+   - orgmode
+     - org-roam
+     - org-modern
+     - org-bullets
+   - telescope.nvim
+     - telescope-orgmode.nvim
+     - telescope-ui-select.nvim
+     - telescope-fzf-native.nvim
+   - neogit
+
 ** Installation
 
    #+begin_src bash
