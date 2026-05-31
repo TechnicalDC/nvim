@@ -4,10 +4,12 @@ return {
 		"nvim-telescope/telescope.nvim",
 		"chipsenkbeil/org-roam.nvim",
 		"akinsho/org-bullets.nvim",
+		"danilshvalov/org-modern.nvim",
 		"nvim-orgmode/telescope-orgmode.nvim",
 	},
 	config = function()
 		local org = require('orgmode')
+		local Menu = require("org-modern.menu")
 
 		-- org.setup_ts_grammar()
 		org.setup({
@@ -23,6 +25,7 @@ return {
 				t = {
 					description = 'Todo',
 					template = '* TODO %?',
+					headling = "TEST",
 					target = "~/orgfiles/todo.org"
 				},
 				T = {
@@ -46,6 +49,23 @@ return {
 					target = '~/orgfiles/journal/%<%Y-%m>.org',
 					datetree = { tree_type = "day" },
 				},
+				e = {
+					description = 'Event',
+					subtemplates = {
+						r = {
+							description = 'recurring',
+							template = '** %?\n %T',
+							target = '~/orgfiles/calendar.org',
+							headline = 'recurring'
+						},
+						o = {
+							description = 'one-time',
+							template = '** %?\n %T',
+							target = '~/orgfiles/calendar.org',
+							headline = 'one-time'
+						},
+					},
+				},
 			},
 			org_default_notes_file = '~/orgfiles/refile.org',
 			calendar_week_start_day = 0,
@@ -55,36 +75,22 @@ return {
 				},
 				menu = {
 					handler = function(data)
-						-- your handler here, for example:
-						local options = {}
-						local options_by_label = {}
-
-						for _, item in ipairs(data.items) do
-							-- Only MenuOption has `key`
-							-- Also we don't need `Quit` option because we can close the menu with ESC
-							if item.key and item.label:lower() ~= "quit" then
-								table.insert(options, item.label)
-								options_by_label[item.label] = item
-							end
-						end
-
-						local handler = function(choice)
-							if not choice then
-								return
-							end
-
-							local option = options_by_label[choice]
-							if option.action then
-								option.action()
-							end
-						end
-
-						vim.ui.select(options, {
-							prompt = data.title,
-						}, handler)
+						data.title = " " .. data.title .. " "
+						Menu:new({
+							window = {
+								margin = { 1, 0, 1, 0 },
+								padding = { 0, 1, 0, 1 },
+								title_pos = "center",
+								border = "rounded",
+								zindex = 1000,
+							},
+							icons = {
+								separator = "|",
+							},
+						}):open(data)
 					end,
 				},
-			},
+			}
 		})
 		require("org-roam").setup({
 			directory = "~/orgfiles/roam",
