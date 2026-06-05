@@ -19,6 +19,7 @@ return {
 		require('mini.align').setup()
 		require('mini.bracketed').setup()
 		require('mini.git').setup()
+		require('mini.input').setup()
 		require('mini.pairs').setup()
 		require('mini.operators').setup()
 		require('mini.surround').setup()
