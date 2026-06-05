@@ -1,4 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
+local show_dotfiles = true
+local filter_show = function(fs_entry) return true end
 
 -- FUNCTIONS {{{
 local nmap = function(lhs, rhs, desc)
@@ -12,7 +14,7 @@ end
 
 local toggle_dotfiles = function()
 	show_dotfiles = not show_dotfiles
-	local new_filter = show_dotfiles and true or filter_hide
+	local new_filter = show_dotfiles and filter_show or filter_hide
 	MiniFiles.refresh({ content = { filter = new_filter } })
 end
 -- }}}

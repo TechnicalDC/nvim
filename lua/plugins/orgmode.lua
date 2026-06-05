@@ -38,16 +38,14 @@ return {
 					template = '* TODO %?\n  SCHEDULED: %^t',
 					target = "~/orgfiles/meetings.org"
 				},
-				n = {
-					description = 'Note',
-					template = '* %?',
-					target = "~/orgfiles/notes.org"
-				},
 				j = {
 					description = 'Journal',
-					template = '\t\t%?',
+					template = '\t\t- %?',
 					target = '~/orgfiles/journal/%<%Y-%m>.org',
-					datetree = { tree_type = "day" },
+					datetree = {
+						tree_type = "day",
+						time_prompt = true
+					},
 				},
 				e = {
 					description = 'Event',
@@ -67,7 +65,7 @@ return {
 					},
 				},
 			},
-			org_default_notes_file = '~/orgfiles/refile.org',
+			org_default_notes_file = '~/orgfiles/notes.org',
 			calendar_week_start_day = 0,
 			ui = {
 				input = {
@@ -85,7 +83,7 @@ return {
 								zindex = 1000,
 							},
 							icons = {
-								separator = "|",
+								separator = "│",
 							},
 						}):open(data)
 					end,
