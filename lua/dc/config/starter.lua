@@ -6,7 +6,7 @@ local headers = require("dc.headers")
 
 starter.setup({
 	header = headers.dc,
-	footer = headers.greeter,
+	footer = "",
 	items = {
 		{ name = 'find files', action = 'Telescope find_files', section = 'Files' },
 		{ name = 'browse files', action = 'lua require("mini.files").open(vim.uv.cwd(), true)', section = 'Files' },
