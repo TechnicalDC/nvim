@@ -1,6 +1,6 @@
 return {
 	'nvim-mini/mini.nvim',
-	version = false,
+	ersion = false,
 	config = function()
 		require("dc.config.clue")
 		require("dc.config.diff")
@@ -20,6 +20,7 @@ return {
 		require('mini.align').setup()
 		require('mini.bracketed').setup()
 		require('mini.git').setup()
+		require('mini.jump2d').setup()
 		require('mini.pairs').setup()
 		require('mini.operators').setup()
 		require('mini.surround').setup()

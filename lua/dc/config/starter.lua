@@ -5,7 +5,7 @@ local opts    = { buffer = true }
 local headers = require("dc.headers")
 
 starter.setup({
-	header = headers.dc,
+	header = headers.mini,
 	footer = "",
 	items = {
 		{ name = 'find files', action = 'Telescope find_files', section = 'Files' },

@@ -2,6 +2,7 @@ local headers = {}
 
 headers.dc = [[
 Neovim :: T E C H N I C A L D C
+            Good Morning, Dilip
 ]]
 
 headers.greeter = [[
