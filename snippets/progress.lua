@@ -95,7 +95,7 @@ local defvar_fmt = fmt(
 		end, 2),
 	}
 )
-local defvar_snippet = s("defvar", defvar_fmt)
+local defvar_snippet = s({ trig="defvar", name='define variable', desc='define new variable' }, defvar_fmt)
 table.insert(snippets, defvar_snippet)
 -- }}}
 
@@ -109,7 +109,7 @@ local defbuf_fmt = fmt(
 		i(2,"tableName"),
 	}
 )
-local defbuf_snippet = s("defbuf", defbuf_fmt)
+local defbuf_snippet = s({ trig="defbuf", name='define buffer', desc='define new buffer' }, defbuf_fmt)
 table.insert(snippets, defbuf_snippet)
 -- }}}
 

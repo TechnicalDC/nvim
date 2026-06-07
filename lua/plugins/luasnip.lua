@@ -22,7 +22,7 @@ return {
 			ext_opts = {
 				[types.choiceNode] = {
 					active = {
-						virt_text = { { " " , "LuaSnipNode" } },
+						virt_text = { { "" , "LuaSnipNode" } },
 					},
 				},
 			},
