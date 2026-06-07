@@ -57,9 +57,9 @@ local meta_fmt = fmta(
 	---
 	]],
 	{
-		title = i(1, "<++>"),
+		title = i(0, "<++>"),
 		author = i(2, "Dilip Chauhan"),
-		new_date = f(function(_,snip) return {os.date('%d-%m-%Y')} end, {})
+		new_date = f(function(_) return {os.date('%d-%m-%Y')} end, {})
 	}
 )
 local meta_snippet = s("meta", meta_fmt)
@@ -70,7 +70,7 @@ table.insert(snippets, meta_snippet)
 local date_fmt = fmta(
    [[- <today> - ]],
    {
-		today = f(function(_,snip) return {os.date('%d/%m/%Y')} end, {})
+		today = f(function(_) return {os.date('%d/%m/%Y')} end, {})
    }
 )
 local date_snippet = s("\\todo", date_fmt)

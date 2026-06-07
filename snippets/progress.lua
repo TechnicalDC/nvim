@@ -31,31 +31,30 @@ end
 local services = {
 	"InventoryServices",
 	"BaseServices",
+	"QraServices",
 }
 local lock_type = {
-	"no-lock",
 	"",
+	"no-lock",
 	"exclusive-lock"
 }
 local def_types = {
 	"variable",
-	"frame",
 	"property",
+	"temp-table",
 	"query",
 	"buffer",
-	"stream",
 	"input parameter",
 	"output parameter",
-	"temp-table"
 }
 local data_types = {
+	"void",
 	"character",
 	"decimal",
 	"integer",
 	"handle",
 	"date",
 	"logical",
-	"void"
 }
 local access_type = {
 	"public",
@@ -79,23 +78,19 @@ local defvar_fmt = fmt(
 			return sn(1, i(1,snip.env.TM_SELECTED_TEXT[1] or {"<++>"}))
 		end),
 		c(2, {
-			i(1, "as character"),
-			i(1, "as integer"),
-			i(1, "as decimal"),
-			i(1, "as date"),
-			i(1, "as logical"),
+			i(1, "as"),
 			i(1, "like"),
 		}),
 		d(3, function (args)
 			local value = args[1][1]
 			if value == "like" then
-			return sn(nil, {
-				i("Hello"),
-			})
+				return sn(nil, {
+					i(1,"<++>"),
+				})
 			else
-			return sn(nil, {
-				t(""),
-			})
+				return sn(nil, {
+					c(1, get_options(data_types))
+				})
 			end
 		end, 2),
 	}
@@ -126,7 +121,7 @@ local defprop_fmt = fmt(
          if not valid-object({}) then
             {} = {}:{}().
             return {}.
-      end geta
+      end get.
       set.
 	]],
 	{
@@ -209,9 +204,7 @@ local method_fmt = fmt(
 		c(2, get_options(data_types)),
 		i(3, "methodName"),
 		i(4, "arguments"),
-		d(5, function ()
-			return sn(nil, i(nil, "return."))
-		end, 2)
+		i(5, "/* Add logic here */")
 	}
 )
 local method_snippet = s("method", method_fmt)
