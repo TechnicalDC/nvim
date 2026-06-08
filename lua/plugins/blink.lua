@@ -96,6 +96,11 @@ return {
 			}
 		},
 		completion = {
+			trigger = {
+				show_on_trigger_character = true,
+				show_on_blocked_trigger_characters = { ".", "\\" },
+				show_on_x_blocked_trigger_characters = { ".", "\\" }
+			},
 			menu = {
 				border = "rounded",
 				scrollbar = true,
@@ -130,7 +135,7 @@ return {
 			},
 			-- Displays a preview of the selected item on the current line
 			ghost_text = {
-				enabled = false,
+				enabled = true,
 			},
 		}
 	},

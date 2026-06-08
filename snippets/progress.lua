@@ -70,9 +70,10 @@ local input_types = {
 return {
 	-- DEFINE VARIABLE {{{
 	s({
-		trig="dv",
+		trig="\\dv",
 		name='define variable',
-		desc='define new variable'
+		desc='define new variable',
+		snippetType = "autosnippet"
 	}, fmt(
 		[[
 		define variable {} {} {} no-undo.
@@ -103,9 +104,10 @@ return {
 
 	-- DEFINE BUFFER {{{
 	s({
-		trig="df",
+		trig="\\db",
 		name='define buffer',
-		desc='define new buffer'
+		desc='define new buffer',
+		snippetType = "autosnippet"
 	}, fmt(
 		[[
 		define buffer {} for {} no-undo.
@@ -119,9 +121,10 @@ return {
 
 	-- DEFINE PROPERTY {{{
 	s({
-		trig="dp",
+		trig="\\dp",
 		name='define property',
-		desc='define new property'
+		desc='define new property',
+		snippetType = "autosnippet"
 	}, fmt(
 		[[
 		define {}{} property {} as {} no-undo
@@ -168,7 +171,10 @@ return {
 
 	-- FIND SNIPPET {{{
 	s({
-		trig = "fd",
+		trig = "\\fd",
+		name='find query',
+		desc='create new find query',
+		snippetType = "autosnippet"
 	}, fmt(
 		[[
 		find first {} no-error.
@@ -192,7 +198,12 @@ return {
 	--}}}
 
 	-- METHOD {{{
-	 s("met",  fmt(
+	 s({
+		trig = "\\met",
+		name='method',
+		desc='define new method',
+		snippetType = "autosnippet"
+	 }, fmt(
 		[[
 		method {} {} {} ({}):
 
@@ -224,7 +235,12 @@ return {
 	-- }}}
 
 	-- CLASS {{{
-	 s("class",  fmt(
+	 s({
+	 	trig = "class",
+		name = 'class',
+		desc = 'define new class',
+		snippetType = "autosnippet"
+	 }, fmt(
 		[[
 		class {}:
 
