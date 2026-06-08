@@ -70,7 +70,7 @@ local input_types = {
 return {
 	-- DEFINE VARIABLE {{{
 	s({
-		trig="defvar",
+		trig="dv",
 		name='define variable',
 		desc='define new variable'
 	}, fmt(
@@ -103,7 +103,7 @@ return {
 
 	-- DEFINE BUFFER {{{
 	s({
-		trig="defbuf",
+		trig="df",
 		name='define buffer',
 		desc='define new buffer'
 	}, fmt(
@@ -119,7 +119,7 @@ return {
 
 	-- DEFINE PROPERTY {{{
 	s({
-		trig="defprop",
+		trig="dp",
 		name='define property',
 		desc='define new property'
 	}, fmt(
@@ -149,7 +149,7 @@ return {
 	)),
 	-- }}}
 
--- DEBUG MESSAGE {{{
+	-- DEBUG MESSAGE {{{
 	s("msg", fmt(
 		[[
 		message "DUU - {} - {}" {} {}.
@@ -168,7 +168,7 @@ return {
 
 	-- FIND SNIPPET {{{
 	s({
-		trig = "find",
+		trig = "fd",
 	}, fmt(
 		[[
 		find first {} no-error.
@@ -192,7 +192,7 @@ return {
 	--}}}
 
 	-- METHOD {{{
-	 s("method",  fmt(
+	 s("met",  fmt(
 		[[
 		method {} {} {} ({}):
 
@@ -219,6 +219,21 @@ return {
 				return sn(nil, t(capture))
 			end),
 			rep(1)
+		}
+	)),
+	-- }}}
+
+	-- CLASS {{{
+	 s("class",  fmt(
+		[[
+		class {}:
+
+			{}
+
+		end class.
+		]], {
+			i(1, "className"),
+			i(2, "/* Add logic here */")
 		}
 	)),
 	-- }}}
