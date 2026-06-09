@@ -65,6 +65,13 @@ local input_types = {
 	"output",
 	"input-output",
 }
+local fetch = {
+	"first",
+	"each",
+	"last",
+	"next",
+	"prev"
+}
 -- }}}
 
 return {
@@ -193,6 +200,50 @@ return {
 				end
 			end, 1),
 			i(3, "/* Add Logic Here */")
+		}
+	)),
+	--}}}
+
+	-- FOR SNIPPET {{{
+	s({
+		trig = "\\for",
+		name='for query',
+		desc='create new for query',
+		snippetType = "autosnippet"
+	}, fmt(
+		[[
+		for {} {} {}:
+			{}
+		end.
+		]],
+		{
+			c(1, get_options(fetch)),
+			i(2, "tableName"),
+			c(3, get_options(lock_type)),
+			i(4, "/* Add Logic Here */")
+		}
+	)),
+	--}}}
+
+	-- FOR WITH WHERE CONDITION SNIPPET {{{
+	s({
+		trig = "\\forw",
+		name='for query',
+		desc='create new for query with condition',
+		snippetType = "autosnippet"
+	}, fmt(
+		[[
+		for {} {} {}
+			where {}:
+			{}
+		end.
+		]],
+		{
+			c(1, get_options(fetch)),
+			i(2, "tableName"),
+			c(3, get_options(lock_type)),
+			i(4, "condition"),
+			i(5, "/* Add Logic Here */")
 		}
 	)),
 	--}}}
