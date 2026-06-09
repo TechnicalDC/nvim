@@ -135,7 +135,7 @@ return {
 			},
 			-- Displays a preview of the selected item on the current line
 			ghost_text = {
-				enabled = true,
+				enabled = false,
 			},
 		}
 	},

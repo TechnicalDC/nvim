@@ -235,8 +235,8 @@ return {
 	-- }}}
 
 	-- CLASS {{{
-	 s({
-	 	trig = "class",
+	s({
+		trig = "\\class",
 		name = 'class',
 		desc = 'define new class',
 		snippetType = "autosnippet"
@@ -250,6 +250,87 @@ return {
 		]], {
 			i(1, "className"),
 			i(2, "/* Add logic here */")
+		}
+	)),
+	-- }}}
+
+	-- DO ON ERROR {{{
+	s({
+		trig = "\\doe",
+		snippetType = "autosnippet"
+	}, fmt([[
+		do on error undo, throw:
+
+			{}
+
+			catch e as Progress.Lang.Error:
+
+				message
+				e:GetMessage(1)
+				skip
+				e:CallStack
+				view-as alert-box error.
+
+			end catch.
+		end.
+		]], {
+			i(1),
+		})
+	),
+	--}}}
+
+	-- CALL METHOD WITH RETURN TYPE {{{
+	s({
+		trig = "\\mr",
+		snippetType = "autosnippet",
+	}, fmt([[
+		{} = this-object:{}({}).
+		]], {
+			i(1, "variable"),
+			i(2, "methodName"),
+			i(3, "inputs"),
+		}
+	)),
+	-- }}}
+
+	-- CALL SERVICE METHOD WITH RETURN TYPE {{{
+	s({
+		trig = "\\sr",
+		snippetType = "autosnippet",
+	}, fmt([[
+		{} = this-object:{}:{}({}).
+		]], {
+			i(1, "variable"),
+			i(2, "service"),
+			i(3, "methodName"),
+			i(4, "inputs"),
+		}
+	)),
+	-- }}}
+
+	-- CALL METHOD {{{
+	s({
+		trig = "\\mn",
+		snippetType = "autosnippet",
+	}, fmt([[
+		this-object:{}({}).
+		]], {
+			i(1, "methodName"),
+			i(2, "inputs"),
+		}
+	)),
+	-- }}}
+
+	-- CALL SERVICE METHOD {{{
+	s({
+		trig = "\\sn",
+		snippetType = "autosnippet",
+	}, fmt([[
+		this-object:{}:{}({}).
+		]], {
+			i(1, "service"),
+			i(2, "methodName"),
+			i(3, "inputs"),
 		}
 	)),
 	-- }}}
