@@ -28,7 +28,8 @@ set.wildmenu       = true
 set.wildmode       = "longest:full,list:full"
 set.wildignore     = "*.o,*.obj,*.bak,*.exe,*.hi,*.dyn_hi,*.dyn_o,*.zip,*.pdf,*.gif,*.png,*.jpg,*.mp4,*mp3"
 set.foldenable     = false
-set.foldcolumn     = '0'
+set.foldlevel      = 0
+set.foldcolumn     = '1'
 set.foldmethod     = "marker"
 set.foldmarker     = "{{{,}}}"
 set.foldexpr       = "v:lua.vim.treesitter.foldexpr()"
@@ -40,8 +41,8 @@ set.helpheight   = 15
 -- Special UI symbols. More is set via 'mini.basics' later.
 set.fillchars:append({
 	fold      = " ",
-	foldinner = "│",
-	foldsep   = "│",
+	foldinner = " ",
+	foldsep   = " ",
 	foldopen  = "",
 	foldclose = "",
 	diff      = "-",
