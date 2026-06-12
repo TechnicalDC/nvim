@@ -31,13 +31,6 @@ local exclude_statusline = function()
 	return false
 end
 
-local exclude_winbar = function()
-	if vim.tbl_contains(config.winbar.exclude_filetype, vim.bo.filetype) then
-		return true
-	end
-	return false
-end
-
 local get_current_mode = function()
 	local current_mode = vim.api.nvim_get_mode().mode
 	local mode = string.format('%s', modes[current_mode][1])
@@ -46,7 +39,7 @@ local get_current_mode = function()
 end
 
 local get_pwd = function ()
-	return "  " .. vim.fn.getcwd()
+	return "  " .. vim.fn.getcwd() .. " "
 end
 
 local get_filename = function ()
@@ -76,17 +69,7 @@ local get_filename = function ()
 
 	filename = " " .. filename .. (head == "." and "" or head .. "/") .. tail
 
-	return filename
-end
-
-local is_modified = function ()
-	if vim.bo.filetype == "help" then
-		return ""
-	end
-	if exclude_statusline() then
-		return ""
-	end
-	return " %m"
+	return " " .. icons.get("filetype",vim.bo.filetype) .. filename .. " "
 end
 
 local get_location = function ()
@@ -94,10 +77,6 @@ local get_location = function ()
 		return ""
 	end
 	return "  %-3.(%l/%L "
-end
-
-local get_filetype = function ()
-	return icons.get("filetype",vim.bo.filetype) .. " " .. vim.bo.filetype .. " "
 end
 
 local get_diagnotics = function ()
@@ -108,35 +87,13 @@ function _G.setup_statusline()
 	return table.concat {
 		get_current_mode(),
 		get_pwd(),
+		get_filename(),
+		" %m",
 		" %<",
 		"%=",
+		get_diagnotics(),
 		get_location(),
 	}
 end
 
-function _G.setup_winbar()
-	local hl = "StatuslineMode"
-	if exclude_winbar() then
-		return ""
-	end
-	if vim.bo.filetype == "orgagenda" then
-		local text = "Org Agenda"
-		return "%#" .. hl .. "# " .. text .. " %#StatusLine#"
-	end
-	if vim.bo.filetype == "org-roam-select" then
-		local text = "Org Roam"
-		return "%#" .. hl .. "# " .. text .. " %#StatusLine#"
-	end
-	return table.concat {
-		"(%n)",
-		get_filename(),
-		is_modified(),
-		" %<",
-		"%=",
-		get_diagnotics(),
-		get_filetype(),
-	}
-end
-
 vim.opt.statusline = "%{%v:lua.setup_statusline()%}"
-vim.opt.winbar = "%{%v:lua.setup_winbar()%}"
