@@ -13,16 +13,18 @@ local rep = require("luasnip.extras").rep
 local fmt = require("luasnip.extras.fmt").fmt
 local postfix = require("luasnip.extras.postfix").postfix
 
-local snippets, autosnippets = {}, {}
-
 -- Returns table containing insert node with provided options
 local get_options = function(arg)
 	local x = {}
 
-	for key, value in pairs(arg) do
+	for key, _ in pairs(arg) do
 		table.insert(x, i(1, arg[key]))
 	end
 	return x
+end
+
+local get_virt_text = function(choices)
+	return "Choices: " .. table.concat(choices, " / ")
 end
 -- }}}
 
@@ -36,15 +38,6 @@ local lock_type = {
 	"",
 	"no-lock",
 	"exclusive-lock"
-}
-local def_types = {
-	"variable",
-	"property",
-	"temp-table",
-	"query",
-	"buffer",
-	"input parameter",
-	"output parameter",
 }
 local data_types = {
 	"void",
@@ -101,7 +94,14 @@ return {
 					})
 				else
 					return sn(nil, {
-						c(1, get_options(data_types))
+						c(1, get_options(data_types), {
+							node_ext_opts = {
+								active = {
+									-- override highlight here ("GruvboxOrange").
+									virt_text = {{ get_virt_text(data_types) , "Comment"}}
+								}
+							}
+						})
 					})
 				end
 			end, 2),
@@ -143,7 +143,13 @@ return {
 			set.
 		]],
 		{
-			c(1, get_options(access_type)),
+			c(1, get_options(access_type), {
+				node_ext_opts = {
+					active = {
+						virt_text = {{ get_virt_text(access_type) , "Comment"}}
+					}
+				}
+			}),
 			c(2, {
 				i(1," static"),
 				i(1," ")
@@ -384,5 +390,54 @@ return {
 			i(3, "inputs"),
 		}
 	)),
+	-- }}}
+
+	-- METHOD ARGUMENTS {{{
+	s({
+		trig = "inp(%d+)",
+		regTrig = true,
+		wordTrig = false,
+		snippetType = "autosnippet"
+	}, {
+		d(1,function(_, snip)
+			local nodes = {}
+			local i_counter = 0
+			local total_args = tonumber(snip.captures[1])
+			if total_args == nil then
+				total_args = 1
+			end
+			for idx = 1, total_args do
+				i_counter = i_counter + 1
+
+				table.insert(nodes, c(i_counter, get_options(input_types), {
+					node_ext_opts = {
+						active = {
+							-- override highlight here ("GruvboxOrange").
+							virt_text = {{ get_virt_text(input_types) , "Comment"}}
+						}
+					}
+				} ))
+				table.insert(nodes, t(" "))
+
+				i_counter = i_counter + 1
+				table.insert(nodes, i(i_counter, "argName" .. tostring(idx)))
+				table.insert(nodes, t(" as "))
+
+				i_counter = i_counter + 1
+				table.insert(nodes, c(i_counter, get_options(data_types), {
+					node_ext_opts = {
+						active = {
+							virt_text = {{ get_virt_text(data_types) , "Comment"}}
+						}
+					}
+				}))
+
+				if idx < total_args then
+					table.insert(nodes, t({",", ""}))
+				end
+			end
+			return sn(nil, nodes)
+		end),
+	})
 	-- }}}
 }

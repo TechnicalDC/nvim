@@ -31,6 +31,7 @@ return {
 		hl(0, "TabLineSel",                         { link = "StatusLineMode" })
 		hl(0, "LineNr",                             { fg = colors.base03 })
 		hl(0, "FoldColumn",								  { link = "LineNr" })
+		hl(0, "Folded",								  { link = "LineNr" })
 		hl(0, "CursorLineNr",                       { bg   = "none", bold = true })
 		hl(0, "NeogitFoldColumn",                   { link = "SignColumn" })
 		hl(0, "DiagnosticUnderlineError",           { undercurl = true })
