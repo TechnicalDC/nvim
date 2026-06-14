@@ -76,11 +76,11 @@ return {
 		snippetType = "autosnippet"
 	}, fmt(
 		[[
-		define variable {} {} {} no-undo.
+		define variable {1} {2} {3} no-undo.
 		]],
 		{
 			d(1, function(_, snip)
-				return sn(1, i(1,snip.env.TM_SELECTED_TEXT[1] or {"<++>"}))
+				return sn(1, i(1,snip.env.TM_SELECTED_TEXT[1] or {"variableName"}))
 			end),
 			c(2, {
 				i(1, "as"),
@@ -90,7 +90,7 @@ return {
 				local value = args[1][1]
 				if value == "like" then
 					return sn(nil, {
-						i(1,"<++>"),
+						i(1,"fieldName"),
 					})
 				else
 					return sn(nil, {
