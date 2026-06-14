@@ -13,7 +13,7 @@ return {
 		require("dc.config.notify")
 		require("dc.config.session")
 		require("dc.config.splitjoin")
-		require("dc.config.starter")
+		-- require("dc.config.starter")
 		-- require("dc.config.statusline")
 
 		require('mini.ai').setup()
