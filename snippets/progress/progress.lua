@@ -394,7 +394,7 @@ return {
 
 	-- METHOD ARGUMENTS {{{
 	s({
-		trig = "inp(%d+)",
+		trig = "\\inp(%d+)",
 		regTrig = true,
 		wordTrig = false,
 		snippetType = "autosnippet"
