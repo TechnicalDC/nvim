@@ -67,9 +67,13 @@ local get_filename = function ()
 		filename = filename .. cwd
 	end
 
-	filename = " " .. filename .. (head == "." and "" or head .. "/") .. tail
+	filename = icons.get("filetype",vim.bo.filetype) .. " " .. filename .. (head == "." and "" or head .. "/") .. tail
 
-	return " " .. icons.get("filetype",vim.bo.filetype) .. filename .. " "
+	if vim.bo.modified then
+		filename = "%#Error#" .. filename .. "%#StatusLine#"
+	end
+
+	return " " .. filename .. " "
 end
 
 local get_location = function ()
@@ -88,7 +92,6 @@ function _G.setup_statusline()
 		get_current_mode(),
 		get_pwd(),
 		get_filename(),
-		" %m",
 		" %<",
 		"%=",
 		get_diagnotics(),
