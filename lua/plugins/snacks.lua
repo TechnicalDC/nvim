@@ -3,6 +3,29 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
+	keys = {
+		{ "<leader>sb",  function() require("snacks").picker.buffers() end,      desc = "Open buffers" },
+		{ "<leader>sk",  function() require("snacks").picker.keymaps() end,      desc = "Keymaps" },
+		{ "<leader>sr",  function() require("snacks").picker.recent() end,      desc = "Open recent files" },
+		{ "<leader>shi", function() require("snacks").picker.highlights() end,      desc = "Open highlights" },
+		{ "<leader>sf",  function() require("snacks").picker.files() end,   desc = "Open files" },
+		{ "<leader>sc",  function() require("snacks").picker.colorschemes() end, desc = "Change colorscheme" },
+		-- { "<leader>ft",  "<cmd>Telescope filetypes<cr>",    desc = "Change filetype" },
+		-- { "<leader>fs",  "<cmd>Telescope spell_suggest<cr>",    desc = "Change spelling" },
+		{ "<leader>sd",  function() require("snacks").picker.diagnostics() end,  desc = "Open diagnostics" },
+		{ "<leader>shl", function() require("snacks").picker.help() end,    desc = "Open help" },
+		{ "<leader>sB", function() require("snacks").picker.grep_buffers() end, desc = "Grep Open Buffers" },
+		{ "<leader>sW", function() require("snacks").picker.grep() end, desc = "Grep" },
+		{ "<leader>sw", function() require("snacks").picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
+		{ "<leader>sm", function() require("snacks").picker.marks() end, desc = "Marks" },
+		{ "gd", function() require("snacks").picker.lsp_definitions() end, desc = "Goto Definition" },
+		{ "gD", function() require("snacks").picker.lsp_declarations() end, desc = "Goto Declaration" },
+		{ "gr", function() require("snacks").picker.lsp_references() end, nowait = true, desc = "References" },
+		{ "gI", function() require("snacks").picker.lsp_implementations() end, desc = "Goto Implementation" },
+		{ "gy", function() require("snacks").picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+		{ "gai", function() require("snacks").picker.lsp_incoming_calls() end, desc = "C[a]lls Incoming" },
+		{ "gao", function() require("snacks").picker.lsp_outgoing_calls() end, desc = "C[a]lls Outgoing" },
+	},
 	opts = {
 		-- your configuration comes here
 		-- or leave it empty to use the default settings
@@ -35,8 +58,11 @@ return {
 			},
 		},
 		explorer = { enabled = false },
-		indent = { enabled = true },
-		input = { enabled = true },
+		indent = {
+			enabled = true,
+			indent = { char = "┊" }
+		},
+		input = { enabled = false },
 		picker = { enabled = true },
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
