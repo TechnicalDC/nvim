@@ -27,3 +27,9 @@
    #+end_src
 
 
+
+** Keymaps
+
+   | Keys          | Description                |
+   |---------------+----------------------------|
+   | Space + f + f | Open files using telescope |
