@@ -36,10 +36,11 @@ return {
 			preset = {
 				header = headers.dc,
 				keys = {
-					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-					{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-					{ icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+					{ icon = " ", key = "f", desc = "find File", action = ":lua Snacks.dashboard.pick('files')" },
+					{ icon = " ", key = "n", desc = "new File", action = ":ene | startinsert" },
+					{ icon = " ", key = "l", desc = "load session", action = ":lua require('mini.sessions').select()" },
+					{ icon = " ", key = "c", desc = "config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+					{ icon = " ", key = "q", desc = "quit", action = ":qa" },
 				},
 			},
 			formats = {
@@ -53,8 +54,7 @@ return {
 				{ section = "keys", padding = 1, indent = 2 },
 				{ title = "MRU", padding = 1 },
 				{ section = "recent_files", limit = 8, padding = 1, indent = 2 },
-				{ title = "Sessions", padding = 1 },
-				{ section = "projects", padding = 1, indent = 2 },
+				{ section = "startup" },
 			},
 		},
 		explorer = { enabled = false },
