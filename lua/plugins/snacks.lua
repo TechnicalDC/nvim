@@ -55,7 +55,9 @@ return {
 				{ hidden = true, icon = " ", key = "f", desc = "find File", action = ":lua Snacks.dashboard.pick('files')" },
 				{ hidden = true, icon = " ", key = "n", desc = "new File", action = ":ene | startinsert" },
 				{ hidden = true, icon = " ", key = "s", desc = "session", action = ":lua require('mini.sessions').select()" },
+				{ hidden = true, icon = " ", key = "b", desc = "browse", action = ":lua require('mini.files').open(vim.uv.cwd(), true)" },
 				{ hidden = true, icon = " ", key = "c", desc = "config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+				{ hidden = true, icon = " ", key = "u", desc = "update", action = ":Lazy update" },
 				{ hidden = true, icon = " ", key = "q", desc = "quit", action = ":qa" },
 				{
 					align = 'center',
@@ -63,8 +65,10 @@ return {
 					text = {
 						{ ' [n]ew ', hl = 'Label' },
 						{ ' [f]iles ', hl = 'DiagnosticInfo' },
-						{ ' [s]essions ', hl = '@property' },
+						{ ' [b]rowse ', hl = '@constant' },
+						{ ' [s]essions ', hl = 'Label' },
 						{ ' [c]onfig ', hl = 'Keyword'},
+						{ ' [u]pdate ', hl = 'DiagnosticInfo'},
 						{ ' [q]uit ', hl = '@error'},
 					},
 				},
