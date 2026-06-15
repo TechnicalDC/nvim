@@ -75,10 +75,12 @@ local get_filename = function ()
 	filename = icons.get("filetype",vim.bo.filetype) .. " " .. filename .. (head == "." and "" or head .. "/") .. tail
 
 	if vim.bo.modified then
-		filename = "%#Error#" .. filename .. "%#StatusLine#"
+		filename = "%#Error# " .. filename .. " %#StatusLine#"
+	else
+		filename = " " .. filename .. " "
 	end
 
-	return " " .. filename .. " "
+	return filename
 end
 
 local get_location = function ()

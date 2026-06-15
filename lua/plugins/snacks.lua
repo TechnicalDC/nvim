@@ -1,4 +1,11 @@
 local headers = require("dc.headers")
+  -- Snacks is insistent about removing the tabline and statusline from the dashboard
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'SnacksDashboardOpened',
+    callback = function()
+      vim.o.laststatus = 3
+    end
+  })
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -36,11 +43,6 @@ return {
 			preset = {
 				header = headers.dc,
 				keys = {
-					{ icon = " ", key = "f", desc = "find File", action = ":lua Snacks.dashboard.pick('files')" },
-					{ icon = " ", key = "n", desc = "new File", action = ":ene | startinsert" },
-					{ icon = " ", key = "l", desc = "load session", action = ":lua require('mini.sessions').select()" },
-					{ icon = " ", key = "c", desc = "config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-					{ icon = " ", key = "q", desc = "quit", action = ":qa" },
 				},
 			},
 			formats = {
@@ -50,25 +52,42 @@ return {
 			},
 			sections = {
 				{ section = "header" },
-				{ title = "Bookmarks", padding = 1 },
-				{ section = "keys", padding = 1, indent = 2 },
-				{ title = "MRU", padding = 1 },
-				{ section = "recent_files", limit = 8, padding = 1, indent = 2 },
+				{ hidden = true, icon = " ", key = "f", desc = "find File", action = ":lua Snacks.dashboard.pick('files')" },
+				{ hidden = true, icon = " ", key = "n", desc = "new File", action = ":ene | startinsert" },
+				{ hidden = true, icon = " ", key = "s", desc = "session", action = ":lua require('mini.sessions').select()" },
+				{ hidden = true, icon = " ", key = "c", desc = "config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+				{ hidden = true, icon = " ", key = "q", desc = "quit", action = ":qa" },
+				{
+					align = 'center',
+					padding = 1,
+					text = {
+						{ ' [n]ew ', hl = 'Label' },
+						{ ' [f]iles ', hl = 'DiagnosticInfo' },
+						{ ' [s]essions ', hl = '@property' },
+						{ ' [c]onfig ', hl = 'Keyword'},
+						{ ' [q]uit ', hl = '@error'},
+					},
+				},
+				{ title = "Recent Files", padding = 1 },
+				{ section = "recent_files", limit = 9, padding = 1, indent = 2 },
 				{ section = "startup" },
 			},
 		},
 		explorer = { enabled = false },
 		indent = {
 			enabled = true,
-			indent = { char = "┊" }
+			indent = { char = "┊" },
+			-- filter = function (buf, win)
+				-- 	return vim.bo[buf].filetype ~= "org"
+				-- end
+			},
+			input = { enabled = false },
+			picker = { enabled = true },
+			notifier = { enabled = true },
+			quickfile = { enabled = true },
+			scope = { enabled = true },
+			scroll = { enabled = true },
+			statuscolumn = { enabled = true },
+			words = { enabled = true },
 		},
-		input = { enabled = false },
-		picker = { enabled = true },
-		notifier = { enabled = true },
-		quickfile = { enabled = true },
-		scope = { enabled = true },
-		scroll = { enabled = true },
-		statuscolumn = { enabled = true },
-		words = { enabled = true },
-	},
-}
+	}
