@@ -1,6 +1,6 @@
 local config = require("dc.config")
 local icons = require("mini.icons")
-local modes = {
+local modes = setmetatable({
 	['n']  = {'NORMAL',     'N',   'StatuslineMode'},
 	['no'] = {'N·OPERATOR', 'N·P', 'StatuslineMode'},
 	['v']  = {'VISUAL',     'V',   'StatuslineMode'},
@@ -22,7 +22,12 @@ local modes = {
 	['r']  = {'PROMPT',     'P',  'StatuslineMode'},
 	['rm'] = {'MORE',       'M',  'StatuslineMode'},
 	['r?'] = {'CONFIRM',    'C',  'StatuslineMode'},
-}
+}, {
+	-- By default return 'Unknown' but this shouldn't be needed
+	__index = function()
+		return   { 'UNKNOWN',  'U', 'StatuslineMode' }
+	end,
+})
 
 local exclude_statusline = function()
 	if vim.tbl_contains(config.statusline.exclude_filetype, vim.bo.filetype) then
