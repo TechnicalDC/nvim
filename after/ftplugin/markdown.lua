@@ -6,3 +6,5 @@ set.listchars = "eol: "
 set.tabstop       = 2
 set.shiftwidth    = 2
 set.softtabstop   = 2
+
+vim.b.snacks_indent = false

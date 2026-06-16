@@ -11,16 +11,16 @@ return {
 		local org = require('orgmode')
 		local Menu = require("org-modern.menu")
 
-		-- org.setup_ts_grammar()
 		org.setup({
 			org_ellipsis = " [...]",
 			org_hide_emphasis_markers = true,
 			org_agenda_files = '~/orgfiles/**/*',
-			org_agenda_span = "day",
+			-- org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
 			org_todo_keywords = {'TODO(t)', 'WAITING(w)', '|', 'PROGRESS(p)', 'DONE(d)'},
 			org_agenda_use_time_grid = false,
 			win_border = "rounded",
+			win_split_mode = "auto",
 			org_capture_templates = {
 				t = {
 					description = 'Todo',
