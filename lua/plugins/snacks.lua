@@ -1,11 +1,11 @@
 local headers = require("dc.headers")
-  -- Snacks is insistent about removing the tabline and statusline from the dashboard
-  vim.api.nvim_create_autocmd('User', {
-    pattern = 'SnacksDashboardOpened',
-    callback = function()
-      vim.o.laststatus = 3
-    end
-  })
+-- Snacks is insistent about removing the tabline and statusline from the dashboard
+vim.api.nvim_create_autocmd('User', {
+	pattern = 'SnacksDashboardOpened',
+	callback = function()
+		vim.o.laststatus = 3
+	end
+})
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -81,17 +81,14 @@ return {
 		indent = {
 			enabled = true,
 			indent = { char = "┊" },
-			-- filter = function (buf, win)
-				-- 	return vim.bo[buf].filetype ~= "org"
-				-- end
-			},
-			input = { enabled = false },
-			picker = { enabled = true },
-			notifier = { enabled = true },
-			quickfile = { enabled = true },
-			scope = { enabled = true },
-			scroll = { enabled = true },
-			statuscolumn = { enabled = true },
-			words = { enabled = true },
 		},
-	}
+		input = { enabled = false },
+		picker = { enabled = true },
+		notifier = { enabled = true },
+		quickfile = { enabled = true },
+		scope = { enabled = true },
+		scroll = { enabled = true },
+		statuscolumn = { enabled = true },
+		words = { enabled = true },
+	},
+}
