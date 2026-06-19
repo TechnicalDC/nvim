@@ -459,4 +459,24 @@ return {
 		i(3, "description")
 	})),
 	-- }}}
+
+	-- INTERFACE {{{
+	s({
+		trig = "\\interface",
+		name = 'interface',
+		desc = 'define new interface',
+		snippetType = "autosnippet"
+	 }, fmt(
+		[[
+		interface {}:
+
+			{}
+
+		end interface.
+		]], {
+			i(1, "interfaceName"),
+			i(2, "/* Add logic here */")
+		}
+	)),
+	-- }}}
 }
