@@ -438,6 +438,25 @@ return {
 			end
 			return sn(nil, nodes)
 		end),
-	})
+	}),
+	-- }}}
+
+	--- BANNER {{{
+	s({
+		trig = "\\banner",
+		snippetType = "autosnippet"
+	}, fmt([[
+	/*
+	 * com.qad.{1}.{2}.IConfirmTask.cls - {3}
+	 *
+	 * Copyright 1986 QAD Inc. All rights reserved.
+	 *
+	 * $Id$ 
+    */
+	]], {
+		i(1, "appName"),
+		i(2, "moduleName"),
+		i(3, "description")
+	})),
 	-- }}}
 }

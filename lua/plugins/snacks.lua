@@ -81,6 +81,7 @@ return {
 		indent = {
 			enabled = true,
 			indent = { char = "┊" },
+			scope = { char = "┊" },
 		},
 		input = { enabled = false },
 		picker = { enabled = true },
