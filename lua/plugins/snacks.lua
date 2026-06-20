@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd('User', {
 		vim.o.laststatus = 3
 	end
 })
+
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -17,8 +18,6 @@ return {
 		{ "<leader>shi", function() require("snacks").picker.highlights() end,      desc = "Open highlights" },
 		{ "<leader>sf",  function() require("snacks").picker.files() end,   desc = "Open files" },
 		{ "<leader>sc",  function() require("snacks").picker.colorschemes() end, desc = "Change colorscheme" },
-		-- { "<leader>ft",  "<cmd>Telescope filetypes<cr>",    desc = "Change filetype" },
-		-- { "<leader>fs",  "<cmd>Telescope spell_suggest<cr>",    desc = "Change spelling" },
 		{ "<leader>sd",  function() require("snacks").picker.diagnostics() end,  desc = "Open diagnostics" },
 		{ "<leader>shl", function() require("snacks").picker.help() end,    desc = "Open help" },
 		{ "<leader>sB", function() require("snacks").picker.grep_buffers() end, desc = "Grep Open Buffers" },

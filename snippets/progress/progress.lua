@@ -67,6 +67,21 @@ local fetch = {
 }
 -- }}}
 
+local function param_docs(args)
+	local params_list = vim.split(args[1][1] or "", ",", { trimempty = true })
+print(vim.inspect(args))
+	local nodes = {}
+
+	for _, param in ipairs(params_list) do
+		param = vim.trim(param)
+
+		table.insert(nodes, t({ " * @param " .. param }))
+		table.insert(nodes, t({ "" }))
+	end
+
+	return sn(nil, nodes)
+end
+
 return {
 	-- DEFINE VARIABLE {{{
 	s({
@@ -441,7 +456,7 @@ return {
 	}),
 	-- }}}
 
-	--- BANNER {{{
+	-- BANNER {{{
 	s({
 		trig = "\\banner",
 		snippetType = "autosnippet"
@@ -479,4 +494,5 @@ return {
 		}
 	)),
 	-- }}}
+
 }

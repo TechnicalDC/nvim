@@ -73,24 +73,24 @@ autocmd("User",{
 	end
 })
 
-local open_starter_if_empty_buffer = function()
-	local buf_id = vim.api.nvim_get_current_buf()
-	local is_empty = vim.api.nvim_buf_get_name(buf_id) == "" and vim.bo[buf_id].filetype == ''
-	if not is_empty then return end
-
-	require('mini.starter').open()
-	vim.api.nvim_buf_delete(buf_id, { force = true })
-end
-
-_G.my_bufdelete = function()
-	require('mini.bufremove').delete()
-	open_starter_if_empty_buffer()
-end
-
-_G.my_bufwipeout = function()
-	require('mini.bufremove').wipeout()
-	open_starter_if_empty_buffer()
-end
-
-map("n", "<leader>bd", _G.my_bufdelete, { desc = "Delete buffer" })
-map("n", "<leader>bw", _G.my_bufwipeout, { desc = "Wipeout buffer" })
+-- local open_starter_if_empty_buffer = function()
+-- 	local buf_id = vim.api.nvim_get_current_buf()
+-- 	local is_empty = vim.api.nvim_buf_get_name(buf_id) == "" and vim.bo[buf_id].filetype == ''
+-- 	if not is_empty then return end
+--
+-- 	require('mini.starter').open()
+-- 	vim.api.nvim_buf_delete(buf_id, { force = true })
+-- end
+--
+-- _G.my_bufdelete = function()
+-- 	require('mini.bufremove').delete()
+-- 	open_starter_if_empty_buffer()
+-- end
+--
+-- _G.my_bufwipeout = function()
+-- 	require('mini.bufremove').wipeout()
+-- 	open_starter_if_empty_buffer()
+-- end
+--
+-- map("n", "<leader>bd", _G.my_bufdelete, { desc = "Delete buffer" })
+-- map("n", "<leader>bw", _G.my_bufwipeout, { desc = "Wipeout buffer" })
