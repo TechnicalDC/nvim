@@ -68,16 +68,21 @@ local fetch = {
 -- }}}
 
 local function param_docs(args)
-	local params_list = vim.split(args[1][1] or "", ",", { trimempty = true })
-print(vim.inspect(args))
+	local params_list = args[1]
 	local nodes = {}
 
 	for _, param in ipairs(params_list) do
 		param = vim.trim(param)
+		local param_name = vim.split(param, " ", { trimempty = true })
 
-		table.insert(nodes, t({ " * @param " .. param }))
-		table.insert(nodes, t({ "" }))
+		if param_name[2] ~= nil then
+			param = param_name[2]
+		end
+
+		table.insert(nodes, t({ " * @param " .. param, "" }))
 	end
+
+	table.insert(nodes, t({ " * " }))
 
 	return sn(nil, nodes)
 end
@@ -85,7 +90,7 @@ end
 return {
 	-- DEFINE VARIABLE {{{
 	s({
-		trig="\\dv",
+		trig="-dv",
 		name='define variable',
 		desc='define new variable',
 		snippetType = "autosnippet"
@@ -126,7 +131,7 @@ return {
 
 	-- DEFINE BUFFER {{{
 	s({
-		trig="\\db",
+		trig="-db",
 		name='define buffer',
 		desc='define new buffer',
 		snippetType = "autosnippet"
@@ -143,7 +148,7 @@ return {
 
 	-- DEFINE PROPERTY {{{
 	s({
-		trig="\\dp",
+		trig="-dp",
 		name='define property',
 		desc='define new property',
 		snippetType = "autosnippet"
@@ -199,7 +204,7 @@ return {
 
 	-- FIND SNIPPET {{{
 	s({
-		trig = "\\fd",
+		trig = "-fd",
 		name='find query',
 		desc='create new find query',
 		snippetType = "autosnippet"
@@ -227,7 +232,7 @@ return {
 
 	-- FOR SNIPPET {{{
 	s({
-		trig = "\\for",
+		trig = "-for",
 		name='for query',
 		desc='create new for query',
 		snippetType = "autosnippet"
@@ -248,7 +253,7 @@ return {
 
 	-- FOR WITH WHERE CONDITION SNIPPET {{{
 	s({
-		trig = "\\forw",
+		trig = "-forw",
 		name='for query',
 		desc='create new for query with condition',
 		snippetType = "autosnippet"
@@ -271,7 +276,7 @@ return {
 
 	-- METHOD {{{
 	 s({
-		trig = "\\met",
+		trig = "-met",
 		name='method',
 		desc='define new method',
 		snippetType = "autosnippet"
@@ -308,7 +313,7 @@ return {
 
 	-- CLASS {{{
 	s({
-		trig = "\\class",
+		trig = "-class",
 		name = 'class',
 		desc = 'define new class',
 		snippetType = "autosnippet"
@@ -328,7 +333,7 @@ return {
 
 	-- DO ON ERROR {{{
 	s({
-		trig = "\\doe",
+		trig = "-doe",
 		snippetType = "autosnippet"
 	}, fmt([[
 		do on error undo, throw:
@@ -353,7 +358,7 @@ return {
 
 	-- CALL METHOD WITH RETURN TYPE {{{
 	s({
-		trig = "\\mr",
+		trig = "-mr",
 		snippetType = "autosnippet",
 	}, fmt([[
 		{} = this-object:{}({}).
@@ -367,7 +372,7 @@ return {
 
 	-- CALL SERVICE METHOD WITH RETURN TYPE {{{
 	s({
-		trig = "\\sr",
+		trig = "-sr",
 		snippetType = "autosnippet",
 	}, fmt([[
 		{} = this-object:{}:{}({}).
@@ -382,7 +387,7 @@ return {
 
 	-- CALL METHOD {{{
 	s({
-		trig = "\\mn",
+		trig = "-mn",
 		snippetType = "autosnippet",
 	}, fmt([[
 		this-object:{}({}).
@@ -395,7 +400,7 @@ return {
 
 	-- CALL SERVICE METHOD {{{
 	s({
-		trig = "\\sn",
+		trig = "-sn",
 		snippetType = "autosnippet",
 	}, fmt([[
 		this-object:{}:{}({}).
@@ -409,7 +414,7 @@ return {
 
 	-- METHOD ARGUMENTS {{{
 	s({
-		trig = "\\inp(%d+)",
+		trig = "-inp(%d+)",
 		regTrig = true,
 		wordTrig = false,
 		snippetType = "autosnippet"
@@ -458,7 +463,7 @@ return {
 
 	-- BANNER {{{
 	s({
-		trig = "\\banner",
+		trig = "-banner",
 		snippetType = "autosnippet"
 	}, fmt([[
 	/*
@@ -477,7 +482,7 @@ return {
 
 	-- INTERFACE {{{
 	s({
-		trig = "\\interface",
+		trig = "-interface",
 		name = 'interface',
 		desc = 'define new interface',
 		snippetType = "autosnippet"
@@ -495,4 +500,31 @@ return {
 	)),
 	-- }}}
 
+	s({
+		trig = "-imet",
+		name='method',
+		desc='define new method',
+		snippetType = "autosnippet"
+	}, fmt(
+		[[
+		/*
+		 * {}
+		 *
+		{}
+		 * @external
+		 *
+		 * @example
+		 * {}
+		 */
+		method {} {} {} ({}).
+		]], {
+			i(1, "Description"),
+			d(2, param_docs, { 7 }),
+			i(3, "example"),
+			c(4, get_options(access_type)),
+			c(5, get_options(data_types)),
+			i(6, "methodName"),
+			i(7, "argumentList"),
+		}
+	)),
 }
