@@ -12,6 +12,9 @@ return {
 	priority = 1000,
 	lazy = false,
 	keys = {
+		{ "<leader>gg", function() require("snacks").lazygit() end, desc = "Lazygit" },
+		{ "<leader>dn", function() require("snacks").notifier.hide() end, desc = "Dismiss All Notifications" },
+		{ "<leader>sn",  function() require("snacks").notifier.show_history() end, desc = "Notification History" },
 		{ "<leader>sb",  function() require("snacks").picker.buffers() end,      desc = "Open buffers" },
 		{ "<leader>sk",  function() require("snacks").picker.keymaps() end,      desc = "Keymaps" },
 		{ "<leader>sr",  function() require("snacks").picker.recent() end,      desc = "Open recent files" },
@@ -24,6 +27,7 @@ return {
 		{ "<leader>sW", function() require("snacks").picker.grep() end, desc = "Grep" },
 		{ "<leader>sw", function() require("snacks").picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
 		{ "<leader>sm", function() require("snacks").picker.marks() end, desc = "Marks" },
+		{ "<leader>ss", function() require("snacks").picker.lsp_symbols() end, desc = "LSP Symbols" },
 		{ "gd", function() require("snacks").picker.lsp_definitions() end, desc = "Goto Definition" },
 		{ "gD", function() require("snacks").picker.lsp_declarations() end, desc = "Goto Declaration" },
 		{ "gr", function() require("snacks").picker.lsp_references() end, nowait = true, desc = "References" },
