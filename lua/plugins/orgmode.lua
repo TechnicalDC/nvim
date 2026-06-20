@@ -1,7 +1,7 @@
 return {
 	'nvim-orgmode/orgmode',
 	dependencies = {
-		"nvim-telescope/telescope.nvim",
+		-- "nvim-telescope/telescope.nvim",
 		"chipsenkbeil/org-roam.nvim",
 		"akinsho/org-bullets.nvim",
 		"danilshvalov/org-modern.nvim",

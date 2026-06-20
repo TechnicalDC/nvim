@@ -14,7 +14,7 @@ map("n", '<C-l>', "<C-w>l", { desc = "Switch to right split" })
 
 map("x",   "<leader>p",     [["_dP]],                                     { desc = "Paste Ultra Pro Max" } )
 map("v",   "<leader>d",     "\"_d",                                       { desc = "Delete ultra pro max" } )
-map({ "n", "v" },           "<leader>n",                                  ":norm ", { desc = "Run normal commands" } )
+map({ "n", "v" }, "<leader>n", ":norm ", 											  { desc = "Run normal commands" } )
 map("n",   "Y",             "y$",                                         { desc = "Copy text till end of line" } )
 map("n",   "<leader><Esc>", ":lua vim.o.hlsearch = false<CR>",            { desc = "Disable incremental search highlighting" } )
 map("n",   "<leader>rr",    [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Replace word under the cursor globally" } )

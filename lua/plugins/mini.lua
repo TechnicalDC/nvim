@@ -10,7 +10,7 @@ return {
 		-- require("dc.config.input")
 		require("dc.config.misc")
 		require("dc.config.move")
-		require("dc.config.notify")
+		-- require("dc.config.notify")
 		require("dc.config.session")
 		require("dc.config.splitjoin")
 		-- require("dc.config.starter")
