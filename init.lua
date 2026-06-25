@@ -56,7 +56,7 @@ require("lazy").setup("plugins", {
 		notify = false
 	},
 	ui = {
-		border = "rounded",
+		border = "single",
 		backdrop = 100,
 		title = " lazy ",
 		title_pos = "center"

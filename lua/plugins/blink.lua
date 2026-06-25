@@ -95,7 +95,7 @@ return {
 			enabled = true,
 			window = {
 				scrollbar = false,
-				border = "rounded",
+				border = "single",
 				winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
 			}
 		},
@@ -106,8 +106,8 @@ return {
 				show_on_x_blocked_trigger_characters = { ".", "\\" }
 			},
 			menu = {
-				border = "rounded",
-				scrollbar = true,
+				border = "single",
+				scrollbar = false,
 				winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
 				draw = {
 					padding = 1,
@@ -128,8 +128,8 @@ return {
 			documentation = {
 				auto_show = true,
 				window = {
-					scrollbar = true,
-					border = "rounded",
+					scrollbar = false,
+					border = "single",
 					winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
 					direction_priority = {
 						menu_north = { 'e', 'w', 'n', 's' },

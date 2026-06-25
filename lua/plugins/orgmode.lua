@@ -19,7 +19,7 @@ return {
 			org_agenda_start_on_weekday = 0,
 			org_todo_keywords = {'TODO(t)', 'WAITING(w)', '|', 'PROGRESS(p)', 'DONE(d)'},
 			org_agenda_use_time_grid = false,
-			win_border = "rounded",
+			win_border = "single",
 			win_split_mode = "auto",
 			org_capture_templates = {
 				t = {
@@ -79,7 +79,7 @@ return {
 								margin = { 1, 0, 1, 0 },
 								padding = { 0, 1, 0, 1 },
 								title_pos = "center",
-								border = "rounded",
+								border = "single",
 								zindex = 1000,
 							},
 							icons = {
