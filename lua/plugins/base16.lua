@@ -15,12 +15,18 @@ return {
 
 		local hl = vim.api.nvim_set_hl
 		local colors = require('base16-colorscheme').colors
+		local is_transparent = true
 
-		hl(0, "Normal",									  { bg = "none" })
-		hl(0, "NormalNC",									  { bg = "none" })
-		hl(0, "NormalFloat",								  { link = "Normal" })
+		if vim.o.winborder == "solid" then
+			hl(0, "FloatBorder", { fg   = colors.base02, bg = colors.base02 })
+		else
+			hl(0, "FloatBorder", { fg   = colors.base03, bg = "none" })
+		end
+
+		hl(0, "Normal",									  { bg = is_transparent and "none" or colors.base00 })
+		hl(0, "NormalNC",									  { link = "Normal" })
+		hl(0, "NormalFloat",								  { bg = is_transparent and "none" or colors.base02 })
 		hl(0, "SignColumn",								  { link = "Normal" })
-		hl(0, "FloatBorder",                        { fg   = colors.base03, bg   = "none"        })
 		hl(0, "FloatTitle",                         { bg = "none",          fg   = colors.base08 })
 		hl(0, "WinSeparator",                       { fg = colors.base02 })
 		hl(0, "StatusLineMode",                     { fg   = colors.base00, bg   = colors.base08, bold = true })
