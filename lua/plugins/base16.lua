@@ -29,7 +29,7 @@ return {
 		hl(0, "FloatTitle",                         { bg   = colors.base08 })
 		hl(0, "WinSeparator",                       { fg = colors.base02 })
 		hl(0, "StatusLineMode",                     { fg   = colors.base00, bg   = colors.base08, bold = true })
-		hl(0, "StatusLine",                         { fg = colors.base03 })
+		-- hl(0, "StatusLine",                         { fg = colors.base03, bg = colors.base01 })
 		hl(0, "Winbar", 									  { link = "StatusLine"})
 		hl(0, "WinbarNC", 								  { link = "StatusLine"})
 		hl(0, "TabLineFill",                        { link = "StatusLine" })
