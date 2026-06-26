@@ -93,7 +93,16 @@ return {
 		require("org-roam").setup({
 			directory = "~/orgfiles/roam",
 		})
-		require('org-bullets').setup()
+		require('org-bullets').setup({
+			symbols = {
+				headlines = { '󰲡', '󰲣', '󰲥', '󰲧', '󰲩', '󰲫' },
+				checkboxes = {
+					half = { "󰪡", "@org.checkbox.halfchecked" },
+					done = { "󰪥", "@org.keyword.done" },
+					todo = { "󰄰", "@org.keyword.todo" },
+				},
+			}
+		})
 		-- require("telescope").load_extension("orgmode")
 		-- require("telescope-orgmode").setup({
 		-- 	picker_defaults = {

@@ -24,7 +24,7 @@ local get_options = function(arg)
 end
 
 local get_virt_text = function(choices)
-	return "Choices: " .. table.concat(choices, " / ")
+	return "󰭹 choices: " .. table.concat(choices, " / ")
 end
 -- }}}
 

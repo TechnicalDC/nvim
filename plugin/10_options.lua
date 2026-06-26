@@ -19,7 +19,7 @@ set.confirm        = true
 set.splitbelow     = true       -- Horizontal splits will be below
 set.splitkeep      = 'screen'   -- Reduce scroll during window split
 set.splitright     = true       -- Vertical splits will be to the right
-set.winborder      = 'single'   -- Use border in floating windows
+-- set.winborder      = 'single'   -- Use border in floating windows
 set.wrap           = false      -- Don't visually wrap lines (toggle with \w)
 set.cursorlineopt  = 'screenline,number' -- Show cursor line per screen line
 set.showtabline    = 0
@@ -116,10 +116,11 @@ vim.filetype.add({
 })
 
 vim.diagnostic.config({
-   float = false,
-   underline = true,
-   severity_sort = true,
-   virtual_lines = { current_line = true },
+	float = false,
+	underline = true,
+	severity_sort = true,
+	virtual_text = { prefix = "󰭹" },
+	virtual_lines = { current_line = true },
    -- signs = {
    --    text = {
    --       [vim.diagnostic.severity.INFO]  = '',
