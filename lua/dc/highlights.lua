@@ -1,91 +1,59 @@
-local palette = require("mini.hues").make_palette()
 local hl = vim.api.nvim_set_hl
+local colors = require('base16-colorscheme').colors
+local M = {}
 
--- print(vim.inspect(palette))
+function M.solid()
 
-hl(0, "NormalFloat",         { fg = palette.fg,      bg = "none" })
-hl(0, "FloatBorder",         { fg = palette.bg_mid2, bg = "none" })
-hl(0, "FloatTitle",          { fg = palette.bg,   bg = palette.azure })
-hl(0, "PmenuKind",           { bg = "None" })
-hl(0, "MiniPickMatchRanges", { fg = palette.green,   bg = "None"})
+	-- Built-in
+	hl(0, "NormalFloat",                        { bg = colors.base02 })
+	hl(0, "FloatBorder",                        { fg = colors.base02, bg = colors.base02 })
+	hl(0, "SignColumn",                         { link = "Normal" })
+	hl(0, "FloatTitle",                         { fg = colors.base00, bg = colors.base08 })
+	hl(0, "WinSeparator",                       { fg = colors.base02 })
+	hl(0, "StatusLineMode",                     { fg = colors.base00, bg = colors.base08, bold = true })
+	hl(0, "Winbar",                             { link = "StatusLine"})
+	hl(0, "WinbarNC",                           { link = "StatusLine"})
+	hl(0, "TabLineFill",                        { link = "StatusLine" })
+	hl(0, "TabLineSel",                         { link = "StatusLineMode" })
+	hl(0, "LineNr",                             { fg = colors.base03 })
+	hl(0, "FoldColumn",                         { link = "LineNr" })
+	hl(0, "Folded",                             { link = "LineNr" })
+	hl(0, "CursorLineNr",                       { bg = "none", bold = true })
+	hl(0, "DiagnosticUnderlineError",           { undercurl = true })
+	hl(0, "DiagnosticUnderlineHint",            { undercurl = true })
+	hl(0, "DiagnosticUnderlineInfo",            { undercurl = true })
+	hl(0, "DiagnosticUnderlineOk",              { undercurl = true })
+	hl(0, "DiagnosticUnderlineWarn",            { undercurl = true })
+	hl(0, "ErrorMsg",                           { link = "Error" })
+	hl(0, "Comment",                            { fg = colors.base03, italic = true })
+	hl(0, "@markup.link.label.markdown_inline", { fg = colors.base0E, underline = true })
+	hl(0, "Pmenu",                              { fg = colors.base05 })
+	hl(0, "PmenuSel",                           { bg = colors.base01 })
 
-hl(0, "StatusLine",            { fg = palette.fg_mid, bg = palette.bg_edge })
-hl(0, "StatusLineNC",          { fg = palette.fg_mid, bg = palette.bg_mid })
-hl(0, "StatusLineTerm",        { fg = palette.fg_mid, bg = "None" })
-hl(0, "StatusLineTermNC",      { fg = palette.fg_mid, bg = "None" })
-hl(0, "WinBar",                { fg = palette.fg_mid, bg = "None" })
-hl(0, "WinBarNC",              { fg = palette.fg_mid, bg = "None" })
-hl(0, "@org.keyword.todo",          { fg = palette.red , bold = true })
-hl(0, "@org.keyword.done",          { fg = palette.green, bold = true })
+	-- Org-mode
+	hl(0, "@org.keyword.todo",     { fg   = colors.base08, bold = true })
+	hl(0, "@org.keyword.done",     { fg   = colors.base0B, bold = true })
+	hl(0, "@org.headline.level1",  { fg   = colors.base08, bold = true })
+	hl(0, "@org.headline.level2",  { fg   = colors.base09, bold = true })
+	hl(0, "@org.headline.level3",  { fg   = colors.base0A, bold = true })
+	hl(0, "@org.headline.level4",  { fg   = colors.base0B, bold = true })
+	hl(0, "@org.headline.level5",  { fg   = colors.base0C, bold = true })
+	hl(0, "@org.headline.level6",  { fg   = colors.base0D, bold = true })
+	hl(0, "@org.headline.level7",  { fg   = colors.base0E, bold = true })
+	hl(0, "@org.headline.level8",  { fg   = colors.base0F, bold = true })
+	hl(0, "@org.agenda.deadline",  { link = "ErrorMsg" })
+	hl(0, "@org.agenda.scheduled", { link = "Normal" })
+	hl(0, "@org.strikethrough",    { strikethrough = true })
 
--- BUILT-IN
-hl(0, "Msg", { link = "StatusLine" })
-hl(0, "Pmenu", { bg = palette.bg_edge })
-hl(0, "WinSeparator",             { fg = palette.bg_mid })
-hl(0, "PmenuSel",                 { fg = palette.fg, bg = palette.bg_mid2 })
-hl(0, "DiagnosticUnderlineError", { undercurl = true })
-hl(0, "DiagnosticUnderlineHint",  { undercurl = true })
-hl(0, "DiagnosticUnderlineInfo",  { undercurl = true })
-hl(0, "DiagnosticUnderlineOk",    { undercurl = true })
-hl(0, "DiagnosticUnderlineWarn",  { undercurl = true })
-hl(0, "@markup.link.label.markdown_inline", { fg = palette.cyan, underline = true })
+	-- Snacks
+	hl(0, "SnacksPickerPreview", {  bg = colors.base01 })
+	hl(0, "SnacksPickerBorder", { fg = colors.base03, bg =  colors.base02 })
+	hl(0, "SnacksPickerBoxBorder", { link = "FloatBorder"})
+	hl(0, "SnacksPickerListCursorline", { link = "PmenuSel"})
+	hl(0, "SnacksPickerPreviewBorder", {  fg = colors.base01, bg = colors.base01 })
 
--- BLINK-CMP
-hl(0, "BlinkCmpSource", { fg = palette.fg_mid2 })
+	-- Minifiles
+	hl(0, "MiniFilesBorderModified", {  fg = colors.base08, bg = colors.base02 })
+end
 
--- MINI-STARTER
-hl(0, "MiniStarterHeader", { fg = palette.fg_edge})
-hl(0, "MiniStarterItem", { fg = palette.fg_mid2})
-hl(0, "MiniStarterSection", { fg = palette.fg_edge})
-hl(0, "MiniStarterItemPrefix", { fg = palette.fg_mid})
-
--- MINI-FILES
-hl(0, "MiniFilesTitle", { link = "FloatTitle" })
-hl(0, "MiniFilesTitleFocused", { fg = palette.bg,   bg = palette.azure })
-hl(0, "MiniFilesBorderModified", { link = "FloatBorder" })
-
--- MINI-PICK
-hl(0, "MiniPickPrompt",       { link = "FloatTitle" })
-hl(0, "MiniPickPromptPrefix", { link = "FloatTitle" })
-hl(0, "MiniPickPromptCaret",  { link = "FloatTitle" })
-hl(0, "MiniPickMatchCurrent", { link = "PmenuSel" })
-
-hl(0, "MiniNotifyBorder", { link = "FloatBorder" })
-
--- MINI-CLUE
-hl(0, "MiniClueDescGroup", { fg = palette.yellow })
-hl(0, "MiniClueSeparator", { fg = palette.blue })
-hl(0, "MiniClueNextKey", { fg = palette.cyan })
-
--- RENDER-MARKDOWN
-hl(0, "RenderMarkdownUnchecked", { fg = palette.red })
-hl(0, "RenderMarkdownH1Bg", { fg = palette.orange })
-hl(0, "RenderMarkdownH2Bg", { fg = palette.yellow })
-hl(0, "RenderMarkdownH3Bg", { fg = palette.green  })
-hl(0, "RenderMarkdownH4Bg", { fg = palette.cyan   })
-hl(0, "RenderMarkdownH5Bg", { fg = palette.azure  })
-hl(0, "RenderMarkdownH6Bg", { fg = palette.blue   })
-
--- MINI-HIPATTERN
-hl(0, "MiniHipatternsDone"     , { fg = palette.green })
-hl(0, "MiniHipatternsPending"  , { fg = palette.red })
-hl(0, "MiniHipatternsProgress" , { fg = palette.blue })
-hl(0, "MiniHipatternsFixme"    , { fg = palette.red })
-hl(0, "MiniHipatternsTodo"     , { fg = palette.yellow })
-hl(0, "MiniHipatternsNote"     , { fg = palette.blue })
-hl(0, "MiniHipatternsDebug"    , { fg = palette.orange })
-
-hl(0,"MiniPickHeader", { link = "FloatTitle" })
-hl(0,"MiniPickBorderText", { link = "FloatTitle" })
-hl(0,"MiniPickPromptPrefix", { link = "FloatTitle" })
-hl(0,"MiniStarterHeader", { fg = palette.purple })
--- MiniTablineModifiedCurrent = { bg = "love" },
--- MiniTablineModifiedVisible = { fg = "love", bg = "love", blend = 30 },
--- MiniTablineModifiedHidden  = { fg = "love", bg = "love", blend = 20 },
-
--- TELESCOPE
-hl(0, "TelescopeNormal", { bg = palette.bg_edge })
-hl(0, "TelescopeSelection", { fg = palette.azure, bg = "none", bold = true })
-hl(0, "TelescopeMultiSelection", { bg = "none", bold = true })
-hl(0, "TelescopeSelectionCaret", { fg = palette.azure, bg = "none", bold = true })
-hl(0, "TelescopePromptPrefix" , { fg = palette.red })
+return M

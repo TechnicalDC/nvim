@@ -87,7 +87,17 @@ return {
 			scope = { char = "┊" },
 		},
 		input = { enabled = false },
-		picker = { enabled = true },
+		picker = {
+			enabled = true,
+			prompt = " > ",
+			layout = {
+				cycle = true,
+				--- Use the default layout or vertical if the window is too narrow
+				preset = function()
+					return vim.o.columns >= 120 and "default" or "dropdown"
+				end,
+			},
+		},
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
