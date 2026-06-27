@@ -44,7 +44,7 @@ local get_current_mode = function()
 end
 
 local get_pwd = function ()
-	return "  " .. vim.fn.getcwd() .. " "
+	return " %#Directory#%#StatusLine# " .. vim.fn.getcwd() .. " "
 end
 
 local get_filename = function ()

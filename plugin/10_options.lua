@@ -35,6 +35,7 @@ set.foldmarker     = "{{{,}}}"
 set.foldexpr       = "v:lua.vim.treesitter.foldexpr()"
 set.foldtext       = "v:lua.custom_fold_text()"
 set.helpheight   = 15
+set.showbreak    = "󱞩 "
 -- set.statuscolumn = "%s%=%{v:virtnum == 0 ? (v:relnum ? v:relnum : v:lnum) : ''} "
 -- set.statuscolumn = " %s%=%l%#LineNr#▕ "
 
@@ -56,7 +57,7 @@ set.fillchars:append({
 	-- verthoriz = '╬',
 })
 
-set.listchars = "eol:󰌑"
+set.listchars = "eol:󱞥"
 				 .. ",tab:  "
 				 .. ",leadtab:┊ "
 				 .. ",nbsp:␣"
@@ -65,7 +66,6 @@ set.listchars = "eol:󰌑"
 				 .. ",trail: "
 				 .. ",extends:>"
 				 .. ",precedes:<"
-
 
 -- Editing ====================================================================
 set.clipboard      = "unnamedplus"

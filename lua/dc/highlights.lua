@@ -54,6 +54,9 @@ function M.solid()
 
 	-- Minifiles
 	hl(0, "MiniFilesBorderModified", {  fg = colors.base08, bg = colors.base02 })
+
+	-- MiniJump2d
+	hl(0, 'MiniJump2dSpot', { fg = colors.base00, bg = colors.base08, bold = true })
 end
 
 return M
