@@ -97,7 +97,6 @@ end
 function _G.setup_statusline()
 	return table.concat {
 		get_current_mode(),
-		get_pwd(),
 		get_filename(),
 		" %<",
 		"%=",
