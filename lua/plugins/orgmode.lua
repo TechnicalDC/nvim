@@ -20,7 +20,7 @@ return {
 			org_todo_keywords = {'TODO(t)', 'WAITING(w)', '|', 'PROGRESS(p)', 'DONE(d)'},
 			org_agenda_use_time_grid = false,
 			win_border = "single",
-			win_split_mode = "float",
+			win_split_mode = "horizontal",
 			org_capture_templates = {
 				t = {
 					description = 'Todo',

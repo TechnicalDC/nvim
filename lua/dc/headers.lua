@@ -21,7 +21,7 @@ headers.mini = [[
 ]]
 
 headers.mini_footer = [[
-Copyright   2025 - TheTechnicalDC
+Copyright   2026 - TheTechnicalDC
 ]]
 
 headers.eldritch_logo = [[
