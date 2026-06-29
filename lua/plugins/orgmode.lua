@@ -1,15 +1,11 @@
 return {
 	'nvim-orgmode/orgmode',
 	dependencies = {
-		-- "nvim-telescope/telescope.nvim",
 		"chipsenkbeil/org-roam.nvim",
 		"akinsho/org-bullets.nvim",
-		"danilshvalov/org-modern.nvim",
-		-- "nvim-orgmode/telescope-orgmode.nvim",
 	},
 	config = function()
 		local org = require('orgmode')
-		local Menu = require("org-modern.menu")
 
 		org.setup({
 			org_ellipsis = " [...]",
@@ -68,26 +64,7 @@ return {
 			org_default_notes_file = '~/orgfiles/notes.org',
 			calendar_week_start_day = 0,
 			ui = {
-				input = {
-					use_vim_ui = true
-				},
-				menu = {
-					handler = function(data)
-						data.title = " " .. data.title .. " "
-						Menu:new({
-							window = {
-								margin = { 1, 0, 1, 0 },
-								padding = { 0, 1, 0, 1 },
-								title_pos = "center",
-								border = "single",
-								zindex = 1000,
-							},
-							icons = {
-								separator = "│",
-							},
-						}):open(data)
-					end,
-				},
+				input = { use_vim_ui = true },
 			}
 		})
 		require("org-roam").setup({
