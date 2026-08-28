@@ -3,24 +3,24 @@ local M = {}
 function M.setup()
 	require('base16-colorscheme').setup {
 		-- Background tones
-		base00 = '#161616', -- Default Background
-		base01 = '#262626', -- Lighter Background (status bars)
-		base02 = '#303030', -- Selection Background
-		base03 = '#636363', -- Comments, Invisibles
+		base00 = '#2e3440', -- Default Background
+		base01 = '#3b4252', -- Lighter Background (status bars)
+		base02 = '#444c5e', -- Selection Background
+		base03 = '#707d99', -- Comments, Invisibles
 		-- Foreground tones
-		base04 = '#dde1e6', -- Dark Foreground (status bars)
-		base05 = '#f2f4f8', -- Default Foreground
-		base06 = '#f2f4f8', -- Light Foreground
-		base07 = '#f2f4f8', -- Lightest Foreground
+		base04 = '#d8dee9', -- Dark Foreground (status bars)
+		base05 = '#eceff4', -- Default Foreground
+		base06 = '#eceff4', -- Light Foreground
+		base07 = '#eceff4', -- Lightest Foreground
 		-- Accent colors
-		base08 = '#ee5396', -- Variables, XML Tags, Errors
-		base09 = '#be95ff', -- Integers, Constants
-		base0A = '#42be65', -- Classes, Search Background
-		base0B = '#33b1ff', -- Strings, Diff Inserted
-		base0C = '#b180ff', -- Regex, Escape Chars
-		base0D = '#80ceff', -- Functions, Methods
-		base0E = '#96e9ad', -- Keywords, Storage
-		base0F = '#ee5396', -- Deprecated, Embedded Tags
+		base08 = '#bf616a', -- Variables, XML Tags, Errors
+		base09 = '#5e81ac', -- Integers, Constants
+		base0A = '#88c0d0', -- Classes, Search Background
+		base0B = '#8fbcbb', -- Strings, Diff Inserted
+		base0C = '#96bbe9', -- Regex, Escape Chars
+		base0D = '#96e9e7', -- Functions, Methods
+		base0E = '#96d6e9', -- Keywords, Storage
+		base0F = '#bf616a', -- Deprecated, Embedded Tags
 	}
 end
 
