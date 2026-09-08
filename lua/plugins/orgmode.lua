@@ -14,7 +14,7 @@ return {
 			org_agenda_files = '~/orgfiles/**/*',
 			-- org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
-			org_todo_keywords = {'TODO(t)', 'WAITING(w)', '|', 'PROGRESS(p)', 'DONE(d)'},
+			org_todo_keywords = {'TODO(t)', 'WAITING(w)', 'PROGRESS(p)', '|', 'CANCELLED(c)', 'DONE(d)'},
 			org_agenda_use_time_grid = false,
 			win_border = "single",
 			win_split_mode = "horizontal",

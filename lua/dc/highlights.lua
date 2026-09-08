@@ -5,8 +5,8 @@ local M = {}
 function M.solid()
 
 	-- Built-in
-	hl(0, "NormalFloat",                        { bg = colors.base02 })
-	hl(0, "FloatBorder",                        { fg = colors.base02, bg = colors.base02 })
+	hl(0, "NormalFloat",                        { bg = "none" })
+	hl(0, "FloatBorder",                        { fg = colors.base07, bg = "none" })
 	hl(0, "SignColumn",                         { link = "Normal" })
 	hl(0, "FloatTitle",                         { fg = colors.base00, bg = colors.base08 })
 	hl(0, "WinSeparator",                       { fg = colors.base02 })
@@ -46,14 +46,14 @@ function M.solid()
 	hl(0, "@org.strikethrough",    { strikethrough = true })
 
 	-- Snacks
-	hl(0, "SnacksPickerPreview", {  bg = colors.base01 })
-	hl(0, "SnacksPickerBorder", { fg = colors.base03, bg =  colors.base02 })
+	hl(0, "SnacksPickerPreview", {  bg = "none" })
+	hl(0, "SnacksPickerBorder", { fg = colors.base07, bg = "none" })
 	hl(0, "SnacksPickerBoxBorder", { link = "FloatBorder"})
 	hl(0, "SnacksPickerListCursorline", { link = "PmenuSel"})
-	hl(0, "SnacksPickerPreviewBorder", {  fg = colors.base01, bg = colors.base01 })
+	hl(0, "SnacksPickerPreviewBorder", { link = "FloatBorder"})
 
 	-- Minifiles
-	hl(0, "MiniFilesBorderModified", {  fg = colors.base08, bg = colors.base02 })
+	hl(0, "MiniFilesBorderModified", {  fg = colors.base08 })
 
 	-- MiniJump2d
 	hl(0, 'MiniJump2dSpot', { fg = colors.base00, bg = colors.base08, bold = true })

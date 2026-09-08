@@ -18,7 +18,7 @@
 
 ** Installation
 
-   #+begin_src bash
+   #+begin_src shell
    # Linux
    git clone https://github.com/TechnicalDC/NvConf ~/.config/nvim
 

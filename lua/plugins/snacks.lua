@@ -94,9 +94,30 @@ return {
 				cycle = true,
 				--- Use the default layout or vertical if the window is too narrow
 				preset = function()
-					return vim.o.columns >= 120 and "default" or "dropdown"
+					return vim.o.columns >= 120 and "ivy_split" or "dropdown"
 				end,
 			},
+			layouts = {
+				ivy_split = {
+					-- preview = "main",
+					layout = {
+						box = "vertical",
+						backdrop = false,
+						width = 0,
+						height = 0.4,
+						position = "bottom",
+						border = "top",
+						title = " {title} {live} {flags}",
+						title_pos = "left",
+						{ win = "input", height = 1, border = "none" },
+						{
+							box = "horizontal",
+							{ win = "list", border = "none" },
+							{ win = "preview", title = "{preview}", width = 0.6, border = "left" },
+						},
+					},
+				}
+			}
 		},
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
