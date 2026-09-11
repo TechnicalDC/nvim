@@ -5,6 +5,7 @@ local M = {}
 function M.solid()
 
 	-- Built-in
+	hl(0, "Normal",                        { bg = "none" })
 	hl(0, "NormalFloat",                        { bg = "none" })
 	hl(0, "FloatBorder",                        { fg = colors.base07, bg = "none" })
 	hl(0, "SignColumn",                         { link = "Normal" })
