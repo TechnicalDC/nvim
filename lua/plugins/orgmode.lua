@@ -10,13 +10,14 @@ return {
 		org.setup({
 			org_ellipsis = " [...]",
 			org_hide_emphasis_markers = true,
+			org_hide_leading_stars = true,
 			org_agenda_files = '~/orgfiles/**/*',
 			-- org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
-			org_todo_keywords = {'TODO(t)', 'WAITING(w)', '|', 'PROGRESS(p)', 'DONE(d)'},
+			org_todo_keywords = {'TODO(t)', 'WAITING(w)', 'PROGRESS(p)', '|', 'CANCELLED(c)', 'DONE(d)'},
 			org_agenda_use_time_grid = false,
 			win_border = "single",
-			win_split_mode = "horizontal",
+			win_split_mode = "edit",
 			org_capture_templates = {
 				t = {
 					description = 'Todo',
@@ -70,6 +71,7 @@ return {
 		require("org-roam").setup({
 			directory = "~/orgfiles/roam",
 		})
+
 		require('org-bullets').setup({
 			symbols = {
 				headlines = { '󰲡', '󰲣', '󰲥', '󰲧', '󰲩', '󰲫' },
@@ -80,20 +82,6 @@ return {
 				},
 			}
 		})
-		-- require("telescope").load_extension("orgmode")
-		-- require("telescope-orgmode").setup({
-		-- 	picker_defaults = {
-		-- 		search_headings = { preview = false },
-		-- 		search_tags = { preview = false },
-		-- 		insert_link = { preview = false },
-		-- 	},
-		-- })
-
-		-- local ext = require("telescope").extensions.orgmode
-		-- vim.keymap.set("n", "<leader>fH", ext.search_headings, { desc = "Org headlines" })
-		-- vim.keymap.set("n", "<leader>fT", ext.search_tags, { desc = "Org tags" })
-		-- vim.keymap.set("n", "<leader>rh", ext.refile_heading, { desc = "Org refile" })
-		-- vim.keymap.set("n", "<leader>li", ext.insert_link, { desc = "Org insert link" })
 
 		-- Experimental LSP support
 		vim.lsp.enable('org')
