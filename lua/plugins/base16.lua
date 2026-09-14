@@ -1,9 +1,17 @@
 return {
-	"AvengeMedia/base46",
-	lazy = true,
-	opts = {},
+	'RRethy/base16-nvim',
 	config = function()
-		vim.cmd.colorscheme("dank-neovim")
+		require('base16-colorscheme').with_config({
+			telescope = true,
+			telescope_borders = true,
+			indentblankline = true,
+			notify = true,
+			ts_rainbow = true,
+			cmp = true,
+			illuminate = true,
+			dapui = true,
+		})
+		require('matugen').setup()
 		require("dc.highlights").solid()
-	end
+	end,
 }
