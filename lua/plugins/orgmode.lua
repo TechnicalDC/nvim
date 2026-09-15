@@ -14,26 +14,22 @@ return {
 			org_agenda_files = '~/orgfiles/**/*',
 			-- org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
-			org_todo_keywords = {'TODO(t)', 'WAITING(w)', 'PROGRESS(p)', '|', 'CANCELLED(c)', 'DONE(d)'},
+			org_todo_keywords = {"TODO(t)", "PROJ(P)", "PROGRESS(p)", "WAIT(w)", "HOLD(h)", "TEST(T)", "|", "CANCELLED(c)", "DONE(d)"},
 			org_agenda_use_time_grid = false,
 			win_border = "single",
-			win_split_mode = "edit",
+			win_split_mode = "auto",
 			org_capture_templates = {
 				t = {
 					description = 'Todo',
 					template = '* TODO %?',
-					headling = "TEST",
+					headling = "Todos",
 					target = "~/orgfiles/todo.org"
 				},
 				T = {
-					description = 'Task',
-					template = '* TODO %?\n  SCHEDULED: %^t\n  [[%F]]\n',
-					target = "~/orgfiles/tasks.org"
-				},
-				m = {
-					description = 'Meeting',
-					template = '* TODO %?\n  SCHEDULED: %^t',
-					target = "~/orgfiles/meetings.org"
+					description = 'Development Task',
+					template = '* TODO %?\n%i\n%a',
+					headling = "Tasks",
+					target = "~/orgfiles/todo.org"
 				},
 				j = {
 					description = 'Journal',
@@ -44,19 +40,19 @@ return {
 						time_prompt = true
 					},
 				},
-				e = {
-					description = 'Event',
+				m = {
+					description = 'Meeting',
 					subtemplates = {
 						r = {
-							description = 'recurring',
-							template = '** %?\n %T',
-							target = '~/orgfiles/calendar.org',
+							description = 'Recurring Meeting',
+							template = '* TODO %?\nSCHEDULED:%^t',
+							target = "~/orgfiles/meetings.org",
 							headline = 'recurring'
 						},
 						o = {
-							description = 'one-time',
-							template = '** %?\n %T',
-							target = '~/orgfiles/calendar.org',
+							description = 'One-time Meeting',
+							template = '* TODO %?\nSCHEDULED:%^t',
+							target = "~/orgfiles/meetings.org",
 							headline = 'one-time'
 						},
 					},
@@ -70,6 +66,24 @@ return {
 		})
 		require("org-roam").setup({
 			directory = "~/orgfiles/roam",
+			templates = {
+				d = {
+					description = "default",
+					template = "%?",
+					target = "${slug}.org",
+				},
+			},
+			extensions = {
+				dailies = {
+					templates = {
+						d = {
+							description = "default",
+							template = "* %?",
+							target = "%<%Y-%m-%d>.org",
+						},
+					},
+				},
+			},
 		})
 
 		require('org-bullets').setup({

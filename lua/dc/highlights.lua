@@ -7,7 +7,7 @@ function M.solid()
 	-- Built-in
 	hl(0, "Normal",                        { bg = "none" })
 	hl(0, "NormalFloat",                        { bg = "none" })
-	hl(0, "FloatBorder",                        { fg = colors.base07, bg = "none" })
+	hl(0, "FloatBorder",                        { fg = colors.base03, bg = "none" })
 	hl(0, "SignColumn",                         { link = "Normal" })
 	hl(0, "FloatTitle",                         { fg = colors.base00, bg = colors.base08 })
 	hl(0, "WinSeparator",                       { fg = colors.base02 })
@@ -48,8 +48,9 @@ function M.solid()
 
 	-- Snacks
 	hl(0, "SnacksPickerPreview", {  bg = "none" })
-	hl(0, "SnacksPickerBorder", { fg = colors.base07, bg = "none" })
-	hl(0, "SnacksPickerBoxBorder", { link = "FloatBorder"})
+	hl(0, "SnacksPickerBorder", { fg = colors.base00, bg = "none" })
+	hl(0, "SnacksPickerBoxBorder", { fg = "none", bg =  "none" })
+	-- hl(0, "SnacksPickerBoxBorder", { link = "FloatBorder"})
 	hl(0, "SnacksPickerListCursorline", { link = "PmenuSel"})
 	hl(0, "SnacksPickerPreviewBorder", { link = "FloatBorder"})
 
