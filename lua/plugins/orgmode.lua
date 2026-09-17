@@ -78,12 +78,12 @@ return {
 							org_agenda_overriding_header = 'My daily agenda',
 							org_agenda_span = 'day' -- can be any value as org_agenda_span
 						},
-						{
-							type = 'tags',
-							match = 'WORK', --Same as providing a "Match:" for tags view <leader>oa + m, See: https://orgmode.org/manual/Matching-tags-and-properties.html
-							org_agenda_overriding_header = 'My work todos',
-							org_agenda_todo_ignore_scheduled = 'all', -- Ignore all headlines that are scheduled. Possible values: past | future | all
-						},
+						-- {
+						-- 	type = 'tags',
+						-- 	match = 'WORK', --Same as providing a "Match:" for tags view <leader>oa + m, See: https://orgmode.org/manual/Matching-tags-and-properties.html
+						-- 	org_agenda_overriding_header = 'My work todos',
+						-- 	org_agenda_todo_ignore_scheduled = 'all', -- Ignore all headlines that are scheduled. Possible values: past | future | all
+						-- },
 						{
 							type = 'agenda',
 							org_agenda_overriding_header = 'Whole week overview',
@@ -93,6 +93,10 @@ return {
 						},
 					}
 				},
+				n = {
+					description = "Today's Agenda & All todos",
+					types = {}
+				}
 				-- p = {
 				-- 	description = 'Personal agenda',
 				-- 	types = {
