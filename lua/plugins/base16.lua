@@ -13,6 +13,5 @@ return {
 		})
 		require('matugen').setup()
 		require("dc.highlights").solid()
-		vim.cmd.colorscheme("base16-catppuccin-mocha")
 	end,
 }
