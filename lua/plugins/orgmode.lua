@@ -47,13 +47,13 @@ return {
 					subtemplates = {
 						r = {
 							description = 'Recurring Meeting',
-							template = '* TODO %?\nSCHEDULED:%^t',
+							template = '* TODO %?\nSCHEDULED: %^t',
 							target = "~/orgfiles/meetings.org",
 							headline = 'Recurring Meetings'
 						},
 						o = {
 							description = 'One-time Meeting',
-							template = '* TODO %?\nSCHEDULED:%^t',
+							template = '* TODO %?\nSCHEDULED: %^t',
 							target = "~/orgfiles/meetings.org",
 							headline = 'One-time Meetings'
 						},
