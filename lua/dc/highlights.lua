@@ -48,6 +48,8 @@ function M.solid()
 
 	-- Snacks
 	hl(0, "SnacksPickerPreview", {  bg = "none" })
+	hl(0, "SnacksBackdrop", {  bg = "none" })
+	hl(0, "SnacksBackdrop_000000", {  bg = "none" })
 	hl(0, "SnacksPickerBorder", { fg = colors.base00, bg = "none" })
 	hl(0, "SnacksPickerBoxBorder", { fg = "none", bg =  "none" })
 	-- hl(0, "SnacksPickerBoxBorder", { link = "FloatBorder"})
