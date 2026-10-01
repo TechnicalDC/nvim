@@ -12,12 +12,12 @@ return {
 			org_hide_emphasis_markers = true,
 			org_hide_leading_stars = true,
 			org_agenda_files = '~/orgfiles/**/*',
-			-- org_agenda_span = "day",
 			org_agenda_start_on_weekday = 0,
 			org_todo_keywords = {"TODO(t)", "PROJ(P)", "PROGRESS(p)", "WAIT(w)", "HOLD(h)", "TEST(T)", "|", "CANCELLED(c)", "DONE(d)"},
 			org_agenda_use_time_grid = false,
 			org_agenda_skip_scheduled_if_done = true,
 			org_agenda_skip_deadline_if_done = true,
+			org_agenda_block_separator = " ",
 			win_border = "single",
 			win_split_mode = "auto",
 			org_capture_templates = {
@@ -89,13 +89,25 @@ return {
 							org_agenda_overriding_header = 'Whole week overview',
 							org_agenda_span = 'week', -- 'week' is default, so it's not necessary here, just an example
 							org_agenda_start_on_weekday = 1, -- Start on Monday
-							org_agenda_remove_tags = true -- Do not show tags only for this view
+							org_agenda_remove_tags = true, -- Do not show tags only for this view
+							org_agenda_skip_scheduled_if_done = true
 						},
 					}
 				},
 				n = {
 					description = "Today's Agenda & All todos",
-					types = {}
+					types = {
+						{
+							type = 'agenda',
+							org_agenda_overriding_header = 'My daily agenda',
+							org_agenda_span = 'day' -- can be any value as org_agenda_span
+						},
+						{
+							type = 'tags_todo', -- Type can be agenda | tags | tags_todo
+							org_agenda_overriding_header = 'All Todos',
+							org_agenda_todo_ignore_deadlines = 'far', -- Ignore all deadlines that are too far in future (over org_deadline_warning_days). Possible values: all | near | far | past | future
+						},
+					}
 				}
 				-- p = {
 				-- 	description = 'Personal agenda',

@@ -2,7 +2,7 @@
 
 function M.setup()
   require('base16-colorscheme').setup({
-    base00 = '#1f2335',
+    base00 = '#000000',
     base01 = '#2c314a',
     base02 = '#343957',
     base03 = '#646b95',
