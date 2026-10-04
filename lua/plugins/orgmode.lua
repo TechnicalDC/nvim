@@ -1,5 +1,6 @@
 return {
 	'nvim-orgmode/orgmode',
+	enabled = false,
 	dependencies = {
 		"chipsenkbeil/org-roam.nvim",
 		"akinsho/org-bullets.nvim",
