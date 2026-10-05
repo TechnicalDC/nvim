@@ -125,6 +125,14 @@ return {
 				},
 				u = { description = "Urgent", type = "tags", match = 'PRIORITY="A"|+urgent' },
 			},
+		},
+		extensions = {
+			roam = { directory = "~/orgfiles/roam/" },
+			pomodoro = true,
+			code = true,
+			kanban = true,
+			timeline = true,
+			sidebar = true,
 		}
 	},
 }
