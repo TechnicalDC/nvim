@@ -79,16 +79,15 @@ return {
 					name = 'Mkdnflow',
 					module = 'mkdnflow.completion.blink',
 				},
-				orgmode = {
-					name = 'Orgmode',
-					module = 'orgmode.org.autocompletion.blink',
-					fallbacks = { 'buffer' },
-				},
+				org = {
+					name = "Org",
+					module = "org.completion.blink"
+				}
 			},
 			default = { 'lsp', 'path', 'snippets', 'buffer' },
 			per_filetype = {
 				markdown = { 'lsp', 'snippets', 'buffer', 'path', 'mkdnflow' },
-				org = {'orgmode', 'buffer', 'snippets'}
+				org = { inherit_defaults = true, "org" }
 			},
 		},
 		signature = {

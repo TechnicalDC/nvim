@@ -3,6 +3,10 @@ return {
 	"xheisenbugx/org.nvim",
 	main = "org",
 	lazy = false, -- startup cost is tiny: only :Org and a few global keymaps
+	keys = {
+		{ "<leader>oc", "<cmd>Org capture<cr>", desc = "Org: capture" },
+		{ "<leader>oa", "<cmd>Org agenda<cr>", desc = "Org: agenda" },
+	},
 	opts = {
 		org_directory = "~/orgfiles/",
 		agenda_files = { "~/orgfiles/**/*.org" },
@@ -15,6 +19,15 @@ return {
 		skip_scheduled_if_done = true,
 		skip_deadline_if_done = true,
 		todo_keywords = {"TODO(t)", "PROJ(P)", "PROGRESS(p)", "WAIT(w)", "HOLD(h)", "TEST(T)", "|", "CANCELLED(c)", "DONE(d)"},
+		ui = {
+			--- Hide *, /, _, =, ~, + around emphasized text (org-hide-emphasis-markers).
+			hide_emphasis_markers = true,
+			--- Show only the last star of each headline (org-hide-leading-stars;
+			--- #+STARTUP: hidestars / showstars).
+			hide_leading_stars = true,
+			--- Replace headline stars with symbols. false or list per level.
+			bullets = true, -- e.g. { "◉", "○", "✸", "✿" }
+		},
 		capture = {
 			templates = {
 				t = {
@@ -59,6 +72,16 @@ return {
 			window = "split",
 		},
 		agenda = {
+			save_after_edit = true,
+			holidays = {
+				general = {
+					{"holiday-fixed", 1, 26, "Republic Day"},
+					{"holiday-fixed", 8, 15, "Independence Day"},
+				},
+				islamic = {},
+				christian = {},
+				hebrew = {}
+			},
 			custom_commands = {
 				-- a block agenda: three views in one buffer
 				c = {
@@ -75,12 +98,6 @@ return {
 							org_agenda_overriding_header = 'My daily agenda',
 							org_agenda_span = 'day' -- can be any value as org_agenda_span
 						},
-						-- {
-						-- 	type = 'tags',
-						-- 	match = 'WORK', --Same as providing a "Match:" for tags view <leader>oa + m, See: https://orgmode.org/manual/Matching-tags-and-properties.html
-						-- 	org_agenda_overriding_header = 'My work todos',
-						-- 	org_agenda_todo_ignore_scheduled = 'all', -- Ignore all headlines that are scheduled. Possible values: past | future | all
-						-- },
 						{
 							type = 'agenda',
 							org_agenda_overriding_header = 'Whole week overview',
@@ -91,6 +108,21 @@ return {
 					}
 				},
 				-- a single tags view
+				n = {
+					description = "Today's Agenda & All todos",
+					types = {
+						{
+							type = 'agenda',
+							org_agenda_overriding_header = 'My daily agenda',
+							org_agenda_span = 'day' -- can be any value as org_agenda_span
+						},
+						{
+							type = 'tags_todo', -- Type can be agenda | tags | tags_todo
+							org_agenda_overriding_header = 'All Todos',
+							org_agenda_todo_ignore_deadlines = 'far', -- Ignore all deadlines that are too far in future (over org_deadline_warning_days). Possible values: all | near | far | past | future
+						},
+					}
+				},
 				u = { description = "Urgent", type = "tags", match = 'PRIORITY="A"|+urgent' },
 			},
 		}
