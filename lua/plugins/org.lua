@@ -13,10 +13,10 @@ return {
 		default_notes_file = "~/orgfiles/notes.org",
 		win_split_mode = "auto",
 		win_border = "single",
-		ellipsis = " [...]",
+		ellipsis = " ...",
 		span = "week",
 		start_on_weekday = 0,
-		todo_keywords = {"TODO(t)", "PROJ(P)", "PROGRESS(p)", "WAIT(w)", "HOLD(h)", "TEST(T)", "|", "CANCELLED(c)", "DONE(d)"},
+		todo_keywords = {"TODO(t)", "PROGRESS(p)", "WAIT(w)", "HOLD(h)", "TEST(T)", "|", "CANCELLED(c)", "DONE(d)"},
 		ui = {
 			--- Hide *, /, _, =, ~, + around emphasized text (org-hide-emphasis-markers).
 			hide_emphasis_markers = true,
@@ -25,6 +25,7 @@ return {
 			hide_leading_stars = true,
 			--- Replace headline stars with symbols. false or list per level.
 			bullets = true, -- e.g. { "◉", "○", "✸", "✿" }
+			indent_mode = true,
 		},
 		capture = {
 			templates = {
@@ -54,28 +55,26 @@ return {
 						time_prompt = true
 					},
 				},
-				m = {
-					description = 'Meeting',
-					subtemplates = {
-						r = {
-							description = 'Recurring Meeting',
-							template = '* TODO %?\nSCHEDULED: %^t',
-							target = "~/orgfiles/meetings.org",
-							headline = 'Recurring Meetings'
-						},
-						o = {
-							description = 'One-time Meeting',
-							template = '* TODO %?\nSCHEDULED: %^t',
-							target = "~/orgfiles/meetings.org",
-							headline = 'One-time Meetings'
-						},
-					},
+				m = "Meeting",
+				mr = {
+					description = 'Recurring Meeting',
+					template = '* TODO %?\nSCHEDULED: %^t',
+					target = "~/orgfiles/meetings.org",
+					headline = 'Recurring Meetings'
 				},
+				mo = {
+					description = 'One-time Meeting',
+					template = '* TODO %?\nSCHEDULED: %^t',
+					target = "~/orgfiles/meetings.org",
+					headline = 'One-time Meetings'
+				}
 			},
 			window = "split",
 		},
 		agenda = {
 			save_after_edit = true,
+			window = "current",
+			block_separator = " ",
 			skip_scheduled_if_done = true,
 			skip_deadline_if_done = true,
 			skip_timestamp_if_done = true,
@@ -83,10 +82,18 @@ return {
 				general = {
 					{"holiday-fixed", 1, 26, "Republic Day"},
 					{"holiday-fixed", 8, 15, "Independence Day"},
+					{"holiday-fixed", 10, 20, "Ayudha Pooja"},
+					{"holiday-fixed", 10, 21, "Vijayadasami"},
+					{"holiday-fixed", 11, 10, "Deepawali"},
 				},
 				islamic = {},
-				christian = {},
-				hebrew = {}
+				christian = {
+					{"holiday-fixed", 12, 25, "Christmas"}
+				},
+				hebrew = {},
+				bahai = {},
+				oriental = {},
+				solar = {}
 			},
 			custom_commands = {
 				-- a block agenda: three views in one buffer
