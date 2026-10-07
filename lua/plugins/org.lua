@@ -9,15 +9,13 @@ return {
 	},
 	opts = {
 		org_directory = "~/orgfiles/",
-		agenda_files = { "~/orgfiles/**/*.org" },
+		agenda_files = { "~/orgfiles/", "~/orgfiles/journal/" },
 		default_notes_file = "~/orgfiles/notes.org",
 		win_split_mode = "auto",
 		win_border = "single",
 		ellipsis = " [...]",
 		span = "week",
 		start_on_weekday = 0,
-		skip_scheduled_if_done = true,
-		skip_deadline_if_done = true,
 		todo_keywords = {"TODO(t)", "PROJ(P)", "PROGRESS(p)", "WAIT(w)", "HOLD(h)", "TEST(T)", "|", "CANCELLED(c)", "DONE(d)"},
 		ui = {
 			--- Hide *, /, _, =, ~, + around emphasized text (org-hide-emphasis-markers).
@@ -33,6 +31,7 @@ return {
 				t = {
 					description = 'Todo',
 					template = '* TODO %?',
+					type = "entry",
 					headline = "Todos",
 					target = "~/orgfiles/todo.org"
 				},
@@ -40,12 +39,16 @@ return {
 					description = 'Development Task',
 					template = '* TODO %?\n%i\n%a',
 					headline = "Tasks",
+					type = "entry",
 					target = "~/orgfiles/todo.org"
 				},
 				j = {
 					description = 'Journal',
-					template = '- %?',
-					target = '~/orgfiles/journal/%<%Y-%m>.org',
+					type = "entry",
+					template = '* %<%H:%M> %?',
+					target = function ()
+						return '~/orgfiles/journal/' .. os.date("%Y-%m") .. '.org'
+					end,
 					datetree = {
 						tree_type = "day",
 						time_prompt = true
@@ -73,6 +76,9 @@ return {
 		},
 		agenda = {
 			save_after_edit = true,
+			skip_scheduled_if_done = true,
+			skip_deadline_if_done = true,
+			skip_timestamp_if_done = true,
 			holidays = {
 				general = {
 					{"holiday-fixed", 1, 26, "Republic Day"},
@@ -114,12 +120,17 @@ return {
 						{
 							type = 'agenda',
 							org_agenda_overriding_header = 'My daily agenda',
-							org_agenda_span = 'day' -- can be any value as org_agenda_span
+							org_agenda_span = 'day', -- can be any value as org_agenda_span
+							org_agenda_skip_scheduled_if_done = true,
+							org_agenda_skip_deadline_if_done = true,
+							org_agenda_skip_timestamp_if_done = true,
 						},
 						{
 							type = 'tags_todo', -- Type can be agenda | tags | tags_todo
 							org_agenda_overriding_header = 'All Todos',
 							org_agenda_todo_ignore_deadlines = 'far', -- Ignore all deadlines that are too far in future (over org_deadline_warning_days). Possible values: all | near | far | past | future
+							org_agenda_todo_ignore_scheduled = true,
+							org_agenda_todo_ignore_timestamp  = true,
 						},
 					}
 				},

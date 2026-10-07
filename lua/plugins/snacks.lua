@@ -139,7 +139,10 @@ return {
 				}
 			}
 		},
-		notifier = { enabled = true },
+		notifier = {
+			enabled = true,
+			style = "fancy"
+		},
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = true },

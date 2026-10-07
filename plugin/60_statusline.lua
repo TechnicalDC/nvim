@@ -100,6 +100,10 @@ function _G.setup_statusline()
 		get_filename(),
 		" %<",
 		"%=",
+		require("org.extensions.pomodoro").statusline(),
+		" ",
+		require("org").statusline(),
+		" ",
 		get_diagnotics(),
 		get_location(),
 	}
