@@ -93,7 +93,7 @@ return {
 			layout = {
 				cycle = true,
 				--- Use the default layout or vertical if the window is too narrow
-				preset = "ivy_split"
+				preset = "ivy"
 				-- preset = function()
 				-- 	return vim.o.columns >= 120 and "ivy_split" or "dropdown"
 				-- end,
@@ -118,8 +118,27 @@ return {
 						},
 					},
 				},
+				ivy = {
+					preview = "main",
+					layout = {
+						box = "vertical",
+						backdrop = false,
+						row = -2,
+						width = 0,
+						height = 0.4,
+						border = "top",
+						title = " {title} {live} {flags}",
+						title_pos = "left",
+						{ win = "input", height = 1, border = "bottom" },
+						{
+							box = "horizontal",
+							{ win = "list", border = "none" },
+							{ win = "preview", title = "{preview}", width = 0.6, border = "left" },
+						},
+					},
+				},
 				ivy_split = {
-					-- preview = "main",
+					preview = "main",
 					layout = {
 						box = "vertical",
 						backdrop = false,
@@ -127,7 +146,7 @@ return {
 						height = 0.4,
 						position = "bottom",
 						border = "top",
-						title = " {title} {live} {flags}",
+						title = "{title} {live} {flags}",
 						title_pos = "left",
 						{ win = "input", height = 1, border = "none" },
 						{
