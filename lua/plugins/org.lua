@@ -1,4 +1,6 @@
 -- ~/.config/nvim/lua/plugins/org.lua
+local org_directory = "~/orgfiles/"
+
 return {
 	"xheisenbugx/org.nvim",
 	main = "org",
@@ -8,9 +10,9 @@ return {
 		{ "<leader>oa", "<cmd>Org agenda<cr>", desc = "Org: agenda" },
 	},
 	opts = {
-		org_directory = "~/orgfiles/",
-		agenda_files = { "~/orgfiles/", "~/orgfiles/journal/" },
-		default_notes_file = "~/orgfiles/notes.org",
+		org_directory = org_directory,
+		agenda_files = { org_directory },
+		default_notes_file = org_directory .. "notes.org",
 		win_split_mode = "auto",
 		win_border = "single",
 		ellipsis = " ...",
@@ -34,38 +36,26 @@ return {
 					template = '* TODO %?',
 					type = "entry",
 					headline = "Todos",
-					target = "~/orgfiles/todo.org"
+					target = org_directory .. "todo.org"
 				},
 				T = {
 					description = 'Development Task',
 					template = '* TODO %?\n%i\n%a',
 					headline = "Tasks",
 					type = "entry",
-					target = "~/orgfiles/todo.org"
-				},
-				j = {
-					description = 'Journal',
-					type = "entry",
-					template = '* %<%H:%M> %?',
-					target = function ()
-						return '~/orgfiles/journal/' .. os.date("%Y-%m") .. '.org'
-					end,
-					datetree = {
-						tree_type = "day",
-						time_prompt = true
-					},
+					target = org_directory .. "todo.org"
 				},
 				m = "Meeting",
 				mr = {
 					description = 'Recurring Meeting',
 					template = '* TODO %?\nSCHEDULED: %^t',
-					target = "~/orgfiles/meetings.org",
+					target = org_directory .. "meetings.org",
 					headline = 'Recurring Meetings'
 				},
 				mo = {
 					description = 'One-time Meeting',
 					template = '* TODO %?\nSCHEDULED: %^t',
-					target = "~/orgfiles/meetings.org",
+					target = org_directory .. "meetings.org",
 					headline = 'One-time Meetings'
 				}
 			},
@@ -145,9 +135,34 @@ return {
 			},
 		},
 		extensions = {
-			roam = { directory = "~/orgfiles/roam/" },
+			roam = { directory = org_directory .. "roam/" },
+			super_agenda = {
+				groups = {
+					{ name = "Today", time_grid = true, date = "today" },
+					{ name = "Important", priority = "A" },
+					{ name = "Due soon", deadline = "future", order = 2 },
+				},
+			},
+			journal = {
+				directory = org_directory .. "journal/",
+				file_type = "monthly",
+				file_format = "%Y-%m.org",
+				scheduled_string = "SCHEDULED:",
+				agenda = true,
+				file_header = "#+TITLE: %B %Y"
+			},
+			ics = {
+				calendars = {
+					{
+						name = "Personal",
+						url = "https://calendar.google.com/calendar/ical/chauhandilip305%40gmail.com/private-7d28020f2a40d15e851ffd1f68665eb7/basic.ics",
+						tags = { "personal"}
+					}
+				}
+			},
 			pomodoro = true,
 			code = true,
+			heatmap = { kind = "closed" },
 			kanban = true,
 			timeline = true,
 			sidebar = true,

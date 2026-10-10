@@ -2,9 +2,9 @@
 
 function M.setup()
   require('base16-colorscheme').setup({
-    base00 = '#111111',
-    base01 = '#121212',
-    base02 = '#1c1c1c',
+    base00 = '#000000',
+    base01 = '#010202',
+    base02 = '#111111',
     base03 = '#606060',
     base04 = '#636363',
     base05 = '#828282',
@@ -25,27 +25,27 @@ function M.setup()
   end
 
   -- telescope.nvim
-  hi('TelescopeNormal',         { fg = '#828282',          bg = '#111111' })
-  hi('TelescopeBorder',         { fg = '#606060',             bg = '#111111' })
-  hi('TelescopePromptNormal',   { fg = '#828282',          bg = '#111111' })
-  hi('TelescopePromptBorder',   { fg = '#606060',             bg = '#111111' })
-  hi('TelescopePromptPrefix',   { fg = '#aaaaaa',             bg = '#111111' })
-  hi('TelescopePromptCounter',  { fg = '#636363',  bg = '#111111' })
-  hi('TelescopePromptTitle',    { fg = '#111111',             bg = '#aaaaaa' })
-  hi('TelescopePreviewTitle',   { fg = '#111111',             bg = '#a7a7a7' })
-  hi('TelescopeResultsTitle',   { fg = '#111111',             bg = '#cccccc' })
-  hi('TelescopeSelection',      { fg = '#828282',          bg = '#1c1c1c' })
-  hi('TelescopeSelectionCaret', { fg = '#aaaaaa',             bg = '#1c1c1c' })
+  hi('TelescopeNormal',         { fg = '#828282',          bg = '#000000' })
+  hi('TelescopeBorder',         { fg = '#606060',             bg = '#000000' })
+  hi('TelescopePromptNormal',   { fg = '#828282',          bg = '#000000' })
+  hi('TelescopePromptBorder',   { fg = '#606060',             bg = '#000000' })
+  hi('TelescopePromptPrefix',   { fg = '#aaaaaa',             bg = '#000000' })
+  hi('TelescopePromptCounter',  { fg = '#636363',  bg = '#000000' })
+  hi('TelescopePromptTitle',    { fg = '#000000',             bg = '#aaaaaa' })
+  hi('TelescopePreviewTitle',   { fg = '#000000',             bg = '#a7a7a7' })
+  hi('TelescopeResultsTitle',   { fg = '#000000',             bg = '#cccccc' })
+  hi('TelescopeSelection',      { fg = '#828282',          bg = '#111111' })
+  hi('TelescopeSelectionCaret', { fg = '#aaaaaa',             bg = '#111111' })
   hi('TelescopeMatching',       { fg = '#aaaaaa',             bold = true })
 
   -- mini.pick
-  hi('MiniPickNormal',         { fg = '#828282',          bg = '#111111' })
-  hi('MiniPickBorder',         { fg = '#606060',             bg = '#111111' })
-  hi('MiniPickPrompt',   { fg = '#828282',          bg = '#111111' })
-  hi('MiniPickPromptPrefix',   { fg = '#aaaaaa',             bg = '#111111' })
-  hi('MiniPickBorderText',    { fg = '#111111',             bg = '#aaaaaa' })
-  hi('MiniPickMatchCurrent',      { fg = '#828282',          bg = '#1c1c1c' })
-  hi('MiniPickPromptCaret', { fg = '#aaaaaa',             bg = '#1c1c1c' })
+  hi('MiniPickNormal',         { fg = '#828282',          bg = '#000000' })
+  hi('MiniPickBorder',         { fg = '#606060',             bg = '#000000' })
+  hi('MiniPickPrompt',   { fg = '#828282',          bg = '#000000' })
+  hi('MiniPickPromptPrefix',   { fg = '#aaaaaa',             bg = '#000000' })
+  hi('MiniPickBorderText',    { fg = '#000000',             bg = '#aaaaaa' })
+  hi('MiniPickMatchCurrent',      { fg = '#828282',          bg = '#111111' })
+  hi('MiniPickPromptCaret', { fg = '#aaaaaa',             bg = '#111111' })
   hi('MiniPickMatchRanges',       { fg = '#aaaaaa',             bold = true })
 end
 
