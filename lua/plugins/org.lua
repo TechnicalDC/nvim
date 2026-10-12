@@ -62,12 +62,24 @@ return {
 			window = "split",
 		},
 		agenda = {
+			span = "day",
+			start_day = "-0d",
 			save_after_edit = true,
 			window = "current",
 			block_separator = " ",
 			skip_scheduled_if_done = true,
 			skip_deadline_if_done = true,
 			skip_timestamp_if_done = true,
+			skip_scheduled_if_deadline_is_shown = true,
+			skip_timestamp_if_deadline_is_shown = true,
+			time_grid = { enabled = false },
+			category_icons = {},
+			prefix_format = {
+				agenda = "  %?-2i %t ",
+				todo = " %i %-12:c",
+				tags = " %i %-12:c",
+				search = " %i %-12:c",
+			},
 			holidays = {
 				general = {
 					{"holiday-fixed", 1, 26, "Republic Day"},
@@ -138,9 +150,36 @@ return {
 			roam = { directory = org_directory .. "roam/" },
 			super_agenda = {
 				groups = {
-					{ name = "Today", time_grid = true, date = "today" },
-					{ name = "Important", priority = "A" },
-					{ name = "Due soon", deadline = "future", order = 2 },
+					{
+						name = "Overdue",
+						scheduled = "past",
+						order = 2
+					},
+					{
+						name = "Important",
+						priority = "A",
+						order = 2
+					},
+					{
+						name = "Meetings",
+						priority = "A",
+						order = 2
+					},
+					{
+						name = "Due soon",
+						deadline = "future",
+						order = 2
+					},
+					{
+						name = "Today",
+						time_grid = true,
+						date = "today",
+						scheduled = "today"
+					},
+					{
+						auto_todo = true,
+						order = 9
+					},
 				},
 			},
 			journal = {
