@@ -42,7 +42,7 @@ return {
 		-- refer to the configuration section below
 		bigfile = { enabled = true },
 		dashboard = {
-			enabled = false,
+			enabled = true,
 			preset = {
 				header = headers.dc,
 				keys = {
@@ -104,13 +104,13 @@ return {
 					layout = {
 						box = "vertical",
 						backdrop = false,
+						row = -2,
 						width = 0,
 						height = 0.4,
-						position = "bottom",
 						border = "top",
 						title = " {title} {live} {flags}",
 						title_pos = "left",
-						{ win = "input", height = 1, border = "none" },
+						{ win = "input", height = 1, border = "bottom" },
 						{
 							box = "horizontal",
 							{ win = "list", border = "none" },

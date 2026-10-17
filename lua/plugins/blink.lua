@@ -87,7 +87,7 @@ return {
 			default = { 'lsp', 'path', 'snippets', 'buffer' },
 			per_filetype = {
 				markdown = { 'lsp', 'snippets', 'buffer', 'path', 'mkdnflow' },
-				org = { inherit_defaults = true, "org" }
+				org = { inherit_defaults = true, "org", "buffer" }
 			},
 		},
 		signature = {
