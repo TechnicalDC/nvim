@@ -205,6 +205,7 @@ return {
 			kanban = true,
 			timeline = true,
 			sidebar = true,
+			lsp = true,
 		}
 	},
 }

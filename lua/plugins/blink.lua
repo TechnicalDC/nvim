@@ -87,14 +87,14 @@ return {
 			default = { 'lsp', 'path', 'snippets', 'buffer' },
 			per_filetype = {
 				markdown = { 'lsp', 'snippets', 'buffer', 'path', 'mkdnflow' },
-				org = { inherit_defaults = true, "org" }
+				org = { inherit_defaults = true, "org", "buffer" }
 			},
 		},
 		signature = {
 			enabled = true,
 			window = {
 				scrollbar = false,
-				border = "single",
+				-- border = "single",
 				winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
 			}
 		},
@@ -105,7 +105,7 @@ return {
 				show_on_x_blocked_trigger_characters = { ".", "\\" }
 			},
 			menu = {
-				border = "single",
+				-- border = "single",
 				scrollbar = false,
 				winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
 				draw = {
@@ -128,7 +128,7 @@ return {
 				auto_show = true,
 				window = {
 					scrollbar = false,
-					border = "single",
+					-- border = "single",
 					winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
 					direction_priority = {
 						menu_north = { 'e', 'w', 'n', 's' },

@@ -2,15 +2,12 @@ return {
 	'nvim-mini/mini.nvim',
 	ersion = false,
 	config = function()
-		require("dc.config.clue")
 		require("dc.config.diff")
 		require("dc.config.files")
 		require("dc.config.hipatterns")
 		require("dc.config.icons")
-		-- require("dc.config.input")
 		require("dc.config.misc")
 		require("dc.config.move")
-		-- require("dc.config.notify")
 		require("dc.config.session")
 		require("dc.config.splitjoin")
 		-- require("dc.config.starter")
