@@ -4,8 +4,8 @@ function M.setup()
   require('base16-colorscheme').setup({
     base00 = '#17130b',
     base01 = '#241f17',
-    base02 = '#2f2921',
-    base03 = '#9b8f80',
+    base02 = '#302a1f',
+    base03 = '#6a6053',
     base04 = '#d2c5b4',
     base05 = '#ece1d4',
     base06 = '#ece1d4',
@@ -14,10 +14,10 @@ function M.setup()
     base09 = '#b5cea4',
     base0A = '#dbc3a1',
     base0B = '#f0bf6d',
-    base0C = '#b5cea4',
-    base0D = '#f0bf6d',
-    base0E = '#dbc3a1',
-    base0F = '#f8dfbb',
+    base0C = '#b7e996',
+    base0D = '#f3cc8b',
+    base0E = '#e9c696',
+    base0F = '#f4ddbe',
   })
 
   local hi = function(group, opts)
@@ -26,26 +26,26 @@ function M.setup()
 
   -- telescope.nvim
   hi('TelescopeNormal',         { fg = '#ece1d4',          bg = '#17130b' })
-  hi('TelescopeBorder',         { fg = '#9b8f80',             bg = '#17130b' })
+  hi('TelescopeBorder',         { fg = '#6a6053',             bg = '#17130b' })
   hi('TelescopePromptNormal',   { fg = '#ece1d4',          bg = '#17130b' })
-  hi('TelescopePromptBorder',   { fg = '#9b8f80',             bg = '#17130b' })
+  hi('TelescopePromptBorder',   { fg = '#6a6053',             bg = '#17130b' })
   hi('TelescopePromptPrefix',   { fg = '#f0bf6d',             bg = '#17130b' })
   hi('TelescopePromptCounter',  { fg = '#d2c5b4',  bg = '#17130b' })
   hi('TelescopePromptTitle',    { fg = '#17130b',             bg = '#f0bf6d' })
   hi('TelescopePreviewTitle',   { fg = '#17130b',             bg = '#dbc3a1' })
   hi('TelescopeResultsTitle',   { fg = '#17130b',             bg = '#b5cea4' })
-  hi('TelescopeSelection',      { fg = '#ece1d4',          bg = '#2f2921' })
-  hi('TelescopeSelectionCaret', { fg = '#f0bf6d',             bg = '#2f2921' })
+  hi('TelescopeSelection',      { fg = '#ece1d4',          bg = '#302a1f' })
+  hi('TelescopeSelectionCaret', { fg = '#f0bf6d',             bg = '#302a1f' })
   hi('TelescopeMatching',       { fg = '#f0bf6d',             bold = true })
 
   -- mini.pick
   hi('MiniPickNormal',         { fg = '#ece1d4',          bg = '#17130b' })
-  hi('MiniPickBorder',         { fg = '#9b8f80',             bg = '#17130b' })
+  hi('MiniPickBorder',         { fg = '#6a6053',             bg = '#17130b' })
   hi('MiniPickPrompt',   { fg = '#ece1d4',          bg = '#17130b' })
   hi('MiniPickPromptPrefix',   { fg = '#f0bf6d',             bg = '#17130b' })
   hi('MiniPickBorderText',    { fg = '#17130b',             bg = '#f0bf6d' })
-  hi('MiniPickMatchCurrent',      { fg = '#ece1d4',          bg = '#2f2921' })
-  hi('MiniPickPromptCaret', { fg = '#f0bf6d',             bg = '#2f2921' })
+  hi('MiniPickMatchCurrent',      { fg = '#ece1d4',          bg = '#302a1f' })
+  hi('MiniPickPromptCaret', { fg = '#f0bf6d',             bg = '#302a1f' })
   hi('MiniPickMatchRanges',       { fg = '#f0bf6d',             bold = true })
 end
 

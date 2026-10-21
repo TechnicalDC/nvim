@@ -16,6 +16,7 @@ return {
 		{ "<leader>dn", function() require("snacks").notifier.hide() end, desc = "Dismiss All Notifications" },
 		{ "<leader>fn",  function() require("snacks").notifier.show_history() end, desc = "Notification History" },
 		{ "<leader>fb",  function() require("snacks").picker.buffers() end,      desc = "Open buffers" },
+		{ "<leader>fe",  function() require("snacks").picker.explorer() end,      desc = "Open explorer" },
 		{ "<leader>fk",  function() require("snacks").picker.keymaps() end,      desc = "Keymaps" },
 		{ "<leader>fr",  function() require("snacks").picker.recent() end,      desc = "Open recent files" },
 		{ "<leader>fhi", function() require("snacks").picker.highlights() end,      desc = "Open highlights" },
@@ -99,6 +100,27 @@ return {
 				-- end,
 			},
 			layouts = {
+				sidebar = {
+					preview = "main",
+					layout = {
+						backdrop = false,
+						width = 40,
+						min_width = 40,
+						height = 0,
+						position = "left",
+						border = "none",
+						box = "vertical",
+						{
+							win = "input",
+							height = 1,
+							border = "bottom",
+							title = "{title} {live} {flags}",
+							title_pos = "center",
+						},
+						{ win = "list", border = "none" },
+						{ win = "preview", title = "{preview}", height = 0.4, border = "top" },
+					},
+				},
 				select = {
 					hidden = { "preview" },
 					layout = {
