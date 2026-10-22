@@ -57,7 +57,8 @@ set.fillchars:append({
 	-- verthoriz = '╬',
 })
 
-set.listchars = "eol:󱞥"
+-- set.listchars = "eol:󱞥"
+set.listchars = "eol: "
 				 .. ",tab:  "
 				 .. ",leadtab:┊ "
 				 .. ",nbsp:␣"
@@ -119,7 +120,7 @@ vim.diagnostic.config({
 	float = false,
 	underline = true,
 	severity_sort = true,
-	virtual_text = { prefix = "󰭹" },
+	virtual_text = { prefix = ">" },
 	virtual_lines = { current_line = true },
    -- signs = {
    --    text = {

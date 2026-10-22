@@ -6,6 +6,7 @@ return {
 		-- refer to the configuration section below
 		preset = "helix",
 		icons = {
+			mappings = false,
 			separator = " │ ",
 		},
 		win = {

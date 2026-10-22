@@ -66,6 +66,7 @@ return {
 			start_day = "-0d",
 			save_after_edit = true,
 			window = "current",
+			span = "day",
 			block_separator = " ",
 			skip_scheduled_if_done = true,
 			skip_deadline_if_done = true,

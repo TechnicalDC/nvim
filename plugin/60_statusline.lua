@@ -87,7 +87,7 @@ local get_location = function ()
 	if exclude_statusline() then
 		return ""
 	end
-	return "  %-3.(%l/%L "
+	return " %-3.(%l/%L "
 end
 
 local get_diagnotics = function ()
