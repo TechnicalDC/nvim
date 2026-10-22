@@ -62,7 +62,6 @@ return {
 			window = "split",
 		},
 		agenda = {
-			span = "day",
 			start_day = "-0d",
 			save_after_edit = true,
 			window = "current",
@@ -136,7 +135,7 @@ return {
 							org_agenda_skip_timestamp_if_done = true,
 						},
 						{
-							type = 'tags_todo', -- Type can be agenda | tags | tags_todo
+							type = 'todo', -- Type can be agenda | tags | tags_todo
 							org_agenda_overriding_header = 'All Todos',
 							org_agenda_todo_ignore_deadlines = 'far', -- Ignore all deadlines that are too far in future (over org_deadline_warning_days). Possible values: all | near | far | past | future
 							org_agenda_todo_ignore_scheduled = true,
@@ -163,7 +162,8 @@ return {
 					},
 					{
 						name = "Meetings",
-						priority = "A",
+						scheduled = "today",
+						file_path = "meetings.org",
 						order = 2
 					},
 					{
