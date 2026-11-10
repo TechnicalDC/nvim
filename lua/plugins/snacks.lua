@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 return {
-	"folke/snacks.nvim",
+	"TechnicalDC/snacks.nvim",
 	priority = 1000,
 	lazy = false,
 	keys = {
@@ -94,7 +94,7 @@ return {
 			layout = {
 				cycle = true,
 				--- Use the default layout or vertical if the window is too narrow
-				preset = "ivy"
+				preset = "float"
 				-- preset = function()
 				-- 	return vim.o.columns >= 120 and "ivy_split" or "dropdown"
 				-- end,
@@ -138,6 +138,24 @@ return {
 							{ win = "list", border = "none" },
 							{ win = "preview", title = "{preview}", width = 0.6, border = "left" },
 						},
+					},
+				},
+				float = {
+					hidden = { "preview" },
+					layout = {
+						backdrop = false,
+						width = 0.5,
+						min_width = 80,
+						max_width = 100,
+						height = 0.4,
+						min_height = 2,
+						box = "vertical",
+						border = "horizontal",
+						title = "{title}",
+						title_pos = "center",
+						{ win = "input", height = 1, border = "none" },
+						{ win = "list", border = "none" },
+						{ win = "preview", title = "{preview}", height = 0.4, border = "top" },
 					},
 				},
 				ivy = {
