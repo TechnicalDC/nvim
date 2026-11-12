@@ -38,12 +38,13 @@ return {
 					headline = "Todos",
 					target = org_directory .. "todo.org"
 				},
-				T = {
+				p = "Project",
+				pq = {
 					description = 'Development Task',
 					template = '* TODO %?\n%i\n%a',
-					headline = "Tasks",
+					headline = "QAD",
 					type = "entry",
-					target = org_directory .. "todo.org"
+					target = org_directory .. "projects.org"
 				},
 				m = "Meeting",
 				mr = {
@@ -158,6 +159,11 @@ return {
 					{
 						name = "Important",
 						priority = "A",
+						order = 2
+					},
+					{
+						name = "Project Tasks",
+						file_path = "projects.org",
 						order = 2
 					},
 					{
