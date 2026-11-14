@@ -94,7 +94,7 @@ return {
 			layout = {
 				cycle = true,
 				--- Use the default layout or vertical if the window is too narrow
-				preset = "float"
+				preset = "ivy"
 				-- preset = function()
 				-- 	return vim.o.columns >= 120 and "ivy_split" or "dropdown"
 				-- end,

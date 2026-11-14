@@ -120,7 +120,7 @@ vim.diagnostic.config({
 	float = false,
 	underline = true,
 	severity_sort = true,
-	virtual_text = { prefix = ">" },
+	virtual_text = { prefix = "󰝗 " },
 	virtual_lines = { current_line = true },
    -- signs = {
    --    text = {
