@@ -14,11 +14,11 @@ return {
 		agenda_files = { org_directory },
 		default_notes_file = org_directory .. "notes.org",
 		win_split_mode = "auto",
-		win_border = "single",
 		ellipsis = " ...",
 		span = "week",
 		start_on_weekday = 0,
 		todo_keywords = {"TODO(t)", "PROGRESS(p)", "WAIT(w)", "HOLD(h)", "TEST(T)", "|", "CANCELLED(c)", "DONE(d)"},
+		tags = { "@work", "@home" },
 		ui = {
 			--- Hide *, /, _, =, ~, + around emphasized text (org-hide-emphasis-markers).
 			hide_emphasis_markers = true,
