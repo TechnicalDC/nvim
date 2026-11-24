@@ -15,8 +15,6 @@ return {
 		default_notes_file = org_directory .. "notes.org",
 		win_split_mode = "auto",
 		ellipsis = " ...",
-		span = "week",
-		start_on_weekday = 0,
 		todo_keywords = {"TODO(t)", "PROGRESS(p)", "WAIT(w)", "HOLD(h)", "TEST(T)", "|", "CANCELLED(c)", "DONE(d)"},
 		tags = { "@work", "@home" },
 		ui = {
@@ -67,6 +65,7 @@ return {
 			save_after_edit = true,
 			window = "current",
 			span = "day",
+			start_on_weekday = 0,
 			block_separator = " ",
 			skip_scheduled_if_done = true,
 			skip_deadline_if_done = true,
@@ -213,6 +212,7 @@ return {
 			timeline = true,
 			sidebar = true,
 			lsp = true,
+			cli = true,
 		}
 	},
 }
