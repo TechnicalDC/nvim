@@ -72,7 +72,10 @@ return {
 			skip_timestamp_if_done = true,
 			skip_scheduled_if_deadline_is_shown = true,
 			skip_timestamp_if_deadline_is_shown = true,
-			time_grid = { enabled = false },
+			time_grid = {
+				enabled = false,
+				separator = " ┄┄┄┄┄",
+			},
 			category_icons = {},
 			prefix_format = {
 				agenda = "  %?-2i %t ",
